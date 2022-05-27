@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Navbar from './components/navbar';
 import Hero from './components/hero';
+import CardHero from './components/cardhero';
+import Subscribe from './components/subscribe';
+
 import Footer from './components/footer';
 
 import App from './App';
@@ -13,6 +16,8 @@ root.render(
   <React.StrictMode>
     <Navbar/>
     <Hero/>
+    <CardHero/>
+    <Subscribe/>
     
     <App />
     <Footer/>

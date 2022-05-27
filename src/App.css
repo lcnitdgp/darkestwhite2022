@@ -159,6 +159,110 @@ main a:focus,
   width: 250px;
 }
 
+
+.cardhero{
+
+  background-color: #eae9e4;
+  color: black;
+  width: 100%;
+  height: 250vh;
+  
+}
+
+.cardhero-header{
+  font-family: 'Cinzel', serif;
+  padding-top: 20vh;
+  font-size: 10vh;
+  font-weight: 100;
+  margin-bottom: 3vh;
+
+}
+hr {
+  
+    width:4%;
+    margin:0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  
+  padding-left: 75px;
+   padding-right: 75px;
+   margin-top: 30px;
+}
+
+.img-card{
+  width: 350px;
+}
+
+
+.card-content{
+  padding-left:10px;
+}
+.date{
+  text-align: left;
+  margin-bottom: 4px;
+  font-family: 'Quintessential', cursive;
+  font-weight: 100;
+}
+
+.blog-title{
+  text-align: left;
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+.blog-line{
+  width: 350px;
+}
+
+.child1{
+  padding: 3px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.blog-type{
+  text-align: left;
+  float: left;
+  
+}
+
+ .blog-comment{
+   float: right;
+ }
+
+.subscribe{
+  width: 100%;
+  height: 50vh;
+ 
+}
+
+.sub-heading{
+  padding: 60px 75px;
+  text-align: left;
+  overflow-wrap: break-word;
+   font-family: 'Cinzel', serif;
+ font-weight: 100;
+  float: left;
+  font-size: 60px;
+  
+}
+
+.sub-text{
+  float: left;
+  padding: 75px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: left;
+  overflow-wrap: break-word;
+  
+}
+
+
+
 footer{
 
 
@@ -208,5 +312,4 @@ letter-spacing: 3px;
   text-align: right;
   bottom: 0;
 }
-
 
