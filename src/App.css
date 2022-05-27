@@ -1,3 +1,6 @@
+
+/* styling of background */
+
 body {
   background-color: #dfdccf;
   color: black;
@@ -6,6 +9,7 @@ body {
   text-align: center;
 }
 
+/* styling of navbar */
 .header{
    display: flex;
   
@@ -17,12 +21,8 @@ body {
        font-family: 'Cinzel', serif;
 
 }
-.profile-photo{
-    margin: 10px;
-    width: 450px;
-    height: auto;
-    
-}
+
+
 
 
 .menu {
@@ -112,6 +112,8 @@ button.open-nav-btn {
   visibility: hidden;
 }
 
+
+/* would have been styling of slide bar component 
 .slide-content a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -157,9 +159,18 @@ main a:focus,
 
 .active {
   width: 250px;
+} */
+
+/* styling of hero section */
+
+.profile-photo{
+    margin: 10px;
+    width: 450px;
+    height: auto;
+    
 }
 
-
+/* styling of grid section */
 .cardhero{
 
   background-color: #eae9e4;
@@ -187,8 +198,8 @@ hr {
   display: grid;
   grid-template-columns: auto auto auto;
   
-  padding-left: 75px;
-   padding-right: 75px;
+  padding-left: 60px;
+   padding-right: 60px;
    margin-top: 30px;
 }
 
@@ -235,6 +246,8 @@ hr {
    float: right;
  }
 
+ /* styling of subscribe section */
+
 .subscribe{
   width: 100%;
   height: 50vh;
@@ -262,6 +275,7 @@ hr {
 }
 
 
+/* styling of footer */
 
 footer{
 
