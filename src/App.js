@@ -1,4 +1,5 @@
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState,useEffect} from "react";
 import Landing from "./landingpage";
 
@@ -12,7 +13,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1000);
   }, []);
   const style = { position: "fixed", top: "50%", right: "50%",
   

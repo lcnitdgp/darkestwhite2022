@@ -3,11 +3,22 @@
 
 body {
   background-color: #dfdccf;
-  color: black;
-  
+   margin:0;
+overflow-x:hidden;
   font-family: Arial;
   text-align: center;
+  
 }
+
+.hero{
+
+  color: black;
+  background-color: #dfdccf;
+  height: 100vh;
+}
+
+
+
 
 /* styling of navbar */
 .header{
@@ -15,17 +26,39 @@ body {
   
 
 }
-.header-title{
-    margin-right: auto;
-    padding: 2vh;
-       font-family: 'Cinzel', serif;
 
+.container{
+margin-left: 0;
+margin-right: 0;
+}
+#responsive-navbar-nav{
+  margin-right: 0;
+}
+.header-title{
+   
+    font-size: 2rem;
+    
+       font-family: 'Cinzel', serif;
+       
+      
+     
+
+}
+
+.nav-content{
+   
+       margin-top: 1rem;
+       margin-left: auto;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.80rem;
+        color: black;
+        font-weight: 600;
+        
 }
 
 
 
-
-.menu {
+/* .menu {
   display: inline-block;
   list-style-type: none;
   font-family: 'Open Sans', sans-serif;
@@ -50,9 +83,9 @@ body {
   transition: all 300ms ease-in-out;
   padding-left: 2px;
 }
+ */
 
-
-.sub-menu li {
+/* .sub-menu li {
   font-size: 14px;
   font-weight: 500;
   background: rgba(244, 242, 242, 0.8);
@@ -61,7 +94,6 @@ body {
   text-align: justify;
   color: rgb(8, 8, 8);
   border-bottom: 1px solid rgba(255,255,255, 0.2);
-  /*display: none;*/
   transform: scale(0);
   transform-origin: top center;
   transition: all 300ms ease-in-out;
@@ -77,11 +109,11 @@ body {
 
 .sub-menu li:hover {
   background: rgb(138, 137, 137);
-}
+} */
 
 
-.menu > li:hover .sub-menu li{
-  /*display: block;*/
+/* .menu > li:hover .sub-menu li{
+
   transform: scale(1);
 }
 
@@ -110,7 +142,7 @@ button.open-nav-btn {
   transition: width 0.5s;
   padding-top: 60px;
   visibility: hidden;
-}
+} */
 
 
 /* would have been styling of slide bar component 

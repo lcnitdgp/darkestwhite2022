@@ -1,6 +1,6 @@
 import "./App.css";
 
-import Navbar from "./components/navbar";
+import NavbarNew from "./components/navbar";
 import Hero from "./components/hero";
 import CardHero from "./components/cardhero";
 import Subscribe from "./components/subscribe";
@@ -10,7 +10,7 @@ function Landing() {
  
   return (
     <div>
-    <Navbar />
+    <NavbarNew />
       <Hero />
       <CardHero />
       <Subscribe />
