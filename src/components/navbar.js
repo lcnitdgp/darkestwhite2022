@@ -76,20 +76,13 @@ import { Container,
 
 function NavbarNew(){
 return(
-  <Navbar collapseOnSelect expand="lg" className="navbar">
-  <Container className="container">
-  <Navbar.Brand className="header-title" href="#home">Darkest White</Navbar.Brand>
+ <Navbar collapseOnSelect expand="lg" className="navbar">
+  <Container>
+  <Navbar.Brand href="#home" className="navbar-title">Darkest White</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-     <Nav className="ms-auto nav-content">
-      <Nav.Link href="#features">HOME</Nav.Link>
-      <NavDropdown title="POSTS" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
+    <Nav className="ms-auto navbar-content">
+      <Nav.Link href="#features navlink">HOME</Nav.Link>
       <NavDropdown title="THEMES" id="collasible-nav-dropdown">
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -97,9 +90,14 @@ return(
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
       </NavDropdown>
-      <Nav.Link href="#pricing">CONTACT US</Nav.Link>
-      
-      
+      <NavDropdown title="POSTS" id="collasible-nav-dropdown">
+        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+      </NavDropdown>
+      <Nav.Link href="#features navlink">CONTACT US</Nav.Link>
     </Nav>
     
   </Navbar.Collapse>

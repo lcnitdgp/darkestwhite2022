@@ -11,10 +11,9 @@ function Landing() {
   return (
     <div>
     <NavbarNew />
-      <Hero />
-      <CardHero />
-      <Subscribe />
-      <Footer />
+    <Hero/>
+    <Footer/>
+     
     </div>
   );
 }
