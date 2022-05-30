@@ -1,13 +1,13 @@
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container,
- Navbar,
- Nav,
- NavDropdown,
- Form,
- FormControl,
- Button,
-
+import {
+  Container,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Form,
+  FormControl,
+  Button,
 } from "react-bootstrap";
 
 // function Navbar() {
@@ -17,10 +17,9 @@ import { Container,
 // <nav className="Navbar">
 //   <ul className="menu">
 //     <li>HOME
-      
+
 //     </li>
-    
-    
+
 //     <li>THEMES
 //       <ul className="sub-menu">
 //         <li>Pandemic Pages</li>
@@ -30,23 +29,20 @@ import { Container,
 //         <li>Movies</li>
 //       </ul>
 //     </li>
-    
-    
+
 //     <li>SIGNUP/LOGIN
 //       <ul className="sub-menu">
 //         <li>SignUp</li>
 //         <li>Login</li>
 //       </ul>
 //     </li>
-    
-    
+
 //     <li>ABOUT US
-      
+
 //     </li>
-    
-    
+
 //     <li>CONTACT US
-      
+
 //     </li>
 
 //     <li className="toggle" id="slide">
@@ -60,52 +56,57 @@ import { Container,
 //       <li><a href="...">About Us</a></li>
 //       <li><a href="...">Contact</a></li>
 
-      
 //     </ul>
 //   </div>
 //     </li>
 //   </ul>
 
 // </nav>
-      
+
 //     </header>
 
-    
 //   );
 // }
 
-function NavbarNew(){
-return(
- <Navbar collapseOnSelect expand="lg" className="navbar">
-  <Container>
-  <Navbar.Brand href="#home" className="navbar-title">Darkest White</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="ms-auto navbar-content">
-      <Nav.Link href="#features navlink">HOME</Nav.Link>
-      <NavDropdown title="THEMES" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
-      <NavDropdown title="POSTS" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
-      <Nav.Link href="#features navlink">CONTACT US</Nav.Link>
-    </Nav>
-    
-  </Navbar.Collapse>
-  </Container>
-</Navbar>
-)
+function NavbarNew() {
+  return (
+    <Navbar collapseOnSelect expand="lg" className="navbar">
+      <Container>
+        <Navbar.Brand href="#home" className="navbar-title">
+          Darkest White
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto navbar-content">
+            <Nav.Link href="#features navlink">HOME</Nav.Link>
+            <NavDropdown title="THEMES" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="POSTS" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="#features navlink">CONTACT US</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
-
-
 
 export default NavbarNew;

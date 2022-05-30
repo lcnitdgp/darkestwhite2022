@@ -1,134 +1,302 @@
 /* styling of navbar */
 
-.navbar-title{
-  font-family: 'Cinzel', serif;
+.navbar-title {
+  font-family: "Cinzel", serif;
   font-size: 1.5rem;
   padding-left: 0.5rem;
 }
-@media screen and (max-width: 1924px){
-  .navbar-title{
-     font-size: 2.25rem;
+@media screen and (max-width: 1924px) {
+  .navbar-title {
+    font-size: 2.25rem;
     margin-left: -5%;
   }
 }
 
-  @media screen and (max-device-width: 768px)
-{
-  .navbar-title{
+@media screen and (max-device-width: 768px) {
+  .navbar-title {
     font-size: 1.7rem;
     margin-left: -1rem;
   }
 }
 
-  @media screen and (max-device-width: 425px)
-{
-  .navbar-title{
+@media screen and (max-device-width: 425px) {
+  .navbar-title {
     font-size: 1.6rem;
-    margin-left: -.2rem;
+    margin-left: -0.2rem;
   }
 }
-.navbar{
+.navbar {
   background-color: #dfdccf;
 }
 
-.navbar-content{
-  font-family: 'Open Sans', sans-serif;
+.navbar-content {
+  font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  font-size: 0.90rem;
+  font-size: 0.9rem;
   color: black;
 }
 
 /* styling of hero section */
 
-.hero{
+.hero {
   background-color: #dfdccf;
   height: 28.5rem;
   width: 100%;
   margin-left: 0;
-  margin-right:0;
+  margin-right: 0;
 }
-.profile-photo{
-
+.profile-photo {
   align-items: center;
-  
-    height: 15rem;
-     display: block;
+
+  height: 15rem;
+  display: block;
   margin-left: auto;
   margin-right: auto;
   width: 70%;
   padding-top: 2rem;
 }
 
-
-@media screen and (max-width: 1924px){
-  .hero{
+@media screen and (min-width: 1024px) {
+  .hero {
     height: 40rem;
   }
-  .profile-photo{
+  .profile-photo {
     height: 30rem;
-    width:40%
+    width: 40%;
   }
 }
 
-@media screen and (max-width: 768px)
-{
-  .hero{
-    height:15rem;
-  }
-   .profile-photo{
-    height: 25rem;
-    width:50%
-  }
-}
-
-@media screen and (max-width: 768px){
-  .hero{
+@media screen and (max-width: 768px) {
+  .hero {
     height: 25rem;
   }
-   .profile-photo{
+  .profile-photo {
     height: 20rem;
-    width:60%
+    width: 40%;
   }
 }
 
-@media screen and (max-width: 320px){
-   .profile-photo{
+@media screen and (max-width: 430px) {
+  .hero {
+    height: 30rem;
+  }
+  .profile-photo {
     height: 20rem;
-    width:70%
+    width: 70%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .hero {
+    height: 30rem;
+  }
+  .profile-photo {
+    height: 20rem;
+    width: 70%;
   }
 }
 
+@media screen and (max-width: 320px) {
+  .hero {
+    height: 27rem;
+  }
+  .profile-photo {
+    height: 20rem;
+    width: 70%;
+  }
+}
+
+/*styling of subcribe section*/
+
+.subscribe{
+  height: 40rem;
+  background-color: #dfdccf;
+ 
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  
+}
+
+.sub-heading{
+  padding-top: 7rem;
+  font-family: "Cinzel",
+  serif;
+  font-size: 2.8rem;
+  
+ 
+  font-weight: 400;
+}
+
+.sub-text{
+  padding-top: .5rem;
+  font-family: "Open Sans",
+  sans-serif;
+  font-weight: 100;
+  color: rgb(91, 91, 91);
+}
+
+
+@media screen and (min-width:768px) {
+  .subscribe {
+    height: 10rem;
+    padding-left: 3rem;
+    
+  }
+
+  .sub-heading {
+    font-size: 4rem;
+
+  }
+
+}
+
+@media screen and (min-width:425px) {
+
+  .subscribe{
+    padding-left: 3rem;
+  }
+}
+
+@media screen and (min-width:375px) {
+  .subscribe{
+    height: 35rem;
+  }
+  
+}
+@media screen and (min-width:1024px) {
+  .subscribe {
+    height: 25rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+   .sub-heading{
+     padding-top: 4rem;
+   }
+  .sub-heading {
+    font-size: 5rem;
+  }
+}
 /*styling for footer*/
 
-.footer{
+.footer {
   background-color: black;
   color: aliceblue;
-  font-family: 'Cinzel', serif;
-  height: 20rem;
+  font-family: "Cinzel", serif;
+  height: rem;
 }
 
-.footer-title{
+.footer-title {
   padding-top: 7rem;
   text-align: center;
   font-size: 2rem;
 }
 
-.footer-lc{
+.footer-lc {
   font-size: 1rem;
   text-align: center;
 }
 
-.footer-socials{
-  font-size: .7rem;
+.footer-socials {
+  font-size: 0.7rem;
   text-align: center;
 }
 
-.tagline{
-  margin: top 18rem;
-}
-
-.copyright{
+.copyright {
   text-align: center;
-  padding-top: 5rem;
+  margin-top: 7rem;
 }
 
+@media screen and (max-width: 1925px) {
+  .footer {
+    height: 35rem;
+  }
+
+  .footer-title {
+    padding-top: 15rem;
+    font-size: 3rem;
+  }
+
+  .footer-lc {
+    font-size: 1.2rem;
+  }
+
+  .footer-socials {
+    font-size: 0.9rem;
+  }
+
+  .copyright {
+    margin-top: 10rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .footer {
+    height: 30rem;
+  }
+
+  .footer-title {
+    padding-top: 12rem;
+    font-size: 2.5rem;
+  }
+
+  .footer-lc {
+    font-size: 1.2rem;
+  }
+
+  .footer-socials {
+    font-size: 0.9rem;
+  }
+
+  .copyright {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .footer {
+    background-color: black;
+    color: aliceblue;
+    font-family: "Cinzel", serif;
+    height: 30rem;
+  }
+
+  .footer-title {
+    padding-top: 12rem;
+    text-align: center;
+    font-size: 2.3rem;
+  }
+
+  .footer-lc {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .footer-socials {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .tagline {
+    margin: top 18rem;
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (max-width: 377px) {
+  .footer {
+    height: 30rem;
+  }
+  .footer-title {
+    padding-top: 12rem;
+  }
+
+  .copyright {
+    margin-top: 10rem;
+    font-size: 1rem;
+  }
+}

@@ -1,16 +1,17 @@
-// import '../App.css';
+import '../App.css';
 
 
-// function Subscribe() {
-//   return (
-//      <div className='subscribe'>
-//          <h1 className='sub-heading'>Subscribe to<br/>
-// our Newsletter</h1>
-// <h4 className='sub-text'>Sed ut perspiciatis unde omnis<br/> iste natus error sit volu <br/>
-// accusa ntium doloremque laudantium,<br/> ut perspiciatis utota.</h4>
+function Subscribe() {
+  return (
+     <div className='subscribe'>
+         <h1 className='sub-heading'>Subscribe to
+our Newsletter</h1>
+<h4 className='sub-text'>Sed ut perspiciatis unde omnis iste natus error sit volu 
+accusa ntium doloremque laudantium, ut perspiciatis utota.</h4>
+   
         
-//      </div>
-//   );
-// }
+     </div>
+  );
+}
 
-// export default Subscribe;
+export default Subscribe;
