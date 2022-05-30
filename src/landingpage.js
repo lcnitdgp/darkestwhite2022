@@ -12,6 +12,7 @@ function Landing() {
     <div>
     <NavbarNew />
     <Hero/>
+    <CardHero/>
     <Subscribe/>
     <Footer/>
 

@@ -105,6 +105,102 @@
   }
 }
 
+/*styling of card*/
+.container-card{
+  
+  margin-top: 3rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.img-card{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+
+}
+.blog-line {
+
+  width: 90%;
+  color: black;
+}
+.card-content{
+  text-align: left;
+  margin-left: 2rem;
+}
+
+.date{
+  font-size: 1.2rem;
+  padding-top: 1rem;
+  font-family: 'Cormorant',
+  serif;
+  font-weight: 500;
+  color: #8a733d;
+  margin-bottom: 0;
+}
+.blog-type{
+  font-family: "Open Sans",
+  sans-serif;
+  font-size: .7rem;
+  font-weight: 600;
+}
+
+.blog-comment{
+  
+    font-family: "Open Sans",
+      sans-serif;
+    font-size: .7rem;
+    font-weight: 600;
+  
+}
+.blog-title{
+  font-family: "Cinzel",
+  serif;
+  margin-top: .3rem;
+  margin-right: 2rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+
+
+
+/*styling of grid*/
+
+.cardhero{
+  background-color: #eae9e4;
+  margin-bottom: 0;
+  height: 200rem;
+}
+@media screen and (min-width:375px) {
+  .cardhero{
+    height: 197rem;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .cardhero {
+    height: 75rem;
+  }
+  
+}
+.cardhero-header{
+  margin-bottom: 0;
+  font-family: "Cinzel",
+  serif;
+  text-align: center;
+  padding-top: 5rem;
+  font-size: 3.5rem;
+}
+
+.herohr{
+  width: 20%;
+margin: 1rem auto;  
+color: black;
+}
 /*styling of subcribe section*/
 
 .subscribe{

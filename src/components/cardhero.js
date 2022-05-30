@@ -1,36 +1,42 @@
-// import '../App.css';
-// import Card from './card';
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import { Container,
-// Row,
-// Col,
-//  Button,
-
-// } from "react-bootstrap";
+import '../App.css';
+import Card from './card';
+import "bootstrap/dist/css/bootstrap.min.css";
+import {Container,Row,Col} from 'react-bootstrap';
 
 
-// function CardHero(){
-//     return(
-//         <div className='cardhero'>
-//             <h1 className='cardhero-header'>Our Recent posts</h1>
-//             <hr/>
-            
-//             <div class="grid-container">
-//   <div class="grid-item"><Card/></div>
-//   <div class="grid-item"><Card/></div>
-//   <div class="grid-item"><Card/></div>  
-//   <div class="grid-item"><Card/></div>
-//   <div class="grid-item"><Card/></div>
-//   <div class="grid-item"><Card/></div>  
- 
-  
-  
 
-  
- 
-//         </div>
-//         </div>
-//     )
-// }
+function CardHero(){
+    return (
+      <div className="cardhero">
+        <h1 className="cardhero-header">Our Recent posts</h1>
+        <hr className="herohr" />
 
+        <Container>
+          <Row>
+            <Col sm={6} md={4}>
+              <Card />
+            </Col>
+            <Col sm={6} md={4}>
+              <Card />
+            </Col>
+            <Col md={4}>
+              <Card />
+            </Col>
+          </Row>
+          <Row>
+            <Col sm={6} md={4}>
+              <Card />
+            </Col>
+            <Col sm={6} md={4}>
+              <Card />
+            </Col>
+            <Col md={4}>
+              <Card />
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    );
+}
 
+export default CardHero;
