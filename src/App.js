@@ -13,18 +13,15 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 500);
   }, []);
-  const style = { position: "fixed", top: "50%", right: "50%",
-  
-
-};
+;
 
   return (
     <div className="App">
       {
         loading ?
-        <div style={style}> 
+        <div className="ring-style"> 
          <RingLoader loading={loading} size={150} />
          </div>
         :

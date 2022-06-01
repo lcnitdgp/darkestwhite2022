@@ -102,6 +102,7 @@ function NavbarNew() {
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#features navlink">CONTACT US</Nav.Link>
+           
           </Nav>
         </Navbar.Collapse>
       </Container>

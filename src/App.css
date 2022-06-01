@@ -1,3 +1,24 @@
+/*loader*/
+
+body{
+  background-color: #dfdccf;
+}
+.ring-style{
+  position: fixed;
+  left: 25%;
+  top: 35%;
+  
+}
+
+@media screen and (min-width:1024px) {
+  .ring-style {
+    position: fixed;
+    left: 45%;
+    top: 305;
+
+  }
+}
+
 /* styling of navbar */
 
 .navbar-title {
