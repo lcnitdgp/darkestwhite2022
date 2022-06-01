@@ -35,7 +35,72 @@
   font-size: 0.9rem;
   color: black;
 }
+/*styling of scroll to top*/
+.scrollTop {
+  position: fixed;
+  width: 100%;
+  bottom: 25px;
+  left: 50px;
+  align-items: center;
+  height: 20px;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+}
 
+
+@media screen and (min-width:1024px) {
+  .scrollTop{
+    left: 600px;
+     height: 40px;
+  }
+}
+
+@media screen and (max-width:770px)
+{
+  .scrollTop {
+    left: 360px;
+     height: 30px;
+  }
+  }
+
+  @media screen and (max-width:430px) {
+    .scrollTop {
+      left: 190px;
+      height: 30px;
+    }
+  }
+
+  @media screen and (max-width:380px) {
+    .scrollTop {
+      left: 170px;
+      height: 30px;
+    }
+  }
+
+    @media screen and (max-width:320px) {
+      .scrollTop {
+        left: 140px;
+        height: 30px;
+      }
+    }
+
+.scrollTop:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
 /* styling of hero section */
 
 .hero {

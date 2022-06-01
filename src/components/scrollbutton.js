@@ -1,38 +1,35 @@
-import React, {useState} from 'react';
-import {FaArrowCircleUp} from 'react-icons/fa';
-import { Button } from '../style';
+import { FaAngleDoubleUp } from "react-icons/fa";
+import { useState } from "react";
+import "../App.css";
 
-const ScrollButton = () =>{
+const ScrollArrow = () => {
+  const [showScroll, setShowScroll] = useState(false);
 
-const [visible, setVisible] = useState(false)
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 500) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 500) {
+      setShowScroll(false);
+    }
+  };
 
-const toggleVisible = () => {
-	const scrolled = document.documentElement.scrollTop;
-	if (scrolled > 300){
-	setVisible(true)
-	}
-	else if (scrolled <= 300){
-	setVisible(false)
-	}
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  window.addEventListener("scroll", checkScrollTop);
+
+  return (
+    <FaAngleDoubleUp
+      className="scrollTop"
+      onClick={scrollTop}
+      style={{
+        
+        display: showScroll ? "flex" : "none",
+        color: "#bfa058"
+      }}
+    />
+  );
 };
 
-const scrollToTop = () =>{
-	window.scrollTo({
-	top: 0,
-	behavior: 'smooth'
-	/* you can also use 'auto' behaviour
-		in place of 'smooth' */
-	});
-};
-
-window.addEventListener('scroll', toggleVisible);
-
-return (
-	<Button>
-	<FaArrowCircleUp onClick={scrollToTop}
-	style={{display: visible ? 'inline' : 'none'}} />
-	</Button>
-);
-}
-
-export default ScrollButton;
+export default ScrollArrow;
