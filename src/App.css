@@ -535,13 +535,17 @@ article > h4{
 }
 .comment-card{
   /* border: 2px solid red; */
+  position:relative;
   background-color: rgb(46, 43, 43);
   color: white;
   width: 50%;
-  margin: 20px;
+  margin: 40px;
+  padding: 15px;
+
 }
 .comment-text{
   /* border: 2px solid red; */
+  margin-top: 10px;
   font-family: 'Antic Slab', serif;
   width: 60%;
 
@@ -558,4 +562,12 @@ article > h4{
 .comment-section{
   margin-top: 30px;
   background-color: black;
+  padding: 10px;
+}
+
+.cheading{
+  margin: 40px;
+  font-size: 50px;
+  font-family: 'Abril fatface', cursive;
+  color: white;
 }
