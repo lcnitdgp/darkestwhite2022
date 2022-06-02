@@ -7,7 +7,7 @@ import CardHero from "./components/cardhero";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import Article from "./components/article";
-
+import Comment from "./components/comment";
 function Landing() {
  
   return (
@@ -19,6 +19,7 @@ function Landing() {
       <Footer />
       <ScrollArrow />
       <Article />
+      <Comment />
     </div>
   );
 }
