@@ -5,9 +5,7 @@ import Landing from "./landingpage";
 
 import { RingLoader } from "react-spinners";
 
-
-
-function App() {
+export default function App() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -33,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+

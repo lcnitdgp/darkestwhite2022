@@ -6,6 +6,7 @@ import Hero from "./components/hero";
 import CardHero from "./components/cardhero";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
+import Article from "./components/article";
 
 function Landing() {
  
@@ -17,6 +18,7 @@ function Landing() {
       <Subscribe />
       <Footer />
       <ScrollArrow />
+      <Article />
     </div>
   );
 }
