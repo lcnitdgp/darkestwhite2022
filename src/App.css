@@ -47,12 +47,12 @@ body{
 }
 
 @media screen and (max-device-width: 330px) {
-   .ring-style {
-     position: fixed;
-     left: 25%;
-     top: 35%;
+  .ring-style {
+    position: fixed;
+    left: 25%;
+    top: 35%;
 
-   }
+  }
 }
 
 
@@ -291,33 +291,82 @@ body{
 
 
 
-
 /*styling of grid*/
 
 .cardhero{
   background-color: #eae9e4;
   margin-bottom: 0;
   height: 200rem;
+  
 }
-@media screen and (min-width:375px) {
+
+.card-grid {
+  display: inline-grid;
+  grid-template-columns: auto;
+}
+
+@media screen and (max-width:380px) {
+  .cardhero-header{
+    padding-left: 2rem;
+     padding-right: 2rem;
+     font-size: 3.2rem;
+
+  }
   .cardhero{
-    height: 197rem;
+    height: 196rem;
+  }
+}
+
+@media screen and (max-width:430px) {
+  .cardhero-header {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    
+
+  }
+  .cardhero {
+    height: 190rem;
   }
 }
 
 @media screen and (min-width:768px) {
+.card-grid {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+}
+  
+
+.cardhero-header{
+  font-size: 4rem;
+}
+
+.cardhero {
+  height: 102rem;
+}
+}
+@media screen and (min-width:1024px) {
+  
+  .card-grid {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+  }
+  .cardhero-header {
+    font-size: 5rem;
+  }
   .cardhero {
     height: 75rem;
   }
-  
 }
+
 .cardhero-header{
   margin-bottom: 0;
   font-family: "Cinzel",
   serif;
   text-align: center;
   padding-top: 5rem;
-  font-size: 3.5rem;
+  font-size: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 .herohr{
@@ -325,6 +374,14 @@ body{
 margin: 1rem auto;  
 color: black;
 }
+/* 
+@media screen and (min-width:1024px) {
+  .card-grid{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+  }
+  
+} */
 /*styling of subcribe section*/
 
 .subscribe{
@@ -609,3 +666,6 @@ article > h4{
   font-family: 'Abril fatface', cursive;
   color: white;
 }
+
+
+
