@@ -291,6 +291,14 @@ body{
   text-align: left;
   margin-left: 2rem;
 }
+.blog-icon{
+  height: 2.5rem;
+  float: right;
+  border-radius: 50%;
+  position: relative;
+  bottom: 1.5rem;
+  right: 2rem;
+}
 
 .date{
   font-size: 1.2rem;
@@ -332,7 +340,7 @@ body{
 .cardhero{
   background-color: #eae9e4;
   margin-bottom: 0;
-  height: 196rem;
+  height: 19r8em;
   
 }
 .cardhero-header {
@@ -366,7 +374,7 @@ body{
 
   }
   .cardhero{
-    height: 195rem;
+    height: 199rem;
   }
 }
 
@@ -378,7 +386,7 @@ body{
 
   }
   .cardhero {
-    height: 190rem;
+    height: 197rem;
   }
 }
 
@@ -408,7 +416,7 @@ body{
 }
 
 .cardhero {
-  height: 102rem;
+  height: 108rem;
 }
 }
 @media screen and (min-width:1024px) {
@@ -424,7 +432,7 @@ body{
     font-size: 5rem;
   }
   .cardhero {
-    height: 77rem;
+    height: 80rem;
   }
 }
 

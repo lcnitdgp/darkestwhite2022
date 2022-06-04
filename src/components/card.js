@@ -20,7 +20,13 @@ function Card(props){
             <div>
               <h6 className="blog-type">{props.item.type}</h6>
             </div>
-
+            <div>
+              <img
+                className="blog-icon"
+                src={require(`../${props.item.icon}`)}
+                alt={"icon"}
+              />
+            </div>
             <div>
               {" "}
               <h6 className="blog-comment">{props.item.Comment}</h6>

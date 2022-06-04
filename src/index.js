@@ -2,7 +2,7 @@ import React, { useState, usedEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './index.css';
-import ClipLoader from "react-spinners/ClipLoader";
+
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';

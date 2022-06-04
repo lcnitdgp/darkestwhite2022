@@ -6,6 +6,7 @@ export default [
     date: "20 august 2020",
     type: "poem",
     Comment: "1 comment",
+    icon: "icon.jpg",
   },
   {
     id: 1,
@@ -14,6 +15,7 @@ export default [
     date: "20 august 2020",
     type: "poem",
     Comment: "1 comment",
+    icon: "icon.jpg",
   },
   {
     id: 1,
@@ -22,6 +24,7 @@ export default [
     date: "20 august 2020",
     type: "poem",
     Comment: "1 comment",
+    icon: "icon.jpg",
   },
   {
     id: 1,
@@ -30,6 +33,7 @@ export default [
     date: "20 august 2020",
     type: "poem",
     Comment: "1 comment",
+    icon: "icon.jpg",
   },
   {
     id: 1,
@@ -38,6 +42,7 @@ export default [
     date: "20 august 2020",
     type: "poem",
     Comment: "1 comment",
+    icon: "icon.jpg",
   },
   {
     id: 1,
@@ -46,5 +51,6 @@ export default [
     date: "20 august 2020",
     type: "poem",
     Comment: "1 comment",
+    icon: "icon.jpg",
   },
 ];
