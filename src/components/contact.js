@@ -3,10 +3,30 @@ import { FaInstagram, FaFacebook, FaGlobe } from "react-icons/fa";
 import NavbarNew from "./navbar";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 import Footer from "./footer";
 import ScrollArrow from "./scrollbutton";
 
 function Contact(){
+  let newDate = new Date();
+  let date = newDate.getDate();
+  let year = newDate.getFullYear();
+  let monthNumber = new Date().getMonth();
+  let monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let monthName = monthNames[monthNumber];
     return (
       <div>
         <NavbarNew />
@@ -31,13 +51,28 @@ function Contact(){
               <br />
               <Row>
                 <Col>
-                  <FaFacebook />
+                  <a
+                    href="https://www.facebook.com/lcnitdgp"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <FaFacebook />
+                  </a>
                 </Col>
                 <Col>
-                  <FaInstagram />
+                  <a
+                    href="https://www.instagram.com/lcnitd/"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <FaInstagram />
+                  </a>
                 </Col>
                 <Col>
-                  <FaGlobe />
+                  <a
+                    href="https://lcnitd.co.in/"
+                    style={{ color: "inherit", textDecoration: "inherit" }}
+                  >
+                    <FaGlobe />
+                  </a>
                 </Col>
               </Row>
             </p>
@@ -48,7 +83,7 @@ function Contact(){
               <Row>
                 <Col lg={6}>
                   <h4 className="date" style={{ paddingLeft: "2rem" }}>
-                    20. June 2020
+                    {date} {monthName} {year}
                   </h4>
                   <h1 className="message">Send us a message</h1>
                   <form style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
@@ -84,9 +119,7 @@ function Contact(){
                     alt={"book"}
                   />
                 </Col>
-                
               </Row>
-              
             </Container>
           </div>
         </div>
