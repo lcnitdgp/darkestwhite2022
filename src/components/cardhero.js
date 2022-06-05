@@ -2,7 +2,7 @@ import '../App.css';
 import Card from './card';
 import "bootstrap/dist/css/bootstrap.min.css";
 import {Container,Row,Col} from 'react-bootstrap';
-import data from './data,'
+import data from './data,';
 
 
 

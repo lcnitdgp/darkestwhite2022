@@ -1,8 +1,6 @@
 /*loader*/
 
-body{
-  background-color: #dfdccf;
-}
+
 .ring-style{
   position: fixed;
   left: 20%;
@@ -516,6 +514,111 @@ body{
     font-size: 5rem;
   }
 }
+
+/*styling for contact*/
+.contact-hero{
+  background-color: black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+  
+}
+.contact-line{
+  width: 80%;
+  margin-left: 2rem;
+}
+
+.team{
+  width: 100%;
+  padding: 2rem;
+}
+.book{
+  width: 100%;
+  margin-top: 2rem;
+}
+.contact-header{
+  font-family: "Cinzel", serif;
+  color: #eae9e4;
+  padding-top: 2rem;
+  font-size: 2.7rem;
+  font-weight: 100;
+  padding-left: 2rem;
+
+}
+.intro{
+  color: white;
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: 'Cormorant', serif;
+
+}
+.message{
+   font-family: "Cinzel", serif;
+  color: #eae9e4;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+.textarea{
+  width: 100%;
+  height: 10rem;
+   margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+@media screen and (min-width:768px) {
+  .contact-line{
+    width: 79%;
+    margin-left: 5rem;
+  
+  }
+
+  .team{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    
+  }
+  .contact-header{
+     padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  .intro{
+     padding-left: 5rem;
+    padding-right: 5rem;
+    font-size: 1.5rem;
+  }
+  .message{
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .contact-line{
+    width: 77%;
+    margin-left: 9rem;
+  
+  }
+
+  .team{
+    padding-left: 9rem;
+    padding-right: 9rem;
+    
+  }
+  .contact-header{
+     padding-left: 9rem;
+    padding-right: 9rem;
+  }
+  .intro{
+     padding-left: 9rem;
+    padding-right: 9rem;
+    font-size: 1.5rem;
+  }
+  .message{
+    font-size: 2.5rem;
+  }
+}
+
+
 /*styling for footer*/
 
 .footer {

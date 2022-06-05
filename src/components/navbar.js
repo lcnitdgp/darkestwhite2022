@@ -1,4 +1,5 @@
 import "../App.css";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Container,
@@ -72,22 +73,29 @@ function NavbarNew() {
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar">
       <Container>
-        <Navbar.Brand href="#home" className="navbar-title">
-          Darkest White
+        <Navbar.Brand className="navbar-title">
+          <Link to="/" style={{ color: "inherit", textDecoration: "inherit" }}>
+            Darkest White
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto navbar-content">
-            <Nav.Link href="#features navlink">HOME</Nav.Link>
+            <Nav.Link>
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                HOME
+              </Link>
+            </Nav.Link>
             <NavDropdown title="THEMES" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.1">Movies</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Books</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Music</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
-                Separated link
+                Visual Arts
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="POSTS" id="collasible-nav-dropdown">
@@ -101,8 +109,14 @@ function NavbarNew() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#features navlink">CONTACT US</Nav.Link>
-           
+            <Nav.Link>
+              <Link
+                to="/contact"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                CONTACT US
+              </Link>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
