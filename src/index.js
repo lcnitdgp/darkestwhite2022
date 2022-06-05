@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import App from './App';
 import Articlepage from './articlepage';
-import Contact from './components/contact';
+import Contactpage from './contactpage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}></Route>
         <Route path="blog" element={<Articlepage />}></Route>
-        <Route path="contact" element={<Contact />}></Route>
+        <Route path="contact" element={<Contactpage />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
