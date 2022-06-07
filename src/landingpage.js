@@ -18,8 +18,8 @@ function Landing() {
       <Subscribe />
       <Footer />
       <ScrollArrow />
-       {/* <Article />
-      <Comment />  */}
+       <Article />
+      <Comment /> 
     </div>
   );
 }
