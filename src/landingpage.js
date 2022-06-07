@@ -6,8 +6,7 @@ import Hero from "./components/hero";
 import CardHero from "./components/cardhero";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
-import Article from "./components/article";
-import Comment from "./components/comment";
+import Blogdisplay from "./components/Blogdisplay";
 function Landing() {
  
   return (
@@ -18,8 +17,7 @@ function Landing() {
       <Subscribe />
       <Footer />
       <ScrollArrow />
-       <Article />
-      <Comment /> 
+      <Blogdisplay />
     </div>
   );
 }

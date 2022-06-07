@@ -1,16 +1,18 @@
 import '../App.css';
-
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function Card(props){
     return (
-      <div className="container-card">
+      <div className="container-card"> 
+        <Link to="/Blogdisplay" style={ {color: "inherit", textDecoration: "inherit" }} >
         <img
           className="img-card"
           src={require(`../${props.item.Image}`)}
           alt={"Carlie Anglemire"}
         />
-
+        </Link>
         <div className="card-content">
           <h5 className="date">{props.item.date}</h5>
           <h2 className="blog-title">{props.item.title}</h2>
@@ -33,6 +35,7 @@ function Card(props){
             </div>
           </div>
         </div>
+        
       </div>
     );
 }

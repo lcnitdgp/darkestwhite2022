@@ -339,13 +339,11 @@
 
 .cardhero{
   align-items: center;
-  border: solid red 2px;
   background-color: #eae9e4;
   height: max-content;
   
 }
 .cardhero-header {
-  border: solid red 2px;
   margin-bottom: 0;
   font-family: "Cinzel", serif;
   text-align: center;
@@ -356,14 +354,12 @@
 }
 
 .herohr {
-  border: solid red 2px;
   width: 20%;
   margin: 1rem auto;
   color: black;
 }
 
 .card-grid {
-  border: solid red 2px;
   width: 70%;
   display: inline-grid;
   grid-template-columns: auto;
@@ -1068,7 +1064,9 @@ button {
     }
 }
 
-
+blogpage{
+  background-color: white;
+}
 
 /* SVG  */
 

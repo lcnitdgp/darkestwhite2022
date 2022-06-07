@@ -6,6 +6,8 @@ import data from './data,';
 
 
 
+
+
 function CardHero(){
    const cards = data.map((item) => {
      return <Card key={item.id} item={item} />;
@@ -39,7 +41,9 @@ function CardHero(){
             </Col>
           </Row>
         </Container> */}
-        <Container className='card-grid'>{cards}</Container>
+        <Container className='card-grid' >
+           {cards}
+        </Container>
       </div>
     );
 }
