@@ -761,7 +761,6 @@
 }
 blog-article{
   background-color: black;
-  margin-top: 30px;
   display: flex;
   flex-direction:  row;
   padding: 20px;   /*remove when neccesary */
@@ -837,8 +836,8 @@ article > h4{
 }
 
 .comment-section{
-  margin-top: 30px;
-  background-color: black;
+  margin-top: 2px;
+  background-color: rgb(7, 6, 6);
   padding: 10px;
 }
 

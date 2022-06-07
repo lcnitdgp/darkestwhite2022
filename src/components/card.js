@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function Card(props){
     return (
       <div className="container-card"> 
-        <Link to="/Blogdisplay" style={ {color: "inherit", textDecoration: "inherit" }} >
+        <Link to="/blog" style={ {color: "inherit", textDecoration: "inherit" }} >
         <img
           className="img-card"
           src={require(`../${props.item.Image}`)}

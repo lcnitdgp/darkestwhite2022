@@ -1,6 +1,5 @@
 import "../App.css";
-import { Link } from "react-router-dom";
-
+import ScrollArrow from "./scrollbutton";
 import Article from "./article";
 import Comment from "./comment";
 export default function Blogdisplay(){
@@ -8,6 +7,7 @@ export default function Blogdisplay(){
         <blogpage>
             <Article />
            <Comment /> 
+           <ScrollArrow />
         </blogpage>
     )
 }

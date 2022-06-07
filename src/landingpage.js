@@ -1,12 +1,11 @@
 import "./App.css";
-
+// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavbarNew from "./components/navbar";
 import ScrollArrow from "./components/scrollbutton";
 import Hero from "./components/hero";
 import CardHero from "./components/cardhero";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
-import Blogdisplay from "./components/Blogdisplay";
 function Landing() {
  
   return (
@@ -17,7 +16,6 @@ function Landing() {
       <Subscribe />
       <Footer />
       <ScrollArrow />
-      <Blogdisplay />
     </div>
   );
 }
