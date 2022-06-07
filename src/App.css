@@ -951,7 +951,7 @@ button {
     justify-content: space-evenly;
 }
 
-.container h2 {
+.container-login h2 {
     width: 100%;
     text-align: center;
     border-bottom: 1px solid #000;
@@ -959,7 +959,7 @@ button {
     margin: 10px 0 20px;
 }
 
-.container h2 span {
+.container-login h2 span {
     background-color: #FF8080;
     padding: 0 10px;
   
@@ -1035,7 +1035,7 @@ text-align: center;
     .social-mediaImg {
         width: 40px;
     }
-    .container h2 span {
+    .container-login h2 span {
         font-size: medium;
     }
 }
