@@ -8,7 +8,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from './App';
 import Articlepage from './articlepage';
 import Contactpage from './contactpage';
+import Userlogin from './components/userlogin';
 import reportWebVitals from './reportWebVitals';
+import Signup from './components/signup';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +20,8 @@ root.render(
         <Route path="/" element={<App />}></Route>
         <Route path="blog" element={<Articlepage />}></Route>
         <Route path="contact" element={<Contactpage />}></Route>
+        <Route path="userlogin" element={<Userlogin />}></Route>
+        <Route path="signup" element={<Signup/>}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
