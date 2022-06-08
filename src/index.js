@@ -10,6 +10,7 @@ import Contactpage from './contactpage';
 import Userlogin from './components/userlogin';
 import reportWebVitals from './reportWebVitals';
 import Signup from './components/signup';
+import Movies from './components/movies';
 import Blogdisplay from './components/Blogdisplay';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,8 +21,9 @@ root.render(
         <Route path="/" element={<App />}></Route>
         <Route path="contact" element={<Contactpage />}></Route>
         <Route path="userlogin" element={<Userlogin />}></Route>
-        <Route path="signup" element={<Signup/>}></Route>
-        <Route path="blog" element={<Blogdisplay/>}></Route>
+        <Route path="signup" element={<Signup />}></Route>
+        <Route path="blog" element={<Blogdisplay />}></Route>
+        <Route path="posts/movies" element={<Movies />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

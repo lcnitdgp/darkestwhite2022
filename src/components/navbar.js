@@ -96,7 +96,14 @@ function NavbarNew() {
               </Link>
             </Nav.Link>
             <NavDropdown title="POSTS" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Movies</NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to="/posts/movies"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  Movies
+                </Link>
+              </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Books</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Music</NavDropdown.Item>
               <NavDropdown.Divider />
@@ -132,19 +139,16 @@ function NavbarNew() {
               </Link>
             </Nav.Link>
             <Nav.Link>
-              <div
-              
-                onClick={handleShow}
-              >
-              ABOUT US
-              </div>
+              <div onClick={handleShow}>ABOUT US</div>
 
               <Offcanvas show={show} onHide={handleClose} placement="end">
                 <Offcanvas.Header closeButton>
                   <Offcanvas.Title>DARKEST WHITE</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  Lorem ipsum dolor sit amet, unum adhuc graece mea ad. Pri odio quas insolens ne, et mea quem deserunt. Vix ex deserunt torqu atos sea vide quo te summo nusqu.
+                  Lorem ipsum dolor sit amet, unum adhuc graece mea ad. Pri odio
+                  quas insolens ne, et mea quem deserunt. Vix ex deserunt torqu
+                  atos sea vide quo te summo nusqu.
                 </Offcanvas.Body>
               </Offcanvas>
             </Nav.Link>
