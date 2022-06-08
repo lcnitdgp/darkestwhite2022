@@ -104,11 +104,30 @@ function NavbarNew() {
                   Movies
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Books</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Music</NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.2">
+                <Link
+                  to="/posts/music"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  Music
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                <Link
+                  to="/posts/visualarts"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  Visual Arts
+                </Link>
+              </NavDropdown.Item>
+              {/* <NavDropdown.Divider /> */}
               <NavDropdown.Item href="#action/3.4">
-                Visual Arts
+                <Link
+                  to="/posts/books"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  Books
+                </Link>
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="LOGIN" id="collasible-nav-dropdown">

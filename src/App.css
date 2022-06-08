@@ -406,6 +406,7 @@
   width: 90%;
   grid-template-columns: auto auto;
   margin-left: 5%;
+  
 
   
    
@@ -428,7 +429,7 @@
 }
 
 .cardhero {
-  height: 108rem;
+  height: 123rem;
 }
 }
 @media screen and (min-width:1024px) {
@@ -446,7 +447,7 @@
     font-size: 5rem;
   }
   .cardhero {
-    height: 80rem;
+    height: 87rem;
   }
 }
 

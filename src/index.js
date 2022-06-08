@@ -11,6 +11,9 @@ import Userlogin from './components/userlogin';
 import reportWebVitals from './reportWebVitals';
 import Signup from './components/signup';
 import Movies from './components/movies';
+import Visual from './components/visualart'
+import Books from './components/books'
+import Music from './components/music'
 import Blogdisplay from './components/Blogdisplay';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,6 +27,9 @@ root.render(
         <Route path="signup" element={<Signup />}></Route>
         <Route path="blog" element={<Blogdisplay />}></Route>
         <Route path="posts/movies" element={<Movies />}></Route>
+        <Route path="posts/books" element={<Books />}></Route>
+        <Route path="posts/visualarts" element={<Visual />}></Route>
+        <Route path="posts/music" element={<Music />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -8,9 +8,14 @@ import data from './data,';
 
 
 
+
 function CardHero(){
    const cards = data.map((item) => {
-     return <Card key={item.id} item={item} />;
+     while(item.id<=6)
+       {return <Card key={item.id} item={item} />;
+      item.id++}
+     
+
    });        
     return (
       <div className="cardhero">
