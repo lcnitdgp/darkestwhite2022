@@ -1,6 +1,8 @@
+import React from 'react'
 import "../App.css";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import {
   Container,
   Navbar,
@@ -8,7 +10,7 @@ import {
   NavDropdown,
   Form,
   FormControl,
-  Button,
+  Button, Offcanvas
 } from "react-bootstrap";
 
 // function Navbar() {
@@ -70,6 +72,10 @@ import {
 // }
 
 function NavbarNew() {
+   const [show, setShow] = React.useState(false);
+
+   const handleClose = () => setShow(false);
+   const handleShow = () => setShow(true);
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar">
       <Container>
@@ -124,6 +130,23 @@ function NavbarNew() {
               >
                 CONTACT US
               </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <div
+              
+                onClick={handleShow}
+              >
+              ABOUT US
+              </div>
+
+              <Offcanvas show={show} onHide={handleClose} placement="end">
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title>DARKEST WHITE</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  Lorem ipsum dolor sit amet, unum adhuc graece mea ad. Pri odio quas insolens ne, et mea quem deserunt. Vix ex deserunt torqu atos sea vide quo te summo nusqu.
+                </Offcanvas.Body>
+              </Offcanvas>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

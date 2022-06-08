@@ -44,7 +44,7 @@ function Signup() {
           </a>
         </div>
         <span className="ac">
-          Don't have an Account? <Link to="/userlogin">Sign Up</Link>
+          Have an Account? <Link to="/userlogin">Log In</Link>
         </span>
       </div>
     </div>
