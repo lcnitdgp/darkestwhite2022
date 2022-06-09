@@ -165,6 +165,14 @@ function NavbarNew() {
               </Link>
             </Nav.Link>
             <Nav.Link>
+              <Link
+                to="/create"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                CREATE POST
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
               <div onClick={handleShow}>ABOUT US</div>
 
               <Offcanvas show={show} onHide={handleClose} placement="end">

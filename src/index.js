@@ -15,6 +15,7 @@ import Visual from './components/visualart'
 import Books from './components/books'
 import Music from './components/music'
 import Blogdisplay from './components/Blogdisplay';
+import Create from './components/createpost';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -30,6 +31,7 @@ root.render(
         <Route path="posts/books" element={<Books />}></Route>
         <Route path="posts/visualarts" element={<Visual />}></Route>
         <Route path="posts/music" element={<Music />}></Route>
+        <Route path="create" element={<Create />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
