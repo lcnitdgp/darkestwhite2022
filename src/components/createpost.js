@@ -28,7 +28,9 @@ export default function Create() {
   return (
     <div>
       <NavbarNew />
+
       <Container className="create-hero">
+        <h1 className="create-header">POST YOUR BLOG</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <Row className="create-fields">
             <input
@@ -37,14 +39,14 @@ export default function Create() {
               {...register("First name", { required: true, maxLength: 80 })}
             />
           </Row>
-          <Row>
+          <Row className="create-fields">
             <input
               type="text"
               placeholder="Last name"
               {...register("Last name", { required: true, maxLength: 100 })}
             />
           </Row>
-          <Row>
+          <Row className="create-fields">
             <input
               type="text"
               placeholder="Email"
@@ -52,15 +54,26 @@ export default function Create() {
             />
           </Row>
 
-          <Row>
+          <Row className="create-fields">
             <textarea
+              rows="10"
+              cols="50"
               placeholder="write your piece here"
               {...register("Blog", {})}
             />
           </Row>
+          <Row className="create-fields">
+            <input className="image-create"
+              type="file"
+              id="myFile"
+              name="filename"
+              placeholder="upload image"
+            />
+          </Row>
 
-          <Row>
+          <Row className="create-fields">
             <Button
+              className="button-create"
               variant="outline-dark"
               style={{
                 borderRadius: "0%",

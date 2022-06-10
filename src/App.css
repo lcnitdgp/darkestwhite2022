@@ -1124,3 +1124,33 @@ button {
 }
    
 }
+
+
+/*create post section */
+
+.create-hero{
+  height: 50rem;
+  
+}
+.create-header{
+   font-family: "Cinzel",
+    serif;
+    text-align: center;
+    padding-top: 2rem;
+    font-weight: 400;
+}
+
+.create-fields{
+  margin: 2rem;
+  
+}
+
+.image-create{
+   margin-left: auto;
+  margin-right: auto;
+}
+.button-create{
+  margin-left: auto;
+  margin-right: auto;
+}
+
