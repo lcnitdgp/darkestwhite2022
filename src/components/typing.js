@@ -6,6 +6,7 @@ const ReactTypingEffectDemo = () => {
       text={["Darkest White", "Darkest White"]}
       typingDelay={1000}
       eraseDelay={2000}
+     
       cursorRenderer={(cursor) => <h1 className="cursor">{cursor}</h1>}
       displayTextRenderer={(text, i) => {
         return (

@@ -84,7 +84,7 @@ function NavbarNew() {
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar">
+    <Navbar collapseOnSelect expand="lg" className="navbar" >
       <Container>
         <Navbar.Brand className="navbar-title">
           <Link to="/" style={{ color: "inherit", textDecoration: "inherit" }}>
@@ -111,7 +111,7 @@ function NavbarNew() {
                   Movies
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item >
                 <Link
                   to="/posts/music"
                   style={{ color: "inherit", textDecoration: "inherit" }}
@@ -119,7 +119,7 @@ function NavbarNew() {
                   Music
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
+              <NavDropdown.Item>
                 <Link
                   to="/posts/visualarts"
                   style={{ color: "inherit", textDecoration: "inherit" }}
@@ -128,7 +128,7 @@ function NavbarNew() {
                 </Link>
               </NavDropdown.Item>
               {/* <NavDropdown.Divider /> */}
-              <NavDropdown.Item href="#action/3.4">
+              <NavDropdown.Item >
                 <Link
                   to="/posts/books"
                   style={{ color: "inherit", textDecoration: "inherit" }}
@@ -138,7 +138,7 @@ function NavbarNew() {
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="LOGIN" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item >
                 {" "}
                 <Link
                   to="/userlogin"
@@ -147,7 +147,7 @@ function NavbarNew() {
                   Login
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
+              <NavDropdown.Item >
                 <Link
                   to="/signup"
                   style={{ color: "inherit", textDecoration: "inherit" }}
@@ -186,6 +186,7 @@ function NavbarNew() {
                 </Offcanvas.Body>
               </Offcanvas>
             </Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

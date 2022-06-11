@@ -204,7 +204,7 @@
   }
   .cursor{
     position: relative;
-    bottom: 4rem;
+    bottom: 4.5rem;
   }
 }
 
@@ -225,7 +225,8 @@
      }
      .cursor{
        position: relative;
-       top: -2rem;
+       bottom: 2.5rem;
+       
      }
 }
 
@@ -245,9 +246,10 @@
   }
   .cursor{
      position: relative;
-     top: .5rem;
+     top: .3rem;
   }
 }
+
 
 @media screen and (max-width: 380px) {
   .hero {
@@ -258,11 +260,12 @@
     width: 70%;
   }
   .darkest-white-hero {
-    font-size: 2.3rem;
-    padding-left: 3rem;
+    font-size: 2rem;
+    padding-left: 2rem;
     
     
   }
+
 }
 
 /*styling of card*/
@@ -374,7 +377,7 @@
 
   }
   .cardhero{
-    height: 199rem;
+    height: 205rem;
   }
   .card-grid {
     margin-left: 10%;
@@ -391,7 +394,7 @@
 
   }
   .cardhero {
-    height: 197rem;
+    height: 212rem;
   }
   .card-grid {
     margin-left: 5%;
