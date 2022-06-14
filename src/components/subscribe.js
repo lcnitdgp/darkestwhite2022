@@ -1,4 +1,5 @@
 import '../App.css';
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Container,
@@ -9,8 +10,11 @@ import {
   Col,
 } from "react-bootstrap";
 
+function Subscribe(props) {
+  
+ 
 
-function Subscribe() {
+    
   return (
     <div className="subscribe">
       <h1 className="sub-heading">Subscribe to our Newsletter</h1>
@@ -28,10 +32,11 @@ function Subscribe() {
            
         }}
       >
-      SUBSCRIBE
+     {props.status?"Subscribe":"Login to Subscribe"}
       </Button>
     </div>
   );
+  
 }
 
 export default Subscribe;

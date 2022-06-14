@@ -72,7 +72,7 @@ import {
 //   );
 // }
 
-function NavbarNew() {
+function NavbarNew(props) {
 
 
   
@@ -84,7 +84,7 @@ function NavbarNew() {
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
   return (
-    <Navbar collapseOnSelect expand="lg" className="navbar" >
+    <Navbar collapseOnSelect expand="lg" className="navbar">
       <Container>
         <Navbar.Brand className="navbar-title">
           <Link to="/" style={{ color: "inherit", textDecoration: "inherit" }}>
@@ -102,6 +102,7 @@ function NavbarNew() {
                 HOME
               </Link>
             </Nav.Link>
+
             <NavDropdown title="POSTS" id="collasible-nav-dropdown">
               <NavDropdown.Item>
                 <Link
@@ -111,7 +112,7 @@ function NavbarNew() {
                   Movies
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item >
+              <NavDropdown.Item>
                 <Link
                   to="/posts/music"
                   style={{ color: "inherit", textDecoration: "inherit" }}
@@ -128,7 +129,7 @@ function NavbarNew() {
                 </Link>
               </NavDropdown.Item>
               {/* <NavDropdown.Divider /> */}
-              <NavDropdown.Item >
+              <NavDropdown.Item>
                 <Link
                   to="/posts/books"
                   style={{ color: "inherit", textDecoration: "inherit" }}
@@ -137,25 +138,16 @@ function NavbarNew() {
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="LOGIN" id="collasible-nav-dropdown">
-              <NavDropdown.Item >
-                {" "}
-                <Link
-                  to="/userlogin"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                >
-                  Login
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item >
-                <Link
-                  to="/signup"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                >
-                  SignUp
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link>
+              <Link
+                to=""
+                style={{ color: "inherit", textDecoration: "inherit" }}
+                onClick={props.login}
+              >
+                {props.status ? "LOGOUT" : "LOGIN"}
+              </Link>
+            </Nav.Link>
+
             <Nav.Link>
               <Link
                 to="/contact"
@@ -169,7 +161,7 @@ function NavbarNew() {
                 to="/create"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
-                CREATE POST
+                {props.status ? "CREATE POST" : ""}
               </Link>
             </Nav.Link>
             <Nav.Link>
@@ -186,7 +178,6 @@ function NavbarNew() {
                 </Offcanvas.Body>
               </Offcanvas>
             </Nav.Link>
-            
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -195,3 +186,29 @@ function NavbarNew() {
 }
 
 export default NavbarNew;
+
+
+
+
+
+ {
+   /* <NavDropdown title="LOGIN" id="collasible-nav-dropdown">
+              <NavDropdown.Item>
+                {" "}
+                <Link
+                  to="/userlogin"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  Login
+                </Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link
+                  to="/signup"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  SignUp
+                </Link>
+              </NavDropdown.Item>
+            </NavDropdown> */
+ }
