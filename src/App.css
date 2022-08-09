@@ -214,7 +214,7 @@
     height: 25rem;
   }
   .profile-photo {
-    height: 20rem;
+    height: 53vw;
     width: 40%;
   }
      .darkest-white-hero {
@@ -394,7 +394,7 @@
 
   }
   .cardhero {
-    height: 212rem;
+    height: 225rem;
   }
   .card-grid {
     margin-left: 5%;
@@ -487,8 +487,7 @@
 
 .sub-text{
   padding-top: .5rem;
-  font-family: "Open Sans",
-  sans-serif;
+  font-family: 'Antic Slab', serif;
   font-weight: 100;
   color: rgb(91, 91, 91);
 }
@@ -773,19 +772,19 @@ blog-text{
 
   background-color: white;
   color: black;
-  width:40%;
+  width:60%;
 }
 blog-text > p{
   
   margin: 10%;
   font-family: 'Antic Slab', serif;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 4vh;
   width: 80%;
 
 }
 article{
-  width: 60%;
+  width: 40%;
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -799,7 +798,8 @@ article{
 }
 article > h1{
   margin-block-start: 15px;
-  font-size: 70px;
+  margin-left: 2vw; 
+  font-size: 12vh;
   font-family: 'Abril fatface', cursive;
   color: red;
 }
@@ -807,12 +807,15 @@ article > h4{
   font-family: 'Antic Slab', serif;
   margin-block-start: 15px;
   margin-block-end: 15px;
+  margin-left: 2vw;
   color: white;
 }
 .like-but{
   color: white;
   
 }
+
+
 .comment-card{
   /* border: 2px solid red; */
   position:relative;
@@ -1157,3 +1160,46 @@ button {
   margin-right: auto;
 }
 
+.app {
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #f8f9fd;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.list-container {
+  display: flex;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.title {
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 10px;
+}
