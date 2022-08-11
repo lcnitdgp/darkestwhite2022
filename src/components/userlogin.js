@@ -24,10 +24,12 @@ function Userlogin(){
             
            
             
-             const { success, token, status } = JSON.parse(res);
-             console.log(success);
-             console.log(token);
-             console.log(status);
+             //const { success, token, status } = JSON.stringify(res);
+            //  console.log(success);
+             
+             console.log(res.data);
+             const token = res.data.token;
+              console.log(token);
              setToken(token);
              window.location = "/";
               console.log("submit");
