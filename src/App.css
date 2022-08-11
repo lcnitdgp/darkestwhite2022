@@ -168,19 +168,16 @@
   margin-right: 0;
 }
 .darkest-white-hero {
-  font-family: "Cinzel",
-    serif;
-  font-size: 1rem;
-  padding-left: 1rem;
+  font-family: "Cinzel", serif;
+  font-size: 4rem;
+  padding-left: 22vw;
   text-align: center;
   position: relative;
-  bottom: 10rem;
-
+  bottom: 2rem;
 }
 .profile-photo {
   align-items: center;
-
-  height: 15rem;
+  height: 90%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -193,12 +190,12 @@
     height: 35rem;
   }
   .profile-photo {
-    height: 30rem;
-    width: 40%;
+    height: 90%;
+    width: 70%;
   }
   .darkest-white-hero{
     font-size: 6rem;
-    padding-left: 17rem;
+    padding-left: 17vw;
     position: relative;
     bottom: 4rem;
   }
@@ -214,23 +211,22 @@
     height: 25rem;
   }
   .profile-photo {
-    height: 53vw;
-    width: 40%;
+    height: 90%;
+    width: 70%;
   }
-     .darkest-white-hero {
-       font-size: 4rem;
-       padding-left: 8rem;
-      position: relative;
-      top: -2rem;
-     }
-     .cursor{
-       position: relative;
-       bottom: 2.5rem;
-       
-     }
+  .darkest-white-hero {
+    font-size: 4rem;
+    padding-left: 12vw;
+    position: relative;
+    top: -2rem;
+  }
+  .cursor{
+    position: relative;
+    bottom: 2.5rem;   
+  }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 580px) {
   .hero {
     height: 25rem;
   }
@@ -240,7 +236,7 @@
   }
   .darkest-white-hero {
     font-size: 2.5rem;
-    padding-left: 3.5rem;
+    padding-left: 16vw;
     position: relative;
     top: .5rem;
   }
@@ -261,11 +257,8 @@
   }
   .darkest-white-hero {
     font-size: 2rem;
-    padding-left: 2rem;
-    
-    
+    padding-left: 16vw;
   }
-
 }
 
 /*styling of card*/
@@ -659,8 +652,8 @@
 }
 
 .footer-socials {
-  font-size: 0.7rem;
   text-align: center;
+  padding: 0 35vw 0 35vw;
 }
 
 .copyright {
@@ -683,7 +676,7 @@
   }
 
   .footer-socials {
-    font-size: 0.9rem;
+    padding: 0 35vw 0 35vw;
   }
 
   .copyright {
@@ -707,7 +700,7 @@
   }
 
   .footer-socials {
-    font-size: 0.9rem;
+    padding: 0 30vw 0 30vw;
   }
 
   .copyright {
@@ -735,8 +728,7 @@
   }
 
   .footer-socials {
-    font-size: 0.9rem;
-    text-align: center;
+    padding: 0 30vw 0 30vw;
   }
 
   .tagline {
