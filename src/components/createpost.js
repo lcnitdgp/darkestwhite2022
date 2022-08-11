@@ -35,15 +35,15 @@ export default function Create() {
           <Row className="create-fields">
             <input
               type="text"
-              placeholder="First name"
-              {...register("First name", { required: true, maxLength: 80 })}
+              placeholder="Author's Name"
+              {...register("Author's Name", { required: true, maxLength: 80 })}
             />
           </Row>
           <Row className="create-fields">
             <input
               type="text"
-              placeholder="Last name"
-              {...register("Last name", { required: true, maxLength: 100 })}
+              placeholder="Title"
+              {...register("Title", { required: true, maxLength: 100 })}
             />
           </Row>
           <Row className="create-fields">

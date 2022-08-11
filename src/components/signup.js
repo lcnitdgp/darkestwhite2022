@@ -1,8 +1,38 @@
 import "../App.css";
+import {useState} from 'react';
+import axios from 'axios';
 import { Link } from "react-router-dom";
 
 
-function Signup() {
+function Signup()  {
+
+   const [name, setName] = useState("");
+   const [email, setEmail] = useState("");
+   const [username, setUserName] = useState("");
+
+   const [password, setPassword] = useState("");
+
+ const handleSubmit = async (e) => {
+   e.preventDefault();
+
+   
+   await axios
+     .post(`http://localhost:5000/user/signup`, {
+       name: name,
+       email: email,
+       username: username,
+       password: password,
+     })
+     .then((res) => {
+       console.log(res);
+       console.log("submit");
+       window.location.replace = "/";
+     })
+
+     .catch((err) => console.log(err));
+ };
+  
+  
   return (
     <div className="container-login">
       <div className="container-wrapper-login">
@@ -10,25 +40,59 @@ function Signup() {
           <i className="bi bi-person-circle ac-logo" />
           Sign Up
         </h3>
-        <form method="post" className="form-login">
+        <form  className="form-login">
           <div className="item-login">
-            <input className="input" type="text" placeholder="Name" />
+            <input
+              className="input"
+              type="text"
+              placeholder="Name"
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              value={name}
+            />
           </div>
           <div className="item-login">
-            <input className="input" type="email" placeholder="Email" />
+            <input
+              className="input"
+              type="email"
+              placeholder="Email"
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              value={email}
+            />
           </div>
           <div className="item-login">
-            <input className="input" type="text" placeholder="Username" />
+            <input
+              className="input"
+              type="text"
+              placeholder="Username"
+              onChange={(e) => {
+                setUserName(e.target.value);
+              }}
+              value={username}
+            />
           </div>
           <div className="item-login">
-            <input className="input" type="password" placeholder="Password" />{" "}
+            <input
+              className="input"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              value={password}
+            />{" "}
           </div>
           <span className="remember">
             {" "}
             <a href="#">Forgot Password?</a>{" "}
           </span>
           <div className="item submit">
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={handleSubmit}>
+              Submit
+            </button>
           </div>
         </form>
         <h2 className="or">OR</h2>
