@@ -87,17 +87,17 @@ function Contact(){
                   </h4>
                   <h1 className="message">Send us a message</h1>
                   <form style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
-                    <input type="textArea" className="textarea"></input>
+                    <textArea className="textarea" placeholder="Type Here.."></textArea>
                     <Col className="form-area">
                       <input
                         type="email"
                         placeholder="Email"
-                        style={{ marginBottom: "2rem", width: "100%" }}
+                        style={{ outline: "none", marginBottom: "2rem", width: "100%" }}
                       ></input>
                       <input
                         type="text"
                         placeholder="Name"
-                        style={{ marginBottom: "2rem", width: "100%" }}
+                        style={{ outline: "none", marginBottom: "2rem", width: "100%" }}
                       ></input>
                     </Col>
                     <Button
