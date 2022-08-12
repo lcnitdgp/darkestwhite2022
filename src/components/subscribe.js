@@ -1,4 +1,5 @@
 import '../App.css';
+import axios from 'axios';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
@@ -10,9 +11,48 @@ import {
   Col,
 } from "react-bootstrap";
 
-function Subscribe(props) {
+const token_key = "USER_TOKEN";
+const user_id = 'USER_ID'
+
+function Subscribe() {
   
  
+ const getToken = () => {
+   let token = window.localStorage.getItem(token_key);
+   if (!!token) return token;
+   return false;
+ };
+  const uid = localStorage.getItem("USER_ID");
+
+  console.log(uid);
+
+ const isLogin = () => {
+   if (!!getToken()) {
+     return true;
+   }
+   return false;
+ };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios
+      .put(`http://localhost:5000/user/subscribe/${uid}`, {
+        uid: uid,
+      })
+      .then((res) => {
+        console.log(res);
+        console.log("submit");
+        //window.location = "/";
+      })
+
+      .catch((err) => console.log(err));
+    {
+      isLogin ? alert("subscribed") : (window.location = "/signup");
+    }
+  };
+
+ const logout = () => {
+   window.localStorage.clear();
+ };
 
     
   return (
@@ -31,8 +71,9 @@ function Subscribe(props) {
           marginBottom: "2rem",
            
         }}
+       onClick={handleSubmit}
       >
-     {props.status?"Subscribe":"Login to Subscribe"}
+     {isLogin?"Subscribe":"Login to Subscribe"}
       </Button>
     </div>
   );

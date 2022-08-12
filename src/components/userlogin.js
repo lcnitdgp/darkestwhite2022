@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import {useState} from 'react';
 const token_key = "USER_TOKEN";
+const user_id = "USER_ID";
 
 
 function Userlogin(){
@@ -27,13 +28,15 @@ function Userlogin(){
              //const { success, token, status } = JSON.stringify(res);
             //  console.log(success);
              
-             console.log(res);
-             const token = res.data.token;
-              console.log(token);
-             setToken(token);
              
+             const token = res.data.token;
+             const user_id = res.data.user[0]._id;
+              console.log(res.data);
+             setToken(token);
+             setId(user_id);
+             alert("logged in");
              window.location = "/";
-              console.log("submit");
+              
           })
 
           .catch((err) => console.log(err));
@@ -54,6 +57,9 @@ function Userlogin(){
         let token = window.localStorage.getItem(token_key);
         if (!!token) return token;
         return false;
+      };
+      const setId = (id) => {
+        window.localStorage.setItem(user_id, id);
       };
     return (
       <div className="container-login">
