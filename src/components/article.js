@@ -5,14 +5,46 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import {useState, useEffect} from 'react';
 import { data } from "jquery";
+import {Button} from 'react-bootstrap';
+const user_id = "USER_ID";
 
 export default function Article(){
-  
 
- const params = useParams();
- console.log(params.id);
+   const params = useParams();
+
+     let uid = window.localStorage.getItem(user_id);
+
+   
+    const handleLike = async (e) => {
+         e.preventDefault();
+         console.log(params.id);
+  
+      await axios
+     .post(`http://localhost:5000/blog/like`, {
+       id: params.id,
+       user_id: uid,
+       
+     })
+     .then((res) => {
+       console.log(res);
+       
+       
+      
+       console.log("sent id");
+       window.location.reload();
+       
+     })
+
+     .catch((err) => console.log(err));
+ };
+    
+
+    
+ 
+
 
  const [post, setPost] = useState([{}]);
+ 
 
  function getPosts() {
    axios
@@ -46,10 +78,13 @@ export default function Article(){
               Written and Edited by{post.author}, A piece close to his heart.
             </h4>
             <span className="like-but">
-              Like{" "}
-              <span>
-                <FaGratipay />
-              </span>
+              {post.likes} Like{" "}
+              <Button onClick={handleLike}
+              >
+                <span>
+                  <FaGratipay />
+                </span>
+              </Button>
             </span>
           </article>
         </blog-article>

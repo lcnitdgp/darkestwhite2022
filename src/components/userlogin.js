@@ -96,19 +96,15 @@ function Userlogin(){
               <a href="#">Forgot Password?</a>{" "}
             </span>
             <div className="item submit">
-              <button type="submit" onClick={handleSubmit}>Submit</button>
+              <button type="submit" onClick={handleSubmit}>
+                Submit
+              </button>
             </div>
           </form>
           <h2 className="or">OR</h2>
           <div className="social-media">
-            <a href="#">
+            <a href="http://localhost:5000/auth/google">
               <div className="icons8-google social-mediaImg" />
-            </a>
-            <a href="#">
-              <div className="icons8-facebook-circled social-mediaImg" />
-            </a>
-            <a href="#">
-              <div className="icons8-twitter social-mediaImg" />
             </a>
           </div>
           <span className="ac">

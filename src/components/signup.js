@@ -40,7 +40,7 @@ function Signup()  {
           <i className="bi bi-person-circle ac-logo" />
           Sign Up
         </h3>
-        <form  className="form-login">
+        <form className="form-login">
           <div className="item-login">
             <input
               className="input"
@@ -97,14 +97,8 @@ function Signup()  {
         </form>
         <h2 className="or">OR</h2>
         <div className="social-media">
-          <a href="#">
+          <a href="http://localhost:5000/auth/google">
             <div className="icons8-google social-mediaImg" />
-          </a>
-          <a href="#">
-            <div className="icons8-facebook-circled social-mediaImg" />
-          </a>
-          <a href="#">
-            <div className="icons8-twitter social-mediaImg" />
           </a>
         </div>
         <span className="ac">
