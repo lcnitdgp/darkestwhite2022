@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function Card(props){
 
-  console.log(props)
+  //console.log(props)
   
     return (
       <div className="container-card">

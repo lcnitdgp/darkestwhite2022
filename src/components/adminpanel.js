@@ -6,9 +6,11 @@ import { Container, Row, Col } from "react-bootstrap";
 //import data from './data,';
 import axios from "axios";
 import Article from "./article";
+import { data } from "jquery";
 
 function AdminPanel() {
   const [post, setPost] = useState([{}]);
+  const [message,setMessage] = useState([{}]);
 
   function getPosts() {
     axios
@@ -22,6 +24,19 @@ function AdminPanel() {
     getPosts();
   }, []);
 
+   function getMessages() {
+     axios
+       .get("http://localhost:5000/message/getmsg")
+       .then((response) => response.data)
+       .then((data) => {
+         setMessage(data);
+        
+       });
+   }
+   useEffect(() => {
+     getMessages();
+        console.log(message);
+   }, []);
   const cards = post.map((item) => {
     
       
@@ -30,11 +45,23 @@ function AdminPanel() {
    
   });
 
+    const messages = message.map((item) => {
+      return (
+        <div>
+          <p>{item.name}</p>
+          <p>{item.email}</p>
+          <p>{item.message}</p>
+        </div>
+      );
+    });
+
   return (
     <div className="cardhero">
       <h1 className="cardhero-header">unpublished Posts</h1>
       <hr className="herohr" />
       <Container className="card-grid">{cards}</Container>
+      <h1 className="cardhero-header">messages</h1>
+      {messages}
     </div>
   );
 }
