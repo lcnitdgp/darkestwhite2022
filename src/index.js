@@ -17,6 +17,7 @@ import Music from './components/music'
 import Blogdisplay from './components/Blogdisplay';
 import Create from './components/createpost';
 import Admin from './components/admin';
+import AdminPanel from './components/adminpanel';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,13 +28,14 @@ root.render(
         <Route path="contact" element={<Contactpage />}></Route>
         <Route path="userlogin" element={<Userlogin />}></Route>
         <Route path="signup" element={<Signup />}></Route>
-        <Route path="blog" element={<Blogdisplay />}></Route>
+        <Route path="blog/:id" element={<Blogdisplay />}></Route>
         <Route path="posts/movies" element={<Movies />}></Route>
         <Route path="posts/books" element={<Books />}></Route>
         <Route path="posts/visualarts" element={<Visual />}></Route>
         <Route path="posts/music" element={<Music />}></Route>
         <Route path="create" element={<Create />}></Route>
-        <Route path="admin" element = {<Admin />}></Route>
+        <Route path="admin" element={<Admin />}></Route>
+        <Route path="adminpanel" element={<AdminPanel />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

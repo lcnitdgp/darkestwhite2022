@@ -1,33 +1,58 @@
 import "../App.css";
 import { FaGratipay } from "react-icons/fa";
 import NavbarNew from "./navbar";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import {useState, useEffect} from 'react';
+import { data } from "jquery";
 
 export default function Article(){
-    return(
-        <div>
-          <NavbarNew />
-          <blog-article>
+  
+
+ const params = useParams();
+ console.log(params.id);
+
+ const [post, setPost] = useState([{}]);
+
+ function getPosts() {
+   axios
+     .get(`http://localhost:5000/blog/${params.id}`)
+     .then((response) => response.data)
+     .then((data) => {
+       setPost(data);
+       console.log(data);
+     });
+ }
+ useEffect(() => {
+   getPosts();
+ }, []);
+
+    return (
+      <div>
+        <NavbarNew />
+        <blog-article>
           <blog-text>
-            <p>
-             Italian tomato and bread soup is actually born of a time where it was the worst possible crime to let a single bit of bread go to waste, even if it’s a stale one. So traditionally, it’s made with very stale Tuscan bread, ideally left out for several days. Tuscan bread specifically is made without salt (which dates back to the 12th century when trade lines were cut off to Florence making salt super expensive!) and that meant the bread went stale rather quickly. Thus, this soup, and other delicious things like panzanella salad, was a way to turn stale bread into a dream of a dish.
-             Italian tomato and bread soup is actually born of a time where it was the worst possible crime to let a single bit of bread go to waste, even if it’s a stale one. So traditionally, it’s made with very stale Tuscan bread, ideally left out for several days. Tuscan bread specifically is made without salt (which dates back to the 12th century when trade lines were cut off to Florence making salt super expensive!) and that meant the bread went stale rather quickly. Thus, this soup, and other delicious things like panzanella salad, was a way to turn stale bread into a dream of a dish.
-            </p>
+            <p>{post.content}</p>
           </blog-text>
           <article>
             <img
-             className="img-article"
-             src={require("../Blog-single-img6-417x292.jpg")}
-             alt={"Carlie Anglemire"} 
+              className="img-article"
+              src={`${post.image}`}
+              alt={"Carlie Anglemire"}
             />
-            <h1> Roses and Moses</h1>
-            <h4> Written and Edited by Mark Twain, A piece close to his heart.</h4>
-            <span className="like-but">Like <span>< FaGratipay /></span></span>
+            <h1> {post.title}</h1>
+            <h4>
+              {" "}
+              Written and Edited by{post.author}, A piece close to his heart.
+            </h4>
+            <span className="like-but">
+              Like{" "}
+              <span>
+                <FaGratipay />
+              </span>
+            </span>
           </article>
         </blog-article>
-
-        </div>
-       
-       
-
-    )
+      </div>
+    );
 }

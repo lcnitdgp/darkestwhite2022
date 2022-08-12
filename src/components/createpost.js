@@ -52,7 +52,8 @@ export default function Create() {
      .then((res) => {
        console.log(res);
        console.log("submit");
-       //window.location.replace = "/";
+       alert("submitted");
+              //window.location.replace = "/";
      })
 
      .catch((err) => {

@@ -1,5 +1,5 @@
 import "./App.css";
-import {React, Component} from "react";
+import {React} from "react";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavbarNew from "./components/navbar";
 import ScrollArrow from "./components/scrollbutton";
@@ -8,31 +8,21 @@ import CardHero from "./components/cardhero";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 
-class Landing extends Component {
-  constructor(props){
-       super(props)
+function Landing () {
 
-    this.state ={
-      auth:0,
-    }
-  }
-
-  loginHandler = () =>{
-   this.setState({auth: !this.state.auth});
-  }
  
-  render(){
+  
     return (
       <div>
-        <NavbarNew login={this.loginHandler} status={this.state.auth} />
+        <NavbarNew  />
         <Hero />
         <CardHero />
-        <Subscribe status={this.state.auth} />
+        <Subscribe  />
         <Footer />
         <ScrollArrow />
       </div>
     );
-  }
+  
 }
 
 export default Landing;

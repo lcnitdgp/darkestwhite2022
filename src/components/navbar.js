@@ -1,8 +1,8 @@
 import React from 'react'
 import "../App.css";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 
 import {
   Container,
@@ -14,11 +14,31 @@ import {
   Button, Offcanvas
 } from "react-bootstrap";
 
-function NavbarNew(props) {
+const token_key = "USER_TOKEN";
+
+function NavbarNew() {
    const [show, setShow] = React.useState(false);
 
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
+
+   const getToken = () => {
+     let token = window.localStorage.getItem(token_key);
+     if (!!token) return token;
+     return false;
+   };
+
+   const isLogin = () => {
+     if (!!getToken()) {
+       return true;
+     }
+     return false;
+   };
+
+    const logout = () => {
+     window.localStorage.clear();
+     
+   };
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar">
       <Container>
@@ -76,11 +96,11 @@ function NavbarNew(props) {
             </NavDropdown>
             <Nav.Link>
               <Link
-                to=""
+                to="/userlogin"
                 style={{ color: "inherit", textDecoration: "inherit" }}
-                onClick={props.login}
+                
               >
-                {props.status ? "LOGOUT" : "LOGIN"}
+                {isLogin ? "LOGOUT" : "LOGIN"}
               </Link>
             </Nav.Link>
 
@@ -97,7 +117,7 @@ function NavbarNew(props) {
                 to="/create"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
-                {props.status ? "CREATE POST" : ""}
+                {isLogin ? "CREATE POST" : ""}
               </Link>
             </Nav.Link>
             {/* <Nav.Link>

@@ -1,84 +1,106 @@
-import React, { useState } from 'react'
 import "../App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Button
-} from "react-bootstrap";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useState } from "react";
+const token_key = "USER_TOKEN";
 
-export default function Admin(){
-    const [errorMessages, setErrorMessages] = useState({});
-    const [isAdmin, setIsAdmin] = useState(false);
-  
-    const database = [
-      {
-        username: "lcnitd",
-        password: "alohomora"
-      },
-    ];
-  
-    const errors = {
-      uname: "Invalid username.",
-      pass: "Invalid password."
-    };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      var { uname, pass } = document.forms[0];
-      const userData = database.find((user) => user.username === uname.value);
-      if (userData) {
-        if (userData.password !== pass.value) {
-          setErrorMessages({ name: "pass", message: errors.pass });
-        }
-        else {
-          setIsAdmin(true);
-        }
-      }
-      else {
-        setErrorMessages({ name: "uname", message: errors.uname });
-      }
-    };
-    const renderErrorMessage = (name) =>
-      name === errorMessages.name && (
-        <div className="error">{errorMessages.message}</div>
-      );
-  
-    const renderForm = (
-      <div className="form">
-        <form onSubmit={handleSubmit}>
-          <div className="input-container">
-            <label>Username </label>
-            <input type="text" name="uname" required />
-            { renderErrorMessage("uname") }
+function Admin() {
+  const [username, setUserName] = useState("");
+
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await axios
+      .post(`http://localhost:5000/user/login`, {
+        username: username,
+        password: password,
+      })
+      .then((res) => {
+        //const { success, token, status } = JSON.stringify(res);
+        //  console.log(success);
+
+        console.log(res);
+        const token = res.data.token;
+        console.log(res.data.user[0].isAdmin);
+        setToken(token);
+         if (res.data.user[0].isAdmin)
+           window.location = "/adminpanel";
+           console.log("submit");
+      })
+
+      .catch((err) => console.log(err));
+  };
+
+  const setToken = (token) => {
+    window.localStorage.setItem(token_key, token);
+  };
+
+  const getToken = () => {
+    let token = window.localStorage.getItem(token_key);
+    if (!!token) return token;
+    return false;
+  };
+  return (
+    <div className="container-login">
+      <div className="container-wrapper-login">
+        <h3 className="login-text">
+          <i className="bi bi-person-circle ac-logo" />
+          Login
+        </h3>
+        <form className="form-login">
+          <div className="item-login">
+            <input
+              className="input"
+              type="text"
+              placeholder="Username"
+              onChange={(e) => {
+                setUserName(e.target.value);
+              }}
+              value={username}
+            />
           </div>
-          <div className="input-container">
-            <label>Password </label>
-            <input type="password" name="pass" required />
-            { renderErrorMessage("pass") }
+          <div className="item-login">
+            <input
+              className="input"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
+              value={password}
+            />{" "}
           </div>
-          <div className="button-container">
-          <Button
-            className="button-create"
-            variant="outline-dark"
-            style={{
-              borderRadius: "0%",
-              width: "40%",
-              margin: "2rem",
-              
-            }}
-          >
-          {"Submit"}
-          </Button>
+          <span className="remember">
+            {" "}
+            <a href="#">Forgot Password?</a>{" "}
+          </span>
+          <div className="item submit">
+            <button type="submit" onClick={handleSubmit}>
+              Submit
+            </button>
           </div>
         </form>
-      </div>
-    );
-  
-    return (
-      <div className="app">
-        <div className="login-form">
-          {isAdmin ? <div> </div> : <div className="title">Sign In</div>}
-          {isAdmin ? <div> Admin successfully logged in. </div> : renderForm}
+        <h2 className="or">OR</h2>
+        <div className="social-media">
+          <a href="#">
+            <div className="icons8-google social-mediaImg" />
+          </a>
+          <a href="#">
+            <div className="icons8-facebook-circled social-mediaImg" />
+          </a>
+          <a href="#">
+            <div className="icons8-twitter social-mediaImg" />
+          </a>
         </div>
+        <span className="ac">
+          Don't have an Account?
+          <Link to="/signup">Sign Up</Link>
+        </span>
       </div>
-    );
+    </div>
+  );
 }
+
+export default Admin;

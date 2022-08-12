@@ -27,10 +27,11 @@ function Userlogin(){
              //const { success, token, status } = JSON.stringify(res);
             //  console.log(success);
              
-             console.log(res.data);
+             console.log(res);
              const token = res.data.token;
               console.log(token);
              setToken(token);
+             
              window.location = "/";
               console.log("submit");
           })
