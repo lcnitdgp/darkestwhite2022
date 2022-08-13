@@ -1,6 +1,6 @@
 import "../App.css";
 import { useState, useEffect } from "react";
-import Card from "./card";
+import AdminCard from "./admincard";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 //import data from './data,';
@@ -40,7 +40,7 @@ function AdminPanel() {
   const cards = post.map((item) => {
     
       
-      return <Card key={item._id} item={item} />
+      return <AdminCard key={item._id} item={item} />
     
    
   });

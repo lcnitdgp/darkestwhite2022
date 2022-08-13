@@ -18,6 +18,7 @@ import Blogdisplay from './components/Blogdisplay';
 import Create from './components/createpost';
 import Admin from './components/admin';
 import AdminPanel from './components/adminpanel';
+import BlogdisplayAdmin from './components/BlogdisplayAdmin'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,6 +30,7 @@ root.render(
         <Route path="userlogin" element={<Userlogin />}></Route>
         <Route path="signup" element={<Signup />}></Route>
         <Route path="blog/:id" element={<Blogdisplay />}></Route>
+        <Route path="blogadmin/:id" element={<BlogdisplayAdmin />}></Route>
         <Route path="posts/movies" element={<Movies />}></Route>
         <Route path="posts/books" element={<Books />}></Route>
         <Route path="posts/visualarts" element={<Visual />}></Route>

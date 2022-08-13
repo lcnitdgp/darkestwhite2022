@@ -39,6 +39,22 @@ export default function Article(){
  };
     
 
+   console.log(params.id);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await axios
+      .post(`http://localhost:5000/blog/publishblog/${params.id}`, {
+    
+      })
+      .then((res) => {
+        console.log(res);
+        console.log("submit param");
+        //window.location.replace = "/";
+      })
+
+      .catch((err) => console.log(err));
+  };
     
  
 
@@ -79,14 +95,14 @@ export default function Article(){
             </h4>
             <span className="like-but">
               {post.likes} Like{" "}
-              <Button onClick={handleLike}
-              >
+              <Button onClick={handleLike}>
                 <span>
                   <FaGratipay />
                 </span>
               </Button>
             </span>
           </article>
+          
         </blog-article>
       </div>
     );
