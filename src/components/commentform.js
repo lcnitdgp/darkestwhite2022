@@ -13,7 +13,7 @@ function CommentForm() {
     e.preventDefault();
 
     await axios
-      .post(`http://104.211.52.147/blog/${params.id}/comments`, {
+      .post(`http://localhost:5000/blog/${params.id}/comments`, {
         
         user_id: uid,
         comment: comment,
@@ -35,7 +35,7 @@ function CommentForm() {
             <input
               className="input"
               type="text"
-              placeholder="comment"
+              placeholder="Leave a comment.."
               onChange={(e) => {
                 setComment(e.target.value);
               }}

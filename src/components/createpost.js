@@ -80,6 +80,7 @@ export default function Create() {
         <form >
           <Row className="create-fields">
             <input
+              className="create-input"
               type="text"
               placeholder="Author's name"
               onChange={(e) => {
@@ -92,6 +93,7 @@ export default function Create() {
           <Row className="create-fields">
             <input
               type="text"
+              className="create-input"
               placeholder="Title"
               onChange={(e) => {
                 setTitle(e.target.value);
@@ -104,7 +106,8 @@ export default function Create() {
             <textarea
               rows="10"
               cols="50"
-              placeholder="write your piece here"
+              className="create-input"
+              placeholder="Write Your Piece Here.."
               onChange={(e) => {
                 setContent(e.target.value);
               }}

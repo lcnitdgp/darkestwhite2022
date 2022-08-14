@@ -20,7 +20,7 @@ function CardHero(){
   useEffect(() => {
     getPosts();
   },[]);
-
+  //console.log(post);
   const reversed = [...post].reverse();
   const cards = reversed.slice(0,6).map((item) => {
     return <Card key={item._id} item={item} />;

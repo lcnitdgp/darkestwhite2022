@@ -17,7 +17,7 @@ function Signup()  {
 
    
    await axios
-     .post(`http://104.211.52.147/user/signup`, {
+     .post(`http://localhost:5000/user/signup`, {
        name: name,
        email: email,
        username: username,

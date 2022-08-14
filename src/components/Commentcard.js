@@ -5,7 +5,7 @@ export default function Commentcard(props) {
     return (
       <div className="comment-card">
         <span className="commentor">{props.item.author}</span>
-        <span className="comment-date"> {props.item.createdAt}</span>
+        <span className="comment-date"> {props.item.createdAt?.substr(0,10) + " " + props.item.createdAt?.substr(11,5)} {props.item.createdAt?.substr(11,2) < 12 ? "AM" : "PM"}</span>
         <p className="comment-text">{props.item.comment}</p>
       </div>
     );

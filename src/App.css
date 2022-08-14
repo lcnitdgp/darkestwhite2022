@@ -96,10 +96,10 @@
 .scrollTop {
   position: fixed;
   width: 100%;
-  bottom: 25px;
-  left: 50px;
+  bottom: 4vh;
+  left: 48vw;
   align-items: center;
-  height: 20px;
+  height: 7vh;
   justify-content: center;
   z-index: 1000;
   cursor: pointer;
@@ -111,8 +111,8 @@
 
 @media screen and (min-width:1024px) {
   .scrollTop{
-    left: 600px;
-     height: 40px;
+    left: 48vw;
+    height: 7vh;
   }
 }
 
@@ -576,6 +576,7 @@
   margin-bottom: 2rem;
   margin-top: 1rem;
   outline: none;
+  padding-left: 0.5rem;
 }
 @media screen and (min-width:768px) {
   .contact-line{
@@ -812,7 +813,6 @@ article > h4{
   position:relative;
   background-color: rgb(46, 43, 43);
   color: white;
-  width: 50%;
   margin: 40px;
   padding: 15px;
 
@@ -878,6 +878,9 @@ article > h4{
 
 .item-login {
     padding: 0.2em;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
 }
 
 .container-wrapper-login label,
@@ -918,10 +921,12 @@ button {
 
 .input {
     padding: 20px;
-    border-radius: 30px;
     border: none;
     font-size: 20px;
     margin: 5px;
+    outline: none;
+    width: 88vw;
+    border-radius: 0.5rem;
 }
 
 .remember {
@@ -1028,9 +1033,7 @@ button {
 
     .input {
         padding: 10px;
-        border-radius: 15px;
         font-size: 15px;
-
     }
 
     .remember {
@@ -1139,7 +1142,10 @@ button {
 
 .create-fields{
   margin: 2rem;
-  
+}
+
+.create-input{
+  outline: none;
 }
 
 .image-create{

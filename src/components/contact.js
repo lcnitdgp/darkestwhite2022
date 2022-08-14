@@ -126,6 +126,7 @@ function Contact() {
                       style={{
                         outline: "none",
                         marginBottom: "2rem",
+                        paddingLeft: "0.5rem",
                         width: "100%",
                       }}
                       onChange={(e) => {
@@ -139,6 +140,7 @@ function Contact() {
                       style={{
                         outline: "none",
                         marginBottom: "2rem",
+                        paddingLeft: "0.5rem",
                         width: "100%",
                       }}
                       onChange={(e) => {

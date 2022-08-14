@@ -22,7 +22,7 @@ function Card(props){
           />
         </Link>
         <div className="card-content">
-          <h5 className="date">{props.item.createdAt}</h5>
+          <h5 className="date">{props.item.createdAt?.slice(0,10)}</h5>
           <h2 className="blog-title">{props.item.title}</h2>
           <hr className="blog-line"></hr>
 
@@ -40,7 +40,7 @@ function Card(props){
             <div>
               {" "}
               <h6 className="blog-comment">
-                {props.item.comment + " comments"}
+                {props.item.comments?.length === 1 ? 1 + " comment" : props.item.comments?.length + " comments"}
               </h6>
             </div>
           </div>
