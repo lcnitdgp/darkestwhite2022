@@ -14,7 +14,7 @@ function AdminPanel() {
 
   function getPosts() {
     axios
-      .get("http://localhost:5000/blog/unpublished")
+      .get("http://104.211.52.147/blog/unpublished")
       .then((response) => response.data)
       .then((data) => {
         setPost(data);
@@ -26,7 +26,7 @@ function AdminPanel() {
 
    function getMessages() {
      axios
-       .get("http://localhost:5000/message/getmsg")
+       .get("http://104.211.52.147/message/getmsg")
        .then((response) => response.data)
        .then((data) => {
          setMessage(data);

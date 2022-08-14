@@ -35,7 +35,7 @@ function Subscribe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .put(`http://localhost:5000/user/subscribe/${uid}`, {
+      .put(`http://104.211.52.147/user/subscribe/${uid}`, {
         uid: uid,
       })
       .then((res) => {

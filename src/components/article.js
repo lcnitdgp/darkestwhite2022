@@ -20,7 +20,7 @@ export default function Article(){
          console.log(params.id);
   
       await axios
-     .post(`http://localhost:5000/blog/like`, {
+     .post(`http://104.211.52.147/blog/like`, {
        id: params.id,
        user_id: uid,
        
@@ -44,7 +44,7 @@ export default function Article(){
     e.preventDefault();
 
     await axios
-      .post(`http://localhost:5000/blog/publishblog/${params.id}`, {
+      .post(`http://l104.211.52.147/blog/publishblog/${params.id}`, {
     
       })
       .then((res) => {
@@ -64,7 +64,7 @@ export default function Article(){
 
  function getPosts() {
    axios
-     .get(`http://localhost:5000/blog/${params.id}`)
+     .get(`http://104.211.52.147/blog/${params.id}`)
      .then((response) => response.data)
      .then((data) => {
        setPost(data);

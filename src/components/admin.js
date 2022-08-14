@@ -13,7 +13,7 @@ function Admin() {
     e.preventDefault();
 
     await axios
-      .post(`http://localhost:5000/user/login`, {
+      .post(`http://104.211.52.147/user/login`, {
         username: username,
         password: password,
       })

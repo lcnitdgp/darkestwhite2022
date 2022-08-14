@@ -16,7 +16,7 @@ function Userlogin(){
         e.preventDefault();
 
         await axios
-          .post(`http://localhost:5000/user/login`, {
+          .post(`http://104.211.52.147/user/login`, {
             
             username: username,
             password: password,
@@ -103,7 +103,7 @@ function Userlogin(){
           </form>
           <h2 className="or">OR</h2>
           <div className="social-media">
-            <a href="http://localhost:5000/auth/google">
+            <a href="http://104.211.52.147/auth/google">
               <div className="icons8-google social-mediaImg" />
             </a>
           </div>

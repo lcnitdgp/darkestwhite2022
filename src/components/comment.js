@@ -12,7 +12,7 @@ export default function Comment(){
 
   function getPosts() {
     axios
-      .get(`http://localhost:5000/blog/${params.id}/comments`)
+      .get(`http://104.211.52.147/blog/${params.id}/comments`)
       .then((response) => response.data)
       .then((data) => {
         setPost(data);

@@ -17,7 +17,7 @@ function Signup()  {
 
    
    await axios
-     .post(`http://localhost:5000/user/signup`, {
+     .post(`http://104.211.52.147/user/signup`, {
        name: name,
        email: email,
        username: username,
@@ -97,7 +97,7 @@ function Signup()  {
         </form>
         <h2 className="or">OR</h2>
         <div className="social-media">
-          <a href="http://localhost:5000/auth/google">
+          <a href="http://104.211.52.147/auth/google">
             <div className="icons8-google social-mediaImg" />
           </a>
         </div>

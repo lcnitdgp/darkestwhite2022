@@ -18,7 +18,7 @@ export default function AdminArticle() {
     console.log(params.id);
 
     await axios
-      .post(`http://localhost:5000/blog/like`, {
+      .post(`http://104.211.52.147/blog/like`, {
         id: params.id,
         user_id: uid,
       })
@@ -37,7 +37,7 @@ export default function AdminArticle() {
     e.preventDefault();
 
     await axios
-      .post(`http://localhost:5000/blog/publishblog/${params.id}`, {})
+      .post(`http://104.211.52.147/blog/publishblog/${params.id}`, {})
       .then((res) => {
         console.log(res);
         console.log("submit param");
@@ -51,7 +51,7 @@ export default function AdminArticle() {
 
   function getPosts() {
     axios
-      .get(`http://localhost:5000/blogadmin/${params.id}`)
+      .get(`http://104.211.52.147blogadmin/${params.id}`)
       .then((response) => response.data)
       .then((data) => {
         setPost(data);

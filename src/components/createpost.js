@@ -39,7 +39,7 @@ export default function Create() {
    reader.readAsDataURL(selectedFile);
    reader.onloadend = async()=> {
    await axios
-     .post(`http://localhost:5000/blog`, {
+     .post(`http://104.211.52.147/blog`, {
        author: author,
        title: title,
        content: content,

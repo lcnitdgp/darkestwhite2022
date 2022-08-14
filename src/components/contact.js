@@ -18,7 +18,7 @@ function Contact() {
     e.preventDefault();
 
     await axios
-      .post(`http://localhost:5000/message`, {
+      .post(`http://104.211.52.147/message`, {
         name: name,
         email: email,
         message:message,

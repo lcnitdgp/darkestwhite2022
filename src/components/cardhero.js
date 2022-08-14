@@ -11,7 +11,7 @@ function CardHero(){
 
  function getPosts() {
   axios
-    .get("http://localhost:5000/blog/getallblogs")
+    .get("http://104.211.52.147/blog/getallblogs")
     .then((response) =>  response.data)
    .then((data) => {
       
