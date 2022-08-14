@@ -10,7 +10,7 @@ import Sidebar from "./sidebar";
 
 export default function Visual() {
   const cards = data.map((item) => {
-    if (item.type == "visual art") {
+    if (item.type === "visual art") {
       return <Card key={item.id} item={item} />;
     }
   });

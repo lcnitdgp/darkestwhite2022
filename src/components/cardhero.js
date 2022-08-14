@@ -7,34 +7,24 @@ import {Container,Row,Col} from 'react-bootstrap';
 import axios from "axios";
 
 function CardHero(){
- const [post, setPost] = useState([{}]);
+  const [post, setPost] = useState([{}]);
 
- function getPosts() {
-  axios
-    .get("http://104.211.52.147/blog/getallblogs")
-    .then((response) =>  response.data)
-   .then((data) => {
-      
-       setPost(data);
-     
-    
-    });
- }
-useEffect(() => {
-  getPosts();
- },[]);
+  function getPosts() {
+    axios
+      .get("http://104.211.52.147/blog/getallblogs")
+      .then((response) =>  response.data)
+      .then((data) => {
+        setPost(data);   
+      });
+  }
+  useEffect(() => {
+    getPosts();
+  },[]);
 
-
-
-
-   const cards = post.map((item) => {
-     
-    
-      
-      return <Card key={item._id} item={item} />;
-     
-     
-   });   
+  const reversed = [...post].reverse();
+  const cards = reversed.slice(0,6).map((item) => {
+    return <Card key={item._id} item={item} />;
+  });   
 
     return (
       <div className="cardhero">
