@@ -26,10 +26,7 @@ export default function Article(){
        
      })
      .then((res) => {
-       console.log(res);
-       
-       
-      
+       console.log(res);      
        console.log("sent id");
        window.location.reload();
        
@@ -91,10 +88,10 @@ export default function Article(){
             <h1> {post.title}</h1>
             <h4>
               {" "}
-              Written and Edited by{post.author}, A piece close to his heart.
+              Written and Edited by {post.author}, a piece close to their heart.
             </h4>
             <span className="like-but">
-              {post.likes} Like{" "}
+              {post.likes == 1? "1 Like" : post.likes + " Likes"} {" "}
               <Button onClick={handleLike}>
                 <span>
                   <FaGratipay />

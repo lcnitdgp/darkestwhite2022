@@ -709,6 +709,9 @@
 }
 
 @media screen and (max-width: 430px) {
+  .container-footer{
+    padding: 0 4vw 0 4vw;
+  }
   .footer {
     background-color: black;
     color: aliceblue;
@@ -719,11 +722,11 @@
   .footer-title {
     padding-top: 12rem;
     text-align: center;
-    font-size: 2.3rem;
+    font-size: 5vh;
   }
 
   .footer-lc {
-    font-size: 1.2rem;
+    font-size: 2.5vh;
     text-align: center;
   }
 
@@ -746,11 +749,11 @@
     height: 30rem;
   }
   .footer-title {
-    padding-top: 12rem;
+    padding-top: 5vh;
   }
 
   .copyright {
-    margin-top: 10rem;
+    margin-top: 11vh;
     font-size: 1rem;
   }
 }
@@ -807,18 +810,35 @@ article > h4{
   
 }
 
+@media only screen and (max-width: 700px){
+  article > h1 {
+    font-size: 5vh;
+  }
+  
+  article > h4 {
+    font-size: 2.5vh;
+  }
+
+  .like-but {
+    font-size: 2.5vh;
+  }
+
+  blog-text > p {
+    font-size: 2.5vh;
+  }
+}
 
 .comment-card{
-  /* border: 2px solid red; */
   position:relative;
   background-color: rgb(46, 43, 43);
   color: white;
-  margin: 40px;
+  margin-top: 7vh;
+  margin-bottom: 7vh;
+  margin-left: 3vw;
+  margin-right: 3vw;
   padding: 15px;
-
 }
 .comment-text{
-  /* border: 2px solid red; */
   margin-top: 10px;
   font-family: 'Antic Slab', serif;
   width: 60%;
@@ -841,12 +861,16 @@ article > h4{
 
 .cheading{
   margin: 40px;
-  font-size: 50px;
+  font-size: 8.3vh;
   font-family: 'Abril fatface', cursive;
   color: white;
 }
 
-
+@media only screen and (max-width: 500px){
+  .cheading  {
+    font-size: 6vh;
+  }
+}
 
 /*login page */
 
@@ -859,15 +883,16 @@ article > h4{
   font-family: "Cinzel", serif;
   font-weight: 400;
   background-color: #4b4a45;
-  
+  min-height: 100vh;
 }
 .container-wrapper-login {
-    padding: 3em; 
-    margin: 1em;
-    width: max-content;
+    padding: 2em; 
+    margin: 1vh 1vw 1vh 1vw;
+    width: 50%;
     height: max-content;
     background-color:#dfdccf;
-    border-radius: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 7px rgb(0 0 0 / 20%), 0 6px 20px 7px rgb(0 0 0 / 19%);
 }
 
 .login-text {
@@ -877,7 +902,7 @@ article > h4{
 }
 
 .item-login {
-    padding: 0.2em;
+    padding: 0.1em;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
@@ -916,16 +941,17 @@ button {
 .form-login {
   justify-content: center;
   padding: 0.5em;
-  /* margin: 2em auto 2em auto */
+  display: flex;
+  flex-direction: column;
 }
 
 .input {
-    padding: 20px;
+    padding: 10px;
     border: none;
     font-size: 20px;
     margin: 5px;
     outline: none;
-    width: 88vw;
+    width: 42vw;
     border-radius: 0.5rem;
 }
 
@@ -992,9 +1018,27 @@ button {
     width: 48px;
 }
 
+
+@media only screen and (max-width: 700px){
+  
+  .container-wrapper-login {
+    padding: 2em;
+    margin: 1em;
+    width: 75%;
+  }
+
+  .input{
+    width: 59vw;
+  }
+}
+
 @media only screen and (max-width: 500px) {
 
+    .container-login{
+      align-items: flex-start;
+    }
     .container-wrapper-login {
+      width: 75%;
       padding: 2em;
       margin: 1em;
     }
@@ -1025,20 +1069,15 @@ button {
         font-size: 14px;
     }
 
-
-
-    .form-login {
-        margin: 1em auto 1em auto
-    }
-
     .input {
         padding: 10px;
         font-size: 15px;
+        width: 53vw;
     }
 
     .remember {
         font-size: smaller;
-        margin-left: 6em;
+        margin-left: 6vw;
     }
 
     .ac {
@@ -1055,6 +1094,23 @@ button {
     .container-login h2 span {
         font-size: medium;
     }
+
+    .container-login h2 {
+      margin: 0 0 10px;
+  }
+
+  .or{
+    padding: 0.5em;
+    height: 1.5em;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .input{
+    width: 49vw;
+  }
 }
 
 .blogpage{

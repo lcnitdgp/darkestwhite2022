@@ -5,13 +5,9 @@ import {useState} from 'react';
 const token_key = "USER_TOKEN";
 const user_id = "USER_ID";
 
-
-function Userlogin(){
-      
+function Userlogin(){      
       const [username, setUserName] = useState("");
-
       const [password, setPassword] = useState("");
-
       const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -23,11 +19,6 @@ function Userlogin(){
           })
           .then((res) => {
             
-           
-            
-             //const { success, token, status } = JSON.stringify(res);
-            //  console.log(success);
-             
              
              const token = res.data.token;
              const user_id = res.data.user[0]._id;
@@ -38,14 +29,7 @@ function Userlogin(){
              window.location = "/";
               
           })
-
           .catch((err) => console.log(err));
-         
-         
-
-       
-
-          
       };
 
       const setToken = (token) => {
@@ -108,8 +92,8 @@ function Userlogin(){
             </a>
           </div>
           <span className="ac">
-            Don't have an Account?
-            <Link to="/signup">Sign Up</Link>
+            Don't have an Account? { }
+            <Link to="/signup">SignUp</Link>
           </span>
         </div>
       </div>
