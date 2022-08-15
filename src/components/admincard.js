@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 function AdminCard(props) {
-  
+  console.log(props);
    
 
   return (

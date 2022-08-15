@@ -17,7 +17,7 @@ function Signup()  {
 
    
    await axios
-     .post(`http://localhost:5000/user/signup`, {
+     .post(`https://darkestwhitebackend.lcnitd.co.in/user/signup`, {
        name: name,
        email: email,
        username: username,
@@ -97,7 +97,7 @@ function Signup()  {
         </form>
         <h2 className="or">OR</h2>
         <div className="social-media">
-          <a href="http://104.211.52.147/auth/google">
+          <a href="https://darkestwhitebackend.lcnitd.co.in/auth/google">
             <div className="icons8-google social-mediaImg" />
           </a>
         </div>

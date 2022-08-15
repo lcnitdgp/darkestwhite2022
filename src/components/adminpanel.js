@@ -7,6 +7,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import Article from "./article";
 import { data } from "jquery";
+import { isContentEditable } from "@testing-library/user-event/dist/utils";
 
 function AdminPanel() {
   const [post, setPost] = useState([{}]);
@@ -14,7 +15,7 @@ function AdminPanel() {
 
   function getPosts() {
     axios
-      .get("http://104.211.52.147/blog/unpublished")
+      .get("https://darkestwhitebackend.lcnitd.co.in/blog/unpublished")
       .then((response) => response.data)
       .then((data) => {
         setPost(data);
@@ -26,7 +27,7 @@ function AdminPanel() {
 
    function getMessages() {
      axios
-       .get("http://104.211.52.147/message/getmsg")
+       .get("https://darkestwhitebackend.lcnitd.co.in/message/getmsg")
        .then((response) => response.data)
        .then((data) => {
          setMessage(data);
@@ -56,7 +57,9 @@ function AdminPanel() {
     });
 
   return (
-    <div className="cardhero">
+    <div className="cardhero"
+     style={{ height: "max-content" }}
+    >
       <h1 className="cardhero-header">unpublished Posts</h1>
       <hr className="herohr" />
       <Container className="card-grid">{cards}</Container>

@@ -20,7 +20,7 @@ export default function Article(){
          console.log(params.id);
   
       await axios
-     .post(`http://104.211.52.147/blog/like`, {
+     .post(`https://darkestwhitebackend.lcnitd.co.in/blog/like`, {
        id: params.id,
        user_id: uid,
        
@@ -61,7 +61,7 @@ export default function Article(){
 
  function getPosts() {
    axios
-     .get(`http://104.211.52.147/blog/${params.id}`)
+     .get(`https://darkestwhitebackend.lcnitd.co.in/blog/${params.id}`)
      .then((response) => response.data)
      .then((data) => {
        setPost(data);

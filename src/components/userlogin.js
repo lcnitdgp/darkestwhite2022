@@ -12,7 +12,7 @@ function Userlogin(){
         e.preventDefault();
 
         await axios
-          .post(`http://104.211.52.147/user/login`, {
+          .post(`https://darkestwhitebackend.lcnitd.co.in/user/login`, {
             
             username: username,
             password: password,
@@ -87,7 +87,7 @@ function Userlogin(){
           </form>
           <h2 className="or">OR</h2>
           <div className="social-media">
-            <a href="http://104.211.52.147/auth/google">
+            <a href="https://darkestwhitebackend.lcnitd.co.in/auth/google">
               <div className="icons8-google social-mediaImg" />
             </a>
           </div>

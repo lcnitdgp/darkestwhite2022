@@ -13,7 +13,7 @@ function Admin() {
     e.preventDefault();
 
     await axios
-      .post(`http://104.211.52.147/user/login`, {
+      .post(`https://darkestwhitebackend.lcnitd.co.in/`, {
         username: username,
         password: password,
       })

@@ -363,6 +363,8 @@
  
 }
 
+
+
 @media screen and (min-width:375px) {
   .cardhero-header{
     padding-left: 2rem;
@@ -389,7 +391,6 @@
   }
   .cardhero {
     height: 234rem;
-
   }
   .card-grid {
     margin-left: 5%;

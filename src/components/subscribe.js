@@ -35,7 +35,7 @@ function Subscribe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .put(`http://104.211.52.147/user/subscribe/${uid}`, {
+      .put(`https://darkestwhitebackend.lcnitd.co.in/user/subscribe/${uid}`, {
         uid: uid,
       })
       .then((res) => {
