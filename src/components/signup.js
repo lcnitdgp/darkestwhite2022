@@ -1,17 +1,39 @@
 import "../App.css";
 import {useState} from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";
-
+import { Link,Navigate } from "react-router-dom";
+import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { gapi } from "gapi-script";
 
 function Signup()  {
 
+  gapi.load("client:auth2", () => {
+    gapi.client.init({
+      clientId:
+        "729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com",
+      plugin_name: "login`",
+    });
+  });
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
    const [username, setUserName] = useState("");
 
    const [password, setPassword] = useState("");
 
+   
+   const [url, setUrl] = useState("");
+   const [loginStatus, setLoginStatus] = useState(false);
+   const responseGoogle = (response) => {
+     console.log(response);
+     setName(response.profileObj.name);
+     setEmail(response.profileObj.email);
+     setUrl(response.profileObj.imageUrl);
+     setLoginStatus(true);
+   };
+   const logout = () => {
+     console.log("logout");
+     setLoginStatus(false);
+   };
  const handleSubmit = async (e) => {
    e.preventDefault();
 
@@ -109,9 +131,24 @@ function Signup()  {
         </form>
         <h2 className="or">OR</h2>
         <div className="social-media">
-          <a href="https://darkestwhitebackend.lcnitd.co.in/auth/google">
-            <div className="icons8-google social-mediaImg" />
-          </a>
+          {!loginStatus && (<GoogleLogin
+            clientId="729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com"
+            buttonText="Sign Up"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={"single_host_origin"}
+            isSignedIn={true}
+          />)}
+         
+          {loginStatus && (
+            <div>
+              <GoogleLogout
+                clientId="729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com"
+                buttonText="Logout"
+                onLogoutSuccess={logout}
+              />
+            </div>
+          )}
         </div>
         <span className="ac">
           Have an Account? <Link to="/userlogin">Log In</Link>
