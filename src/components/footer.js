@@ -37,7 +37,7 @@ function Footer() {
           </Col>
         </Row>
         </div>
-        <h6 className="copyright">made with love by Lc ©</h6>
+        <h6 className="copyright">made with love by Lc © 2022</h6>
       </div>
 
       {/* <h4 className='footer-tagline'>made with love by lc</h4>

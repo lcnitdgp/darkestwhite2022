@@ -1,5 +1,6 @@
 import '../App.css';
 import axios from 'axios';
+import { useState } from 'react';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
@@ -54,6 +55,15 @@ function Subscribe() {
    window.localStorage.clear();
  };
 
+ const[isHovering, setIsHovering] = useState(false);
+ 
+ const handleMouseEnter = () => {
+  setIsHovering(true);
+  };
+
+const handleMouseLeave = () => {
+  setIsHovering(false);
+};
     
   return (
     <div className="subscribe">
@@ -63,15 +73,20 @@ function Subscribe() {
         doloremque laudantium, ut perspiciatis utota.
       </h4>
       <Button
-        className="button-create"
+        className="button-subscribe"
         variant="outline-dark"
         style={{
           borderRadius: "0%",
-          width: "40%",
+          width: "max-content",
           marginBottom: "2rem",
-           
+          marginTop: "1rem",
+          backgroundColor: isHovering? "" : "#3a2d2d",
+          color: isHovering? "#dfdccf" : "#fff", 
+          fontFamily: "inherit",
         }}
        onClick={handleSubmit}
+       onMouseEnter={handleMouseEnter}
+       onMouseLeave={handleMouseLeave}
       >
      {isLogin?"Subscribe":"Login to Subscribe"}
       </Button>

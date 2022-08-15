@@ -28,7 +28,7 @@ function CommentForm() {
   };
 
   return (
-    <div className="comment-card">
+    <div className="comment-section">
       
         <form className="form-login">
           <div className="item-login">

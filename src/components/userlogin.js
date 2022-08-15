@@ -61,6 +61,9 @@ function Userlogin(){
                 onChange={(e) => {
                   setUserName(e.target.value);
                 }}
+                style={{
+                  height: "auto",
+                }}
                 value={username}
               />
             </div>
@@ -69,6 +72,9 @@ function Userlogin(){
                 className="input"
                 type="password"
                 placeholder="Password"
+                style={{
+                  height: "auto",
+                }}
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
