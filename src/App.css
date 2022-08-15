@@ -278,7 +278,8 @@
   margin-left: auto;
   margin-right: auto;
   width: 80%;
-
+  height: auto;
+  max-height: 100%;
 }
 .blog-line {
 
@@ -845,17 +846,24 @@ article > h4{
 }
 .commentor{
   font-family: 'Abril fatface', cursive;
-
+  width: 50%;
 }
+
 .comment-date{
   font-family: 'Antic Slab', serif;
-
+  width: 50%;
+  text-align: end;
 }
 
 .comment-section{
   margin-top: 2px;
   background-color: rgb(7, 6, 6);
   padding: 10px;
+}
+
+.comment-row{
+  display: flex;
+  flex-direction: row;
 }
 
 .cheading{
@@ -1000,6 +1008,7 @@ button {
     border-bottom: 1px solid #000;
     line-height: 0.1em;
     margin: 10px 0 20px;
+    font-size: larger;
 }
 
 .container-login h2 span {

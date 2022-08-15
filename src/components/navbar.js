@@ -96,16 +96,6 @@ function NavbarNew() {
             </NavDropdown>
             <Nav.Link>
               <Link
-                to="/userlogin"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-                
-              >
-                {isLogin ? "LOGOUT" : "LOGIN"}
-              </Link>
-            </Nav.Link>
-
-            <Nav.Link>
-              <Link
                 to="/contact"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
@@ -118,6 +108,15 @@ function NavbarNew() {
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 {isLogin ? "CREATE POST" : ""}
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link
+                to="/userlogin"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+                
+              >
+                {isLogin ? "LOGOUT" : "LOGIN"}
               </Link>
             </Nav.Link>
             {/* <Nav.Link>

@@ -49,6 +49,9 @@ function Signup()  {
               onChange={(e) => {
                 setName(e.target.value);
               }}
+              style={{
+                height: "auto",
+              }}
               value={name}
             />
           </div>
@@ -59,6 +62,9 @@ function Signup()  {
               placeholder="Email"
               onChange={(e) => {
                 setEmail(e.target.value);
+              }}
+              style={{
+                height: "auto",
               }}
               value={email}
             />
@@ -71,6 +77,9 @@ function Signup()  {
               onChange={(e) => {
                 setUserName(e.target.value);
               }}
+              style={{
+                height: "auto",
+              }}
               value={username}
             />
           </div>
@@ -81,6 +90,9 @@ function Signup()  {
               placeholder="Password"
               onChange={(e) => {
                 setPassword(e.target.value);
+              }}
+              style={{
+                height: "auto",
               }}
               value={password}
             />{" "}
