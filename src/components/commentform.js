@@ -32,9 +32,8 @@ function CommentForm() {
       
         <form className="form-login">
           <div className="item-login">
-            <input
-              className="input"
-              type="text"
+            <textarea
+              className = "input"
               placeholder="Leave a comment.."
               onChange={(e) => {
                 setComment(e.target.value);

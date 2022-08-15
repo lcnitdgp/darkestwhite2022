@@ -794,6 +794,8 @@ article{
   border : solid 2px red;
   margin-block-end: 15px;
   width: 60%;
+  height: auto;
+  object-fit: cover;
 }
 article > h1{
   margin-block-start: 15px;
@@ -1039,6 +1041,7 @@ button {
 
   .input{
     width: 59vw;
+    font-size: 15px;
   }
 }
 
@@ -1122,7 +1125,7 @@ button {
 
 @media only screen and (max-width: 380px) {
   .input{
-    width: 49vw;
+    width: 84vw;
   }
 }
 
