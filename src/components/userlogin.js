@@ -2,10 +2,31 @@ import '../App.css'
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import {useState} from 'react';
+import { GoogleLogin, GoogleLogout } from "react-google-login";
+
+
 const token_key = "USER_TOKEN";
 const user_id = "USER_ID";
 
-function Userlogin(){      
+function Userlogin(){   
+   
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+
+  const [url, setUrl] = useState("");
+  const [loginStatus, setLoginStatus] = useState(false);
+  const responseGoogle = (response) => {
+    console.log(response);
+    setName(response.profileObj.name);
+    setEmail(response.profileObj.email);
+    setUrl(response.profileObj.imageUrl);
+    setLoginStatus(true);
+  };
+  const logout = () => {
+    console.log("logout");
+    setLoginStatus(false);
+  };
       const [username, setUserName] = useState("");
       const [password, setPassword] = useState("");
       const handleSubmit = async (e) => {
@@ -93,12 +114,31 @@ function Userlogin(){
           </form>
           <h2 className="or">OR</h2>
           <div className="social-media">
-            <a href="https://darkestwhitebackend.lcnitd.co.in/auth/google">
-              <div className="icons8-google social-mediaImg" />
-            </a>
+            {!loginStatus && (
+              <GoogleLogin
+                clientId="729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={"single_host_origin"}
+                isSignedIn={true}
+                uxMode="redirect"
+                redirectUri="http://localhost:3000/"
+              />
+            )}
+
+            {loginStatus && (
+              <div>
+                <GoogleLogout
+                  clientId="729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com"
+                  buttonText="Logout"
+                  onLogoutSuccess={logout}
+                />
+              </div>
+            )}
           </div>
           <span className="ac">
-            Don't have an Account? { }
+            Don't have an Account? {}
             <Link to="/signup">SignUp</Link>
           </span>
         </div>

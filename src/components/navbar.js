@@ -90,6 +90,7 @@ function NavbarNew() {
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
                 {isLogin ? "LOGOUT" : "LOGIN"}
+                
               </Link>
             </Nav.Link>
             {/* <Nav.Link>
