@@ -107,7 +107,6 @@ export default function Article(){
                   : post.likes == 1
                   ? "1 Like"
                   : post.likes + " Likes"}
-                
 
                 {!isLiked ? <FaHeart /> : <FaRegHeart />}
               </Button>

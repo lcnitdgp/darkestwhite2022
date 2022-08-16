@@ -14,7 +14,6 @@ function Card(props){
           to={{ pathname: `/blog/${props.item._id}` }}
           style={{ color: "inherit", textDecoration: "inherit" }}
         >
-          
           <img
             className="img-card"
             src={`${props.item.image}`}
@@ -22,13 +21,16 @@ function Card(props){
           />
         </Link>
         <div className="card-content">
-          <h5 className="date">{props.item.createdAt?.slice(0,10)}</h5>
+          <h5 className="date">{props.item.createdAt?.slice(0, 10)}</h5>
           <h2 className="blog-title">{props.item.title}</h2>
           <hr className="blog-line"></hr>
 
           <div className="childcontent">
             <div>
               <h6 className="blog-type">{props.item.type_of_post}</h6>
+            </div>
+            <div>
+              <h6 className="blog-type">{props.item.likes===1?"1 Like": props.item.likes+ "Likes"} </h6>
             </div>
             {/* <div>
               <img
@@ -37,10 +39,13 @@ function Card(props){
                 alt={"icon"}
               />
             </div> */}
+            
             <div>
               {" "}
               <h6 className="blog-comment">
-                {props.item.comments?.length === 1 ? 1 + " comment" : props.item.comments?.length + " comments"}
+                {props.item.comments?.length === 1
+                  ? 1 + " comment"
+                  : props.item.comments?.length + " comments"}
               </h6>
             </div>
           </div>

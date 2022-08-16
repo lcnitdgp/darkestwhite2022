@@ -59,41 +59,15 @@ function NavbarNew() {
               </Link>
             </Nav.Link>
 
-            <NavDropdown title="POSTS" id="collasible-nav-dropdown">
-              <NavDropdown.Item>
-                <Link
-                  to="/posts/movies"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                >
-                  Movies
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link
-                  to="/posts/music"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                >
-                  Music
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link
-                  to="/posts/visualarts"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                >
-                  Visual Arts
-                </Link>
-              </NavDropdown.Item>
-              {/* <NavDropdown.Divider /> */}
-              <NavDropdown.Item>
-                <Link
-                  to="/posts/books"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                >
-                  Books
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link>
+              <Link
+                to="/posts"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                POSTS
+              </Link>
+            </Nav.Link>
+
             <Nav.Link>
               <Link
                 to="/contact"
@@ -114,7 +88,6 @@ function NavbarNew() {
               <Link
                 to="/userlogin"
                 style={{ color: "inherit", textDecoration: "inherit" }}
-                
               >
                 {isLogin ? "LOGOUT" : "LOGIN"}
               </Link>
