@@ -109,9 +109,10 @@
 }
 
 
+
 @media screen and (min-width:1024px) {
   .scrollTop{
-    left: 48vw;
+    left: 46vw;
     height: 7vh;
   }
 }
@@ -374,7 +375,7 @@
      font-size: 2.5rem;
   }
   .cardhero{
-    height: 213rem;
+    height: 180rem;
 
   }
   .card-grid {
@@ -384,14 +385,14 @@
   }
 }
 
-@media screen and (min-width:540px) {
+@media screen and (min-width:425px) {
   .cardhero-header {
     padding-left: 4rem;
     padding-right: 4rem;
     font-size: 2.5rem;
   }
   .cardhero {
-    height: 234rem;
+    height: 200rem;
   }
   .card-grid {
     margin-left: 5%;
@@ -426,7 +427,7 @@
   }
 
   .cardhero {
-    height: 135rem;
+    height: 110rem;
   }
 }
 @media screen and (min-width:1024px) {
@@ -444,9 +445,30 @@
     font-size: 4rem;
   }
   .cardhero {
-    height: 87rem;
+    height:75rem;
   }
 }
+
+@media screen and (min-width:1440px) {
+  
+  .card-grid {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    width: 85%;
+    margin-left: 8%;
+    /* margin-left: 4rem; */
+  }
+
+  
+  .cardhero-header {
+    font-size: 4rem;
+  }
+  .cardhero {
+    height:90rem;
+  }
+}
+
+
 
 
 /* 

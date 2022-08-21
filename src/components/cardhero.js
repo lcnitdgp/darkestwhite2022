@@ -29,7 +29,7 @@ function CardHero(){
     return (
       <div className="cardhero">
         <h1 className="cardhero-header">Our Recent posts</h1>
-        <hr className="herohr" />
+       
         <Container className='card-grid' >
            {cards}
         </Container>
