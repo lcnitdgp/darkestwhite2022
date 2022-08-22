@@ -12,7 +12,7 @@ export default function Comment(){
 
   function getPosts() {
     axios
-      .get(`https://darkestwhitebackend.lcnitd.co.in/blog/${params.id}/comments`)
+      .get(`http://localhost:5000/${params.id}/comments`)
       .then((response) => response.data)
       .then((data) => {
         setPost(data);

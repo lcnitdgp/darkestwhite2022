@@ -2,6 +2,9 @@ import '../App.css';
 import axios from 'axios';
 import { useState } from 'react';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   Container,
@@ -36,7 +39,7 @@ function Subscribe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .put(`https://darkestwhitebackend.lcnitd.co.in/user/subscribe/${uid}`, {
+      .put(`http://localhost:5000/user/subscribe/${uid}`, {
         uid: uid,
       })
       .then((res) => {
@@ -47,7 +50,8 @@ function Subscribe() {
 
       .catch((err) => console.log(err));
     {
-      isLogin ? alert("subscribed") : (window.location = "/signup");
+      isLogin ? toast("subscribed") : (window.location = "/signup");
+      console.log("submit");
     }
   };
 
@@ -90,6 +94,7 @@ const handleMouseLeave = () => {
       >
      {isLogin?"Subscribe":"Login to Subscribe"}
       </Button>
+      <ToastContainer />
     </div>
   );
   

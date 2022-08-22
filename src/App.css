@@ -170,8 +170,8 @@
 }
 .darkest-white-hero {
   font-family: "Cinzel", serif;
-  font-size: 4rem;
-  padding-left: 22vw;
+  font-size: 1rem;
+  padding-left: 15vw;
   text-align: center;
   position: relative;
   bottom: 2rem;
@@ -187,7 +187,8 @@
   padding-top: 2rem;
 }
 
-@media screen and (min-width: 1024px) {
+
+@media screen and (min-width: 1440px) {
   .hero {
     height: 35rem;
   }
@@ -198,7 +199,29 @@
   }
   .darkest-white-hero{
     font-size: 6rem;
-    padding-left: 22vw;
+    padding-left: 25vw;
+    position: relative;
+    bottom: 4rem;
+  }
+  .cursor{
+    position: relative;
+    bottom: 4.5rem;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    height: 35rem;
+  }
+  .profile-photo {
+    height: auto;
+    max-width: 100%;
+    max-height: 90%;
+  }
+  .darkest-white-hero{
+    font-size: 6rem;
+    padding-left: 14vw;
     position: relative;
     bottom: 4rem;
   }
@@ -211,7 +234,7 @@
 
 @media screen and (max-width: 768px) {
   .hero {
-    height: 25rem;
+    height: 27rem;
   }
   .profile-photo {
     height: auto;
@@ -219,7 +242,7 @@
   }
   .darkest-white-hero {
     font-size: 3.5rem;
-    padding-left: 12vw;
+    padding-left: 20.5vw;
     position: relative;
     top: -2rem;
   }
@@ -238,8 +261,8 @@
     width: 70%;
   }
   .darkest-white-hero {
-    font-size: 2.5rem;
-    padding-left: 16vw;
+    font-size: 2.3rem;
+    padding-left: 15vw;
     position: relative;
     top: .5rem;
   }
@@ -259,7 +282,7 @@
     width: 70%;
   }
   .darkest-white-hero {
-    font-size: 2rem;
+    font-size: 1.7rem;
     padding-left: 16vw;
   }
 }

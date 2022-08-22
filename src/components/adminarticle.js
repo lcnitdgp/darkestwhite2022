@@ -18,7 +18,7 @@ export default function AdminArticle() {
     console.log(params.id);
 
     await axios
-      .post(`https://darkestwhitebackend.lcnitd.co.in/`, {
+      .post(`http://localhost:5000/blog/like`, {
         id: params.id,
         user_id: uid,
       })
@@ -37,7 +37,7 @@ export default function AdminArticle() {
     e.preventDefault();
 
     await axios
-      .post(`https://darkestwhitebackend.lcnitd.co.in/blog/publishblog/${params.id}`, {})
+      .post(`http://localhost:5000/${params.id}`, {})
       .then((res) => {
         console.log(res);
         console.log("submit param");
@@ -51,7 +51,7 @@ export default function AdminArticle() {
 
   function getPosts() {
     axios
-      .get(`https://darkestwhitebackend.lcnitd.co.in/blogadmin/${params.id}`)
+      .get(`http://localhost:5000/${params.id}`)
       .then((response) => response.data)
       .then((data) => {
         setPost(data);

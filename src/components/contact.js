@@ -18,7 +18,7 @@ function Contact() {
     e.preventDefault();
 
     await axios
-      .post(`https://darkestwhitebackend.lcnitd.co.in/message`, {
+      .post(`http://localhost:5000/message`, {
         name: name,
         email: email,
         message:message,

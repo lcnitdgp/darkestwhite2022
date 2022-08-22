@@ -2,7 +2,11 @@ import "../App.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import 'react-toastify/dist/ReactToastify.css';
+
+import { ToastContainer, toast } from 'react-toastify';
 const token_key = "USER_TOKEN";
+const user_id = "USER_ID";
 
 function Admin() {
   const [username, setUserName] = useState("");
@@ -13,7 +17,7 @@ function Admin() {
     e.preventDefault();
 
     await axios
-      .post(`https://darkestwhitebackend.lcnitd.co.in/`, {
+      .post(`http://localhost:5000/user/login`, {
         username: username,
         password: password,
       })
@@ -25,6 +29,11 @@ function Admin() {
         const token = res.data.token;
         console.log(res.data.user[0].isAdmin);
         setToken(token);
+       
+        const user_id = res.data.user[0]._id;
+
+        setId(user_id);
+        toast.success("logged in");
          if (res.data.user[0].isAdmin)
            window.location = "/adminpanel";
            console.log("submit");
@@ -35,6 +44,9 @@ function Admin() {
 
   const setToken = (token) => {
     window.localStorage.setItem(token_key, token);
+  };
+  const setId = (id) => {
+    window.localStorage.setItem(user_id, id);
   };
 
   const getToken = () => {
@@ -80,6 +92,7 @@ function Admin() {
             <button type="submit" onClick={handleSubmit}>
               Submit
             </button>
+            <ToastContainer/>
           </div>
         </form>
         <h2 className="or">OR</h2>

@@ -27,7 +27,7 @@ export default function Article(){
     e.preventDefault();
 
     await axios
-      .post(`http://l104.211.52.147/blog/publishblog/${params.id}`, {
+      .post(`http://localhost:5000/blog/publishblog/${params.id}`, {
     
       })
       .then((res) => {
@@ -47,7 +47,7 @@ export default function Article(){
 
  function getPosts() {
    axios
-     .get(`https://darkestwhitebackend.lcnitd.co.in/blog/${params.id}`)
+     .get(`http://localhost:5000/blog/${params.id}`)
      .then((response) => response.data)
      .then((data) => {
        setPost(data);
@@ -67,8 +67,9 @@ export default function Article(){
 
      setIsLiked((prevLiked) => !prevLiked);
      console.log(isLiked);
+     console.log(post.likes);
      await axios
-       .post(`https://darkestwhitebackend.lcnitd.co.in/blog/like`, {
+       .post(`http://localhost:5000/blog/like`, {
          id: params.id,
          user_id: uid,
        })
@@ -103,12 +104,14 @@ export default function Article(){
                 {!isLiked
                   ? post.likes == 1
                     ? "1 Like"
-                    : post.likes + 1 + " Likes"
-                  : post.likes == 1
+                    : post.likes + " Likes"
+                  : post.likes == 0
                   ? "1 Like"
                   : post.likes + " Likes"}
 
+
                 {!isLiked ? <FaHeart /> : <FaRegHeart />}
+              
               </Button>
             </span>
           </article>

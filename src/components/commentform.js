@@ -13,7 +13,7 @@ function CommentForm() {
     e.preventDefault();
 
     await axios
-      .post(`https://darkestwhitebackend.lcnitd.co.in/blog/${params.id}/comments`, {
+      .post(`http://localhost:5000/${params.id}/comments`, {
         
         user_id: uid,
         comment: comment,

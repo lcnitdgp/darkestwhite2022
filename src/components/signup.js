@@ -39,7 +39,7 @@ function Signup()  {
 
    
    await axios
-     .post(`https://darkestwhitebackend.lcnitd.co.in/user/signup`, {
+     .post(`http://localhost:5000/signup`, {
        name: name,
        email: email,
        username: username,

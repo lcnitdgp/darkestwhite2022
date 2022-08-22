@@ -15,7 +15,7 @@ function AdminPanel() {
 
   function getPosts() {
     axios
-      .get("https://darkestwhitebackend.lcnitd.co.in/blog/unpublished")
+      .get("http://localhost:5000/blog/unpublished")
       .then((response) => response.data)
       .then((data) => {
         setPost(data);
@@ -27,7 +27,7 @@ function AdminPanel() {
 
    function getMessages() {
      axios
-       .get("https://darkestwhitebackend.lcnitd.co.in/message/getmsg")
+       .get("http://localhost:5000/message/getmsg")
        .then((response) => response.data)
        .then((data) => {
          setMessage(data);

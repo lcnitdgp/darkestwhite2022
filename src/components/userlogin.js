@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 import {useState} from 'react';
 import { GoogleLogin, GoogleLogout } from "react-google-login";
+import { toast, ToastContainer } from 'react-toastify';
 
 
 const token_key = "USER_TOKEN";
@@ -33,7 +34,7 @@ function Userlogin(){
         e.preventDefault();
 
         await axios
-          .post(`https://darkestwhitebackend.lcnitd.co.in/user/login`, {
+          .post(`http://localhost:5000/user/login`, {
             
             username: username,
             password: password,
@@ -46,7 +47,7 @@ function Userlogin(){
               console.log(res.data);
              setToken(token);
              setId(user_id);
-             alert("logged in");
+             toast("logged in");
              window.location = "/";
               
           })
@@ -110,6 +111,7 @@ function Userlogin(){
               <button type="submit" onClick={handleSubmit}>
                 Submit
               </button>
+              <ToastContainer/>
             </div>
           </form>
           <h2 className="or">OR</h2>
