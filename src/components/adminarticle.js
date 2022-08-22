@@ -37,11 +37,12 @@ export default function AdminArticle() {
     e.preventDefault();
 
     await axios
-      .post(`http://localhost:5000/${params.id}`, {})
+      .post(`http://localhost:5000/blog/publishblog/${params.id}`, {})
       .then((res) => {
         console.log(res);
         console.log("submit param");
         //window.location.replace = "/";
+        window.location = "/";
       })
 
       .catch((err) => console.log(err));
@@ -51,7 +52,7 @@ export default function AdminArticle() {
 
   function getPosts() {
     axios
-      .get(`http://localhost:5000/${params.id}`)
+      .get(`http://localhost:5000/blog/${params.id}`)
       .then((response) => response.data)
       .then((data) => {
         setPost(data);
@@ -78,19 +79,26 @@ export default function AdminArticle() {
           <h1> {post.title}</h1>
           <h4>
             {" "}
-            Written and Edited by{post.author}, A piece close to his heart.
+            Written and Edited by {post.author}, A piece close to his heart.
           </h4>
-          <span className="like-but">
+          {/* <span className="like-but">
             {post.likes} Like{" "}
             <Button onClick={handleLike}>
               <span>
                 <FaGratipay />
               </span>
             </Button>
-          </span>
+          </span> */}
         </article>
         <div>
-          <Button onClick={handleSubmit}>Publish</Button>
+            <Button
+              onClick={handleSubmit}
+            style={{
+              padding: "0.5em 1em 0.5em 1em",
+              background: "red",
+              borderColor: "red",
+            }}
+          >Publish</Button>
         </div>
       </blog-article>
     </div>

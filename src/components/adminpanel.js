@@ -15,7 +15,7 @@ function AdminPanel() {
 
   function getPosts() {
     axios
-      .get("http://localhost:5000/blog/unpublished")
+      .get("https://darkestwhitebackend.lcnitd.co.in/blog/unpublished")
       .then((response) => response.data)
       .then((data) => {
         setPost(data);
@@ -39,34 +39,33 @@ function AdminPanel() {
         console.log(message);
    }, []);
   const cards = post.map((item) => {
-    
-      
       return <AdminCard key={item._id} item={item} />
-    
-   
   });
 
     const messages = message.map((item) => {
       return (
-        <div>
-          <p>{item.name}</p>
-          <p>{item.email}</p>
-          <p>{item.message}</p>
+        <div className = "comment-card" style = {{color: "black", }}>
+          <div className = "comment-row">
+            <span className="commentor" style = {{fontFamily: "'Antic Slab', serif", }}>{item.name}</span>
+            <span className="comment-date"> {item.email}</span>
+          </div>
+          <p className="comment-text">{item.message}</p>
         </div>
       );
     });
 
-  return (
-    <div className="cardhero"
-     style={{ height: "max-content" }}
-    >
-      <h1 className="cardhero-header">unpublished Posts</h1>
-      <hr className="herohr" />
-      <Container className="card-grid">{cards}</Container>
-      <h1 className="cardhero-header">messages</h1>
-      {messages}
-    </div>
-  );
+    return (
+      <div className="cardhero"
+      style={{ height: "auto" }}
+      >
+        <h1 className="cardhero-header">unpublished Posts</h1>
+        <hr className="herohr" />
+        <Container className="card-grid">{cards}</Container>
+        <h1 className="cardhero-header">messages</h1>
+        <hr className="herohr" />
+        <div className = "comment-section" style = {{background: "#eae9e4",}}>{messages}</div>
+      </div>
+    );
 }
 
 export default AdminPanel;

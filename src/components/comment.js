@@ -7,12 +7,12 @@ import { useParams } from "react-router-dom";
 export default function Comment(){
 
   const params = useParams();
-
+  console.log(params);
   const [post, setPost] = useState([{}]);
 
   function getPosts() {
     axios
-      .get(`http://localhost:5000/${params.id}/comments`)
+      .get(`http://localhost:5000/blog/${params.id}/comments`)
       .then((response) => response.data)
       .then((data) => {
         setPost(data);

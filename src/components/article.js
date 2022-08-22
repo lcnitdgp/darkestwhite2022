@@ -110,10 +110,10 @@ export default function Article(){
               >
                 {!isLiked
                   ? post.likes == 1
-                    ? "1 Like"
+                    ? "1 Like "
                     : post.likes + " Likes "
                   : post.likes == 0
-                  ? "1 Like"
+                  ? "1 Like "
                   : post.likes + " Likes "}
 
 

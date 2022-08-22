@@ -1,7 +1,7 @@
 import "../App.js"
 export default function Commentcard(props) {
 
-    console.log(props.item);
+    console.log(props);
     return (
       <div className="comment-card">
         <div className="comment-row">

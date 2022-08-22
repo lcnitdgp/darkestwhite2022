@@ -15,7 +15,7 @@ export default function Posts() {
 
   function getPosts() {
     axios
-      .get("http://localhost:5000/getallblogs")
+      .get("http://localhost:5000/blog/getallblogs")
       .then((response) => response.data)
       .then((data) => {
         setPost(data);
@@ -24,7 +24,8 @@ export default function Posts() {
   useEffect(() => {
     getPosts();
   }, []);
-   const cards = post.map((item) => {
+
+   const cards = [...post].reverse().map((item) => {
      return <Card key={item._id} item={item} />;
    });         
    const sampleLocation = useLocation();
