@@ -12,10 +12,11 @@ export default function Comment(){
 
   function getPosts() {
     axios
-      .get(`http://localhost:5000/${params.id}/comments`)
+      .get(`http://localhost:5000/blog/${params.id}/comments`)
       .then((response) => response.data)
       .then((data) => {
         setPost(data);
+        console.log(data);
       });
   }
   useEffect(() => {

@@ -8,6 +8,16 @@ import { data } from "jquery";
 import {Button} from 'react-bootstrap';
 
 const user_id = "USER_ID";
+const token_key = "USER_TOKEN";
+let uid = window.localStorage.getItem(user_id);
+
+const getToken = () => {
+  let token = window.localStorage.getItem(token_key);
+  if (!!token) return token;
+  return false;
+};
+
+let token = getToken();
 
 export default function Article(){
 
@@ -72,7 +82,11 @@ export default function Article(){
        .post(`http://localhost:5000/blog/like`, {
          id: params.id,
          user_id: uid,
-       })
+       }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
        .then((res) => {
         
          console.log("sent id");
@@ -108,7 +122,7 @@ export default function Article(){
                   borderColor: "red",
                 }}
               >
-                {!isLiked
+                {isLiked==true
                   ? post.likes == 1
                     ? "1 Like"
                     : post.likes + " Likes "
@@ -117,7 +131,7 @@ export default function Article(){
                   : post.likes + " Likes "}
 
 
-                {!isLiked ? <FaHeart /> : <FaRegHeart />}
+                {isLiked==true ? <FaHeart /> : <FaRegHeart />}
               
               </Button>
             </span>

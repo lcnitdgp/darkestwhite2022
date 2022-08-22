@@ -29,7 +29,7 @@ function NavbarNew() {
    };
 
    const isLogin = () => {
-     if (!!getToken()) {
+     if (getToken()) {
        return true;
      }
      return false;
@@ -88,8 +88,11 @@ function NavbarNew() {
               <Link
                 to="/userlogin"
                 style={{ color: "inherit", textDecoration: "inherit" }}
+                onClick={logout}
               >
                 {isLogin ? "LOGOUT" : "LOGIN"}
+
+              
                 
               </Link>
             </Nav.Link>

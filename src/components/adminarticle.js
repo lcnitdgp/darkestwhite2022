@@ -7,11 +7,19 @@ import { useState, useEffect } from "react";
 import { data } from "jquery";
 import { Button } from "react-bootstrap";
 const user_id = "USER_ID";
-
+const token_key = "USER_TOKEN";
 export default function AdminArticle() {
   const params = useParams();
 
   let uid = window.localStorage.getItem(user_id);
+
+  const getToken = () => {
+    let token = window.localStorage.getItem(token_key);
+    if (!!token) return token;
+    return false;
+  };
+
+  let token = getToken();
 
   const handleLike = async (e) => {
     e.preventDefault();
@@ -21,6 +29,11 @@ export default function AdminArticle() {
       .post(`http://localhost:5000/blog/like`, {
         id: params.id,
         user_id: uid,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       })
       .then((res) => {
         console.log(res);
@@ -42,6 +55,11 @@ export default function AdminArticle() {
         console.log(res);
         console.log("submit param");
         //window.location.replace = "/";
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       })
 
       .catch((err) => console.log(err));
