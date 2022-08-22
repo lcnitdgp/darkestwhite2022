@@ -13,6 +13,16 @@ function Admin() {
 
   const [password, setPassword] = useState("");
 
+  const getToken = () => {
+    let token = window.localStorage.getItem(token_key);
+    if (token) return token;
+    return false;
+  };
+
+  let token = getToken();
+  
+
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -20,7 +30,14 @@ function Admin() {
       .post(`http://localhost:5000/user/login`, {
         username: username,
         password: password,
-      })
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+      
+      )
       .then((res) => {
         //const { success, token, status } = JSON.stringify(res);
         //  console.log(success);
@@ -49,11 +66,7 @@ function Admin() {
     window.localStorage.setItem(user_id, id);
   };
 
-  const getToken = () => {
-    let token = window.localStorage.getItem(token_key);
-    if (!!token) return token;
-    return false;
-  };
+  
   return (
     <div className="container-login">
       <div className="container-wrapper-login">

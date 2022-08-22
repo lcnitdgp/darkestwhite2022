@@ -16,6 +16,7 @@ export default function Comment(){
       .then((response) => response.data)
       .then((data) => {
         setPost(data);
+        console.log(data);
       });
   }
   useEffect(() => {

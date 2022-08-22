@@ -248,7 +248,8 @@
   }
 
   .profile-photo{
-    height: auto;
+    height: 90%;
+
 
   }
   .darkest-white-hero{
@@ -265,7 +266,7 @@
   }
 
   .profile-photo{
-    height: 80%;
+    height: 60%;
   }
 
   .darkest-white-hero{
@@ -525,7 +526,7 @@
     display: inline-grid;
     grid-template-columns: auto auto auto;
     width: 85%;
-    margin-left: 8%;
+    margin-left: 5%;
     /* margin-left: 4rem; */
   }
 
@@ -538,7 +539,29 @@
   }
 }
 
+@media screen and (min-width:1920px) {
+  
+  .card-grid {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    width: 85%;
+    margin-left: 12%;
+    /* margin-left: 4rem; */
+  }
 
+  
+  .cardhero-header {
+    font-size: 4rem;
+  }
+  .cardhero {
+    height:90rem;
+    
+  }
+  .img-card{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 
 /* 
