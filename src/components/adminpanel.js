@@ -44,7 +44,7 @@ function AdminPanel() {
 
     const messages = message.map((item) => {
       return (
-        <div className = "comment-card" style = {{color: "black", }}>
+        <div className = "comment-card" style = {{color: "black", backgroundColor: "rgb(223 221 212)", }}>
           <div className = "comment-row">
             <span className="commentor" style = {{fontFamily: "'Antic Slab', serif", }}>{item.name}</span>
             <span className="comment-date"> {item.email}</span>
