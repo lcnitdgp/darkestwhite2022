@@ -30,7 +30,7 @@ function Card(props){
               <h6 className="blog-type">{props.item.type_of_post}</h6>
             </div>
             <div>
-              <h6 className="blog-type">{props.item.likes===1?"1 Like": props.item.likes+ "Likes"} </h6>
+              <h6 className="blog-type">{props.item.likes===1?"1 Like": props.item.likes+ " Likes"} </h6>
             </div>
             {/* <div>
               <img

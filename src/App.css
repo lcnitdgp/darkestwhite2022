@@ -398,7 +398,7 @@
      font-size: 2.5rem;
   }
   .cardhero{
-    height: 180rem;
+    height: auto;
 
   }
   .card-grid {
@@ -415,7 +415,7 @@
     font-size: 2.5rem;
   }
   .cardhero {
-    height: 200rem;
+    height: auto;
   }
   .card-grid {
     margin-left: 5%;
@@ -450,7 +450,7 @@
   }
 
   .cardhero {
-    height: 110rem;
+    height: auto;
   }
 }
 @media screen and (min-width:1024px) {
@@ -468,7 +468,7 @@
     font-size: 4rem;
   }
   .cardhero {
-    height:75rem;
+    height:auto;
   }
 }
 
@@ -1170,7 +1170,8 @@ button {
 
 @media only screen and (max-width: 380px) {
   .input{
-    width: 84vw;
+    width: 50vw;
+    font-size: revert;
   }
 }
 

@@ -71,6 +71,9 @@ function Admin() {
                 setUserName(e.target.value);
               }}
               value={username}
+              style={{
+                height: "auto",
+              }}
             />
           </div>
           <div className="item-login">
@@ -82,6 +85,9 @@ function Admin() {
                 setPassword(e.target.value);
               }}
               value={password}
+              style={{
+                height: "auto",
+              }}
             />{" "}
           </div>
           <span className="remember">
@@ -109,7 +115,7 @@ function Admin() {
         </div>
         <span className="ac">
           Don't have an Account?
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/signup"> Sign Up</Link>
         </span>
       </div>
     </div>

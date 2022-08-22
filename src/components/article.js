@@ -100,14 +100,21 @@ export default function Article(){
               Written and Edited by {post.author}, a piece close to their heart.
             </h4>
             <span className="like-but">
-              <Button onClick={handleLike}>
+              <Button
+                onClick={handleLike}
+                style={{
+                  padding: "0.5em 1em 0.5em 1em",
+                  background: "red",
+                  borderColor: "red",
+                }}
+              >
                 {!isLiked
                   ? post.likes == 1
                     ? "1 Like"
-                    : post.likes + " Likes"
+                    : post.likes + " Likes "
                   : post.likes == 0
                   ? "1 Like"
-                  : post.likes + " Likes"}
+                  : post.likes + " Likes "}
 
 
                 {!isLiked ? <FaHeart /> : <FaRegHeart />}
