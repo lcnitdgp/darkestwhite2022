@@ -163,22 +163,22 @@
 
 .hero {
   background-color: #dfdccf;
-  height: 28.5rem;
+  height: 25rem;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
 }
 .darkest-white-hero {
   font-family: "Cinzel", serif;
-  font-size: 1rem;
-  padding-left: 15vw;
+  font-size: 2rem;
+  padding-left: 10vw;
   text-align: center;
   position: relative;
-  bottom: 2rem;
+
 }
 .profile-photo {
   align-items: center;
-  height: 90%;
+  height: 50%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -187,30 +187,45 @@
   padding-top: 2rem;
 }
 
+@media screen and (min-width: 375px) {
+ .darkest-white-hero{
+  font-size: 2.5rem;
+  padding-left: 7vw;
+ }
+}
 
-@media screen and (min-width: 1440px) {
-  .hero {
-    height: 35rem;
-  }
-  .profile-photo {
-    height: auto;
-    max-width: 100%;
-    max-height: 90%;
+@media screen and (min-width: 375px){
+  .profile-photo{
+    height: 60%;
   }
   .darkest-white-hero{
-    font-size: 6rem;
-    padding-left: 25vw;
-    position: relative;
-    bottom: 4rem;
-  }
-  .cursor{
-    position: relative;
-    bottom: 4.5rem;
+    font-size: 2.5rem;
+    padding-left: 7vw;
   }
 }
 
+@media screen and (min-width: 375px){
+  .darkest-white-hero{
+    padding-left: 12.5vw;
+  }
+}
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px){
+
+  .hero{
+    height: 35rem;
+  }
+
+  .darkest-white-hero{
+    font-size: 4rem;
+    padding-left: 17vw;
+  }
+  .profile-photo{
+    height: 70%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .hero {
     height: 35rem;
   }
@@ -231,10 +246,30 @@
   }
 }
 
+@media screen and (min-width: 1440px) {
 
-@media screen and (max-width: 768px) {
+  .hero{
+    height: 45rem;
+  }
+
+  .profile-photo{
+    height: auto;
+
+  }
+  .darkest-white-hero{
+    font-size: 7rem;
+    padding-left: 20vw;
+  }
+}
+
+
+/* 
+} */
+
+
+/* @media screen and (max-width: 768px) {
   .hero {
-    height: 27rem;
+    height: 25rem;
   }
   .profile-photo {
     height: auto;
@@ -242,7 +277,7 @@
   }
   .darkest-white-hero {
     font-size: 3.5rem;
-    padding-left: 20.5vw;
+    padding-left: 12vw;
     position: relative;
     top: -2rem;
   }
@@ -261,8 +296,8 @@
     width: 70%;
   }
   .darkest-white-hero {
-    font-size: 2.3rem;
-    padding-left: 15vw;
+    font-size: 2.5rem;
+    padding-left: 16vw;
     position: relative;
     top: .5rem;
   }
@@ -282,10 +317,10 @@
     width: 70%;
   }
   .darkest-white-hero {
-    font-size: 1.7rem;
+    font-size: 2rem;
     padding-left: 16vw;
   }
-}
+} */
 
 /*styling of card*/
 .container-card{
@@ -398,7 +433,7 @@
      font-size: 2.5rem;
   }
   .cardhero{
-    height: auto;
+    height: 180rem;
 
   }
   .card-grid {
@@ -415,7 +450,7 @@
     font-size: 2.5rem;
   }
   .cardhero {
-    height: auto;
+    height: 200rem;
   }
   .card-grid {
     margin-left: 5%;
@@ -450,7 +485,7 @@
   }
 
   .cardhero {
-    height: auto;
+    height: 110rem;
   }
 }
 @media screen and (min-width:1024px) {
@@ -468,7 +503,7 @@
     font-size: 4rem;
   }
   .cardhero {
-    height:auto;
+    height:75rem;
   }
 }
 
@@ -1170,8 +1205,7 @@ button {
 
 @media only screen and (max-width: 380px) {
   .input{
-    width: 50vw;
-    font-size: revert;
+    width: 84vw;
   }
 }
 
