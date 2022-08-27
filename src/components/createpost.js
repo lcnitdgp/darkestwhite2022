@@ -14,6 +14,21 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+const token_key = "USER_TOKEN";
+
+ const getToken = () => {
+   let token = window.localStorage.getItem(token_key);
+    console.log(token + "article");
+   if (token) return token;
+   
+   return false;
+
+ };
+
+ let token = getToken();
+
 
 export default function Create() {
  const [author, setAuthor] = useState("");
@@ -30,10 +45,13 @@ export default function Create() {
     setFileInputState(e.target.value);
   };
 
-  
+
      
  const handleSubmit = async (e) => {
    e.preventDefault();
+   if(!token)
+    toast("You're not Logged In to perform this action");   
+  
    if (!selectedFile) return;
    const reader = new FileReader();
    reader.readAsDataURL(selectedFile);
@@ -46,13 +64,15 @@ export default function Create() {
        image: reader.result,
      },{
       headers:{
-        "Authorization":`Bearer ${localStorage.getItem("USER_TOKEN")}`
+         Authorization: `Bearer ${token}`,
       }
      })
      .then((res) => {
        console.log(res);
        console.log("submit");
-       alert("submitted");
+        
+      
+       toast("submitted");
               //window.location.replace = "/";
      })
 
@@ -65,7 +85,7 @@ export default function Create() {
    reader.onerror = () => {
      console.error("AHHHHHHHH!!");
    };
-      
+   
  };
   
  
@@ -139,6 +159,7 @@ export default function Create() {
             >
               SUBMIT
             </Button>
+            <ToastContainer/>
           </Row>
         </form>
       </Container>

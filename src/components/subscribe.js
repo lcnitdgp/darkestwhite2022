@@ -17,27 +17,27 @@ import {
 
 const token_key = "USER_TOKEN";
 const user_id = 'USER_ID'
-
-function Subscribe() {
-  
- 
  const getToken = () => {
    let token = window.localStorage.getItem(token_key);
    if (!!token) return token;
    return false;
  };
+
+ let token = getToken();
+
+function Subscribe() {
+  
+ 
+
   const uid = localStorage.getItem("USER_ID");
 
-  console.log(uid);
+  
 
- const isLogin = () => {
-   if (!!getToken()) {
-     return true;
-   }
-   return false;
- };
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!uid)
+    toast("You need to log in");
     await axios
       .put(`http://localhost:5000/user/subscribe/${uid}`, {
         uid: uid,
@@ -49,8 +49,8 @@ function Subscribe() {
       })
 
       .catch((err) => console.log(err));
-    {
-      isLogin ? toast("subscribed") : (window.location = "/signup");
+    { 
+      token ? toast("subscribed") : toast(" not subscribed");
       console.log("submit");
     }
   };
@@ -71,7 +71,7 @@ const handleMouseLeave = () => {
     
   return (
     <div className="subscribe">
-      <h1 className="sub-heading">Subscribe to our Newsletter</h1>
+      <h1 className="sub-heading">Subscribe to our Blog</h1>
       <h4 className="sub-text">
         Sed ut perspiciatis unde omnis iste natus error sit volu accusa ntium
         doloremque laudantium, ut perspiciatis utota.
@@ -92,7 +92,7 @@ const handleMouseLeave = () => {
        onMouseEnter={handleMouseEnter}
        onMouseLeave={handleMouseLeave}
       >
-     {isLogin?"Subscribe":"Login to Subscribe"}
+     {token?"Subscribe":"Login to Subscribe"}
       </Button>
       <ToastContainer />
     </div>

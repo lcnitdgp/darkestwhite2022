@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const user_id = "USER_ID";
 const token_key = "USER_TOKEN";
 
@@ -23,7 +25,8 @@ function CommentForm() {
     e.preventDefault();
 
     console.log(token);
-
+  if(!token)
+  toast("You need to LogIn to perform this action.")
     await axios
       .post(
         `http://localhost:5000/blog/${params.id}/comments`,
@@ -61,6 +64,7 @@ function CommentForm() {
           <button type="submit" onClick={handleSubmit}>
             Submit
           </button>
+          <ToastContainer/>
         </div>
       </form>
     </div>

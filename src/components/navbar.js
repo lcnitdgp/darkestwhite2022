@@ -2,6 +2,8 @@ import React from 'react'
 import "../App.css";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from 'axios';
+import { useState } from 'react';
 
 
 import {
@@ -17,7 +19,8 @@ import {
 const token_key = "USER_TOKEN";
 
 function NavbarNew() {
-   const [show, setShow] = React.useState(false);
+   const [show, setShow] = useState(false);
+   
 
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
@@ -28,17 +31,32 @@ function NavbarNew() {
      return false;
    };
 
-   const isLogin = () => {
-     if (getToken()) {
-       return true;
-     }
-     return false;
-   };
+   let token = getToken();
+const [isLogin, setIsLogin] = useState(token);
+  
 
-    const logout = () => {
+    const logout = async (e) => {
+      e.preventDefault();
+      if(!token)
+      window.location.replace('/userlogin');
      window.localStorage.clear();
+       await axios
+       .get(`http://localhost:5000/user/logout`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+       .then((res) => {
+        
+         setIsLogin(false);
+        
+         console.log(res);
+       })
+
+       .catch((err) => console.log(err));
      
    };
+ 
   return (
     <Navbar collapseOnSelect expand="lg" className="navbar">
       <Container>
@@ -81,7 +99,7 @@ function NavbarNew() {
                 to="/create"
                 style={{ color: "inherit", textDecoration: "inherit" }}
               >
-                {isLogin ? "CREATE POST" : ""}
+                {isLogin? "CREATE POST" : ""}
               </Link>
             </Nav.Link>
             <Nav.Link>
@@ -90,7 +108,7 @@ function NavbarNew() {
                 style={{ color: "inherit", textDecoration: "inherit" }}
                 onClick={logout}
               >
-                {isLogin ? "LOGOUT" : "LOGIN"}
+                {isLogin? "LOGOUT" : "LOGIN"}
 
               
                 

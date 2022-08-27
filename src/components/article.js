@@ -6,6 +6,8 @@ import axios from "axios";
 import {useState, useEffect} from 'react';
 import { data } from "jquery";
 import {Button} from 'react-bootstrap';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const user_id = "USER_ID";
 const token_key = "USER_TOKEN";
@@ -19,17 +21,27 @@ const getToken = () => {
 
 let token = getToken();
 
+let x = 0;
+
+
 export default function Article(){
+
+  
 
    const params = useParams();
 
+   
+     
+     
+    
+
    const [isLiked,setIsLiked] = useState(false);
+   const [likes, setLikes] = useState(); 
+  
   
     
-     let uid = window.localStorage.getItem(user_id);
-
    
- 
+
     
 
 
@@ -60,12 +72,15 @@ export default function Article(){
      .get(`http://localhost:5000/blog/${params.id}`)
      .then((response) => response.data)
      .then((data) => {
+
        setPost(data);
+       
+       
        
        
      });
 
-   
+    
     
  }
  useEffect(() => {
@@ -74,10 +89,22 @@ export default function Article(){
    const handleLike = async (e) => {
      e.preventDefault();
    
-
-     setIsLiked((prevLiked) => !prevLiked);
-     console.log(isLiked);
-     console.log(post.likes);
+ axios
+   .get(`http://localhost:5000/blog/${params.id}`)
+   .then((response) => response.data)
+   .then((data) => {
+   
+     console.log(data.likedBy);
+     if (data.likedBy.includes(uid)) setIsLiked(true);
+     else setIsLiked(false);
+   
+     //console.log(isLiked);
+    
+    
+   });
+     
+   if (!token) toast("You're not Logged In to perform this action"); 
+     
      await axios
        .post(`http://localhost:5000/blog/like`, {
          id: params.id,
@@ -90,6 +117,9 @@ export default function Article(){
        .then((res) => {
         
          console.log("sent id");
+         setLikes(res.data.likes);
+         console.log(res.data.likes);
+        
          //window.location.reload();
        })
 
@@ -122,18 +152,21 @@ export default function Article(){
                   borderColor: "red",
                 }}
               >
-                {isLiked==true
-                  ? post.likes == 1
+
+                {!likes>=0?post.likes+ " likes":
+                isLiked==true
+                  ? likes == 1
                     ? "1 Like "
-                    : post.likes + " Likes "
-                  : post.likes == 0
+                    : likes + " Likes "
+                  : likes == 0
                   ? "1 Like "
-                  : post.likes + " Likes "}
+                  : likes + " Likes "}
 
 
-                {isLiked==true ? <FaHeart /> : <FaRegHeart />}
+                {isLiked==false ? <FaHeart /> : <FaRegHeart />}
               
               </Button>
+              <ToastContainer/>
             </span>
           </article>
         </blog-article>
