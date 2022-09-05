@@ -39,7 +39,7 @@ function Subscribe() {
     if(!uid)
     toast("You need to log in");
     await axios
-      .put(`http://localhost:5000/user/subscribe/${uid}`, {
+      .put(`https://darkestwhitebackend.lcnitd.co.in/user/subscribe/${uid}`, {
         uid: uid,
       })
       .then((res) => {

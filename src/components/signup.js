@@ -39,7 +39,7 @@ function Signup()  {
 
    
    await axios
-     .post(`http://localhost:5000/signup`, {
+     .post(`https://darkestwhitebackend.lcnitd.co.in/signup`, {
        name: name,
        email: email,
        username: username,
@@ -119,17 +119,17 @@ function Signup()  {
               value={password}
             />{" "}
           </div>
-          <span className="remember">
+          {/* <span className="remember">
             {" "}
             <a href="#">Forgot Password?</a>{" "}
-          </span>
+          </span> */}
           <div className="item submit">
             <button type="submit" onClick={handleSubmit}>
               Submit
             </button>
           </div>
         </form>
-        <h2 className="or">OR</h2>
+        {/* <h2 className="or">OR</h2>
         <div className="social-media">
           {!loginStatus && (<GoogleLogin
             clientId="729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com"
@@ -149,7 +149,7 @@ function Signup()  {
               />
             </div>
           )}
-        </div>
+        </div> */}
         <span className="ac">
           Have an Account? <Link to="/userlogin">Log In</Link>
         </span>

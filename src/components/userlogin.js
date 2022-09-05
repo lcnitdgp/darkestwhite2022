@@ -31,7 +31,7 @@ function Userlogin(){
         e.preventDefault();
 
         await axios
-          .post(`http://localhost:5000/user/login`, {
+          .post(`https://darkestwhitebackend.lcnitd.co.in/user/login`, {
             
             username: username,
             password: password,
@@ -100,10 +100,10 @@ function Userlogin(){
                 value={password}
               />{" "}
             </div>
-            <span className="remember">
+            {/* <span className="remember">
               {" "}
               <a href="#">Forgot Password?</a>{" "}
-            </span>
+            </span> */}
             <div className="item submit">
               <button type="submit" onClick={handleSubmit}>
                 Submit
@@ -111,15 +111,15 @@ function Userlogin(){
               <ToastContainer/>
             </div>
           </form>
-          <h2 className="or">OR</h2>
+          {/* <h2 className="or">OR</h2>
           <div className="social-media">
             
 
            
-          </div>
+          </div> */}
           <span className="ac">
             Don't have an Account? {}
-            <Link to="/signup">SignUp</Link>
+            <Link to="/signup">Sign Up</Link>
           </span>
         </div>
       </div>

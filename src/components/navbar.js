@@ -41,7 +41,7 @@ const [isLogin, setIsLogin] = useState(token);
       window.location.replace('/userlogin');
      window.localStorage.clear();
        await axios
-       .get(`http://localhost:5000/user/logout`, {
+       .get(`https://darkestwhitebackend.lcnitd.co.in/user/logout`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

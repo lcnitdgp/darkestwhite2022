@@ -49,7 +49,7 @@ export default function Article(){
     e.preventDefault();
 
     await axios
-      .post(`http://localhost:5000/blog/publishblog/${params.id}`, {
+      .post(`https://darkestwhitebackend.lcnitd.co.in/blog/publishblog/${params.id}`, {
     
       })
       .then((res) => {
@@ -69,7 +69,7 @@ export default function Article(){
 
  function getPosts() {
    axios
-     .get(`http://localhost:5000/blog/${params.id}`)
+     .get(`https://darkestwhitebackend.lcnitd.co.in/blog/${params.id}`)
      .then((response) => response.data)
      .then((data) => {
 
@@ -90,7 +90,7 @@ export default function Article(){
      e.preventDefault();
    
  axios
-   .get(`http://localhost:5000/blog/${params.id}`)
+   .get(`https://darkestwhitebackend.lcnitd.co.in/blog/${params.id}`)
    .then((response) => response.data)
    .then((data) => {
    
@@ -106,7 +106,7 @@ export default function Article(){
    if (!token) toast("You're not Logged In to perform this action"); 
      
      await axios
-       .post(`http://localhost:5000/blog/like`, {
+       .post(`https://darkestwhitebackend.lcnitd.co.in/blog/like`, {
          id: params.id,
          user_id: uid,
        }, {

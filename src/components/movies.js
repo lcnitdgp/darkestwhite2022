@@ -15,7 +15,7 @@ export default function Posts() {
 
   function getPosts() {
     axios
-      .get("http://localhost:5000/blog/getallblogs")
+      .get("https://darkestwhitebackend.lcnitd.co.in/blog/getallblogs")
       .then((response) => response.data)
       .then((data) => {
         setPost(data);

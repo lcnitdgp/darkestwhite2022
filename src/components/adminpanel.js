@@ -27,7 +27,7 @@ function AdminPanel() {
 
    function getMessages() {
      axios
-       .get("http://localhost:5000/message/getmsg")
+       .get("https://darkestwhitebackend.lcnitd.co.in/message/getmsg")
        .then((response) => response.data)
        .then((data) => {
          setMessage(data);

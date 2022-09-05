@@ -17,7 +17,7 @@ function AdminCard(props) {
   //   e.preventDefault();
 
   //   await axios
-  //     .post(`http://localhost:5000/blog/publishblog/${props.item._id}`, {
+  //     .post(`https://darkestwhitebackend.lcnitd.co.in/blog/publishblog/${props.item._id}`, {
     
   //     })
   //     .then((res) => {
