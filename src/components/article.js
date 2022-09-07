@@ -95,13 +95,9 @@ export default function Article(){
    .then((data) => {
    
      console.log(data.likedBy);
-     if (data.likedBy.includes(uid)) setIsLiked(true);
-     else setIsLiked(false);
+     (data.likedBy.includes(uid))? setIsLiked(true) : setIsLiked(false);
      setLikes(data.likedBy.length);
-     console.log(isLiked);
-   
-     //console.log(isLiked);
-    
+     console.log(isLiked);    
     
    });
      
