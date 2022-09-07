@@ -36,7 +36,7 @@ export default function Article(){
     
 
    const [isLiked,setIsLiked] = useState(false);
-   const [likes, setLikes] = useState(); 
+   const [likes, setLikes] = useState(0); 
   
   
     
@@ -97,6 +97,8 @@ export default function Article(){
      console.log(data.likedBy);
      if (data.likedBy.includes(uid)) setIsLiked(true);
      else setIsLiked(false);
+     setLikes(data.likedBy.length);
+     console.log(isLiked);
    
      //console.log(isLiked);
     
@@ -115,12 +117,8 @@ export default function Article(){
         },
       })
        .then((res) => {
-        
+        console.log(res.data);
          console.log("sent id");
-         setLikes(res.data.likes);
-         console.log(res.data.likes);
-        
-         //window.location.reload();
        })
 
        .catch((err) => console.log(err));
@@ -153,17 +151,8 @@ export default function Article(){
                 }}
               >
 
-                {!likes>=0?post.likes+ " likes":
-                isLiked==true
-                  ? likes == 1
-                    ? "1 Like "
-                    : likes + " Likes "
-                  : likes == 0
-                  ? "1 Like "
-                  : likes + " Likes "}
-
-
-                {isLiked==false ? <FaHeart /> : <FaRegHeart />}
+                { likes == 1 ? likes + " Like ": likes + " Likes "}
+                {isLiked==true ? <FaHeart /> : <FaRegHeart />}
               
               </Button>
               <ToastContainer/>
