@@ -77,12 +77,8 @@
 
 @media screen and (max-device-width: 425px) {
   .navbar-title {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin-left: -0.2rem;
-  }
-  .navbar-toggler-icon {
-    height: 1em;
-    width: 1em;
   }
 }
 
@@ -167,7 +163,7 @@
 
 .hero {
   background-color: #dfdccf;
-  max-height: fit-content;
+  height: 25rem;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -186,7 +182,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  /* width: 70%; */
   object-fit: cover;
   padding-top: 2rem;
 }
@@ -205,13 +201,17 @@
   }
   .darkest-white-hero{
     font-size: 2.5rem;
-    padding-left: 14vw;
+    padding-left: 12vw;
   }
 }
 
 
 
 @media screen and (min-width: 768px){
+
+  .hero{
+    max-height: 35rem;
+  }
 
   .darkest-white-hero{
     font-size: 4rem;
@@ -351,8 +351,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 84vw;
-  max-width: 80%;
+  width: 80%;
   height: auto;
   max-height: 100%;
 }
@@ -486,7 +485,7 @@
     display: block;
     margin-left: auto;
     padding-right: auto;
-    width: 23vw;
+    width: 90%;
     max-width: 24vw;
   }
 
@@ -773,7 +772,7 @@
 
 .footer-socials {
   text-align: center;
-  padding: 0 40vw 0 40vw;
+  padding: 0 35vw 0 35vw;
 }
 
 .copyright {
@@ -784,12 +783,11 @@
 
 @media screen and (max-width: 1925px) {
   .footer {
-    height: 30rem;
-    max-height: fit-content;
+    height: 35rem;
   }
 
   .footer-title {
-    padding-top: 10rem;
+    padding-top: 15rem;
     font-size: 3rem;
   }
 
@@ -809,11 +807,11 @@
 
 @media screen and (max-width: 770px) {
   .footer {
-    height: 25rem;
+    height: 30rem;
   }
 
   .footer-title {
-    padding-top: 7rem;
+    padding-top: 12rem;
     font-size: 2.5rem;
   }
 
@@ -826,7 +824,7 @@
   }
 
   .copyright {
-    margin-top: 20vh;
+    margin-top: 10rem;
   }
 }
 
@@ -842,7 +840,7 @@
   }
 
   .footer-title {
-    padding-top: 10vh;
+    padding-top: 12rem;
     text-align: center;
     font-size: 5vh;
   }
@@ -853,7 +851,7 @@
   }
 
   .footer-socials {
-    padding: 0 29vw 0 29vw;
+    padding: 0 30vw 0 30vw;
   }
 
   .tagline {
@@ -868,8 +866,7 @@
 
 @media screen and (max-width: 377px) {
   .footer {
-    height: 44vh;
-    min-height: fit-content;
+    height: 30rem;
   }
   .footer-title {
     padding-top: 5vh;
@@ -1333,9 +1330,9 @@ button {
 .movies{
   display: inline-grid;
   width: 90%;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   margin-left: 5%;
-  padding-bottom: 5vh;
+
 }
    
 }

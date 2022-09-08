@@ -40,7 +40,7 @@ function CommentForm() {
       .then((res) => {
         console.log(res);
         console.log("submit comment");
-        window.location = `/blog/${params.id}`;
+        //window.location.replace = "/";
       })
 
       .catch((err) => console.log(err));

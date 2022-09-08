@@ -30,12 +30,7 @@ function Card(props){
               <h6 className="blog-type">{props.item.type_of_post}</h6>
             </div>
             <div>
-              <h6 className="blog-type">
-                {props.item.likes===1?"1 Like ": props.item.likes+ " Likes "}
-                {props.item.comments?.length === 1
-                  ? 1 + " Comment"
-                  : props.item.comments?.length + " Comments"}
-              </h6>
+              <h6 className="blog-type">{props.item.likes===1?"1 Like": props.item.likes+ " Likes"} </h6>
             </div>
             {/* <div>
               <img
@@ -45,14 +40,14 @@ function Card(props){
               />
             </div> */}
             
-            {/* <div>
+            <div>
               {" "}
               <h6 className="blog-comment">
                 {props.item.comments?.length === 1
-                  ? 1 + " Comment"
-                  : props.item.comments?.length + " Comments"}
+                  ? 1 + " comment"
+                  : props.item.comments?.length + " comments"}
               </h6>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
