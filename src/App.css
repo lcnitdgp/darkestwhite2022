@@ -195,6 +195,7 @@
 }
 
 @media screen and (min-width: 425px){
+
   .profile-photo{
     height: 60%;
   }
@@ -209,7 +210,7 @@
 @media screen and (min-width: 768px){
 
   .hero{
-    height: 35rem;
+    max-height: 35rem;
   }
 
   .darkest-white-hero{
@@ -334,6 +335,7 @@
     padding-left: 16vw;
   }
 } */
+
 
 /*styling of card*/
 .container-card{
@@ -671,8 +673,7 @@
   padding-top: 2rem;
   font-size: 2.7rem;
   font-weight: 100;
-  padding-left: 2rem;
-
+  text-align: center;
 }
 .intro{
   color: white;
@@ -906,7 +907,7 @@ article{
   justify-content: center;
 }
 .img-article{
-  border : solid 2px red;
+  border : solid 2px #ffcf00;
   margin-block-end: 15px;
   width: 60%;
   height: auto;
@@ -918,7 +919,7 @@ article > h1{
   font-size: 12vh;
   max-width: 100%;
   font-family: "Cinzel", serif;
-  color: red;
+  color: #ffcf00;
 }
 article > h4{
   font-family: 'Antic Slab', serif;
@@ -992,6 +993,29 @@ article > h4{
 }
 
 @media only screen and (max-width: 500px){
+  blog-article{
+    flex-direction: column-reverse;
+  }
+  blog-text{
+    width: 100%;
+  }
+  blog-text > p{
+    font-size: 4vh;
+  }
+  article{
+    width: 100%;
+    padding-bottom: 5vw;
+  }
+  article > h1{
+    font-size: 12vh;
+  }
+  article > h4{
+    font-size: 5vh;
+  }
+  .like-but{
+    color: white;
+    
+  }  
   .cheading  {
     font-size: 6vh;
   }
