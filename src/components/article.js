@@ -72,11 +72,8 @@ export default function Article(){
      .get(`https://darkestwhitebackend.lcnitd.co.in/blog/${params.id}`)
      .then((response) => response.data)
      .then((data) => {
-
        setPost(data);
-       
-       
-       
+       setLikes(data.likes);     
        
      });
 
@@ -142,8 +139,8 @@ export default function Article(){
                 onClick={handleLike}
                 style={{
                   padding: "0.5em 1em 0.5em 1em",
-                  background: "red",
-                  borderColor: "red",
+                  background: "rgb(139 112 0)",
+                  borderColor: "rgb(139 112 0)",
                 }}
               >
 
