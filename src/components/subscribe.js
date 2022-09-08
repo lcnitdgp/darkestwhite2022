@@ -37,7 +37,7 @@ function Subscribe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(!uid)
-    toast("You need to log in");
+    window.location= "/userlogin";
     await axios
       .put(`https://darkestwhitebackend.lcnitd.co.in/user/subscribe/${uid}`, {
         uid: uid,
@@ -73,8 +73,7 @@ const handleMouseLeave = () => {
     <div className="subscribe">
       <h1 className="sub-heading">Subscribe to our Blog</h1>
       <h4 className="sub-text">
-        Sed ut perspiciatis unde omnis iste natus error sit volu accusa ntium
-        doloremque laudantium, ut perspiciatis utota.
+       Receive updates whenever a new blog is posted, right in your inbox!
       </h4>
       <Button
         className="button-subscribe"

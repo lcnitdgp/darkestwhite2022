@@ -73,6 +73,7 @@ function Signup()  {
               }}
               style={{
                 height: "auto",
+                width: "100%",
               }}
               value={name}
             />
@@ -87,6 +88,7 @@ function Signup()  {
               }}
               style={{
                 height: "auto",
+                width: "100%",
               }}
               value={email}
             />
@@ -101,6 +103,8 @@ function Signup()  {
               }}
               style={{
                 height: "auto",
+                width: "100%",
+
               }}
               value={username}
             />
@@ -115,6 +119,8 @@ function Signup()  {
               }}
               style={{
                 height: "auto",
+                width: "100%",
+
               }}
               value={password}
             />{" "}

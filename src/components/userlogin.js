@@ -82,6 +82,8 @@ function Userlogin(){
                 }}
                 style={{
                   height: "auto",
+                  width: "100%",
+                  // maxWidth: "20vw",
                 }}
                 value={username}
               />
@@ -93,6 +95,9 @@ function Userlogin(){
                 placeholder="Password"
                 style={{
                   height: "auto",
+                  width: "100%",
+
+                  // maxWidth: "20vw",
                 }}
                 onChange={(e) => {
                   setPassword(e.target.value);
