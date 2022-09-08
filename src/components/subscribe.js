@@ -70,7 +70,7 @@ const handleMouseLeave = () => {
 };
     
   return (
-    <div className="subscribe">
+    <div className="subscribe" style={{height: "max-content"}}>
       <h1 className="sub-heading">Subscribe to our Blog</h1>
       <h4 className="sub-text">
         Sed ut perspiciatis unde omnis iste natus error sit volu accusa ntium
