@@ -74,8 +74,7 @@ export default function Article(){
      .then((data) => {
 
        setPost(data);
-       console.log(data);
-       setLikes(data.likes);  
+       
        
        
        
@@ -143,8 +142,8 @@ export default function Article(){
                 onClick={handleLike}
                 style={{
                   padding: "0.5em 1em 0.5em 1em",
-                  background: "rgb(139 112 0)",
-                  borderColor: "rgb(139 112 0)",
+                  background: "red",
+                  borderColor: "red",
                 }}
               >
 
