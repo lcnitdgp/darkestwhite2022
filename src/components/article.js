@@ -47,7 +47,8 @@ export default function Article(){
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+           if(token)
+           {
     await axios
       .post(`https://darkestwhitebackend.lcnitd.co.in/blog/publishblog/${params.id}`, {
     
@@ -59,7 +60,7 @@ export default function Article(){
       })
 
       .catch((err) => console.log(err));
-  };
+  }};
     
  
 
@@ -92,14 +93,16 @@ export default function Article(){
    .then((data) => {
    
      console.log(data.likedBy);
-     (data.likedBy.includes(uid))? setIsLiked(true) : setIsLiked(false);
+     (data.likedBy.includes(uid) && token)? setIsLiked(true) : setIsLiked(false);
      setLikes(data.likedBy.length);
      console.log(isLiked);    
     
    });
      
-   if (!token) toast("You're not Logged In to perform this action"); 
-     
+   if (!token) 
+   toast("You're not Logged In to perform this action"); 
+
+     if(token){
      await axios
        .post(`https://darkestwhitebackend.lcnitd.co.in/blog/like`, {
          id: params.id,
@@ -115,7 +118,7 @@ export default function Article(){
        })
 
        .catch((err) => console.log(err));
-   };
+   }};
     return (
       <div>
         <NavbarNew />
