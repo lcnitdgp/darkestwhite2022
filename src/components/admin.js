@@ -50,7 +50,6 @@ function Admin() {
         const user_id = res.data.user[0]._id;
 
         setId(user_id);
-        toast.success("logged in");
          if (res.data.user[0].isAdmin)
            window.location = "/adminpanel";
            console.log("submit");

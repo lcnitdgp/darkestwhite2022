@@ -5,6 +5,8 @@ import {useState} from 'react';
 
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { GoogleLogin, GoogleLogout } from "react-google-login";
+
 
 const token_key = "USER_TOKEN";
 
@@ -23,6 +25,10 @@ function Userlogin(){
     setEmail(response.profileObj.email);
     setUrl(response.profileObj.imageUrl);
     setLoginStatus(true);
+  };
+  const logout = () => {
+    console.log("logged out");
+    setLoginStatus(false);
   };
   
       const [username, setUserName] = useState("");
@@ -116,12 +122,30 @@ function Userlogin(){
               <ToastContainer/>
             </div>
           </form>
-          {/* <h2 className="or">OR</h2>
+          <h2 className="or">OR</h2>
           <div className="social-media">
-            
-
-           
-          </div> */}
+          {!loginStatus && (
+              <GoogleLogin
+                clientId="729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com"
+                buttonText="Login"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={"single_host_origin"}
+                isSignedIn={true}
+                uxMode="redirect"
+                redirectUri="http://localhost/"
+              />
+            )}           
+             {loginStatus && (
+              <div>
+                <GoogleLogout
+                  clientId="729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com"
+                  buttonText="Logout"
+                  onLogoutSuccess={logout}
+                />
+              </div>
+            )}
+          </div>
           <span className="ac">
             Don't have an Account? {}
             <Link to="/signup">Sign Up</Link>

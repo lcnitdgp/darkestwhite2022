@@ -10,6 +10,7 @@ import Contactpage from './contactpage';
 import Userlogin from './components/userlogin';
 import reportWebVitals from './reportWebVitals';
 import Signup from './components/signup';
+import Verify from './components/userverify';
 import Movies from './components/movies';
 
 import Blogdisplay from './components/Blogdisplay';
@@ -30,6 +31,7 @@ root.render(
         <Route path="blog/:id" element={<Blogdisplay />}></Route>
         <Route path="blogadmin/:id" element={<BlogdisplayAdmin />}></Route>
         <Route path="posts" element={<Movies />}></Route>
+        <Route path="userverify" element={<Verify />}></Route>
         
         <Route path="create" element={<Create />}></Route>
         <Route path="admin" element={<Admin />}></Route>

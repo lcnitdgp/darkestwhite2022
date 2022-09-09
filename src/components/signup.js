@@ -17,9 +17,7 @@ function Signup()  {
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
    const [username, setUserName] = useState("");
-
    const [password, setPassword] = useState("");
-
    
    const [url, setUrl] = useState("");
    const [loginStatus, setLoginStatus] = useState(false);
@@ -39,16 +37,16 @@ function Signup()  {
 
    
    await axios
-     .post(`https://darkestwhitebackend.lcnitd.co.in/signup`, {
+     .post(`http://localhost:5000/user/signup`, {
        name: name,
        email: email,
-       username: username,
+        username: username,
        password: password,
      })
      .then((res) => {
        console.log(res);
        console.log("submit");
-       window.location.replace = "/";
+       window.location = "/userverify";
      })
 
      .catch((err) => console.log(err));
@@ -135,7 +133,7 @@ function Signup()  {
             </button>
           </div>
         </form>
-        {/* <h2 className="or">OR</h2>
+        <h2 className="or">OR</h2>
         <div className="social-media">
           {!loginStatus && (<GoogleLogin
             clientId="729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com"
@@ -155,7 +153,7 @@ function Signup()  {
               />
             </div>
           )}
-        </div> */}
+        </div>
         <span className="ac">
           Have an Account? <Link to="/userlogin">Log In</Link>
         </span>
