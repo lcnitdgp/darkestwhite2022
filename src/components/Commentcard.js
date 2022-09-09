@@ -1,5 +1,6 @@
 import "../App.js"
 export default function Commentcard(props) {
+  console.log(props);
 
   const dateToTime = date => date.toLocaleString('en-US', {
     hour: 'numeric',

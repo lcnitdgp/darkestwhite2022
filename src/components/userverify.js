@@ -16,22 +16,27 @@ function VerifyUser(){
        
       const [OTP, setOTP] = useState("");
       const handleSubmit = async (e) => {
+        console.log(OTP);
         e.preventDefault();
 
         await axios
-          .get(`http://localhost:5000/user/verify`, {
+          .post(`http://localhost:5000/user/verify`, {
             uniqueString: OTP,
           })
           .then((res) => {
-            
-             
-             const token = res.data.token;
+            console.log(res);
+            if(res.data.success === true){
+              const token = res.data.token;
              const user_id = res.data.user[0]._id;
-              console.log(res.data);
              setToken(token);
              setId(user_id);
-             toast("verified");
+             toast("Verified");
              window.location = "/";
+            }
+            else{
+              toast("Incorrect OTP.")
+            }
+            
               
           })
           .catch((err) => console.log(err));
@@ -60,7 +65,7 @@ function VerifyUser(){
             Enter Otp
           </h3>
             <div>
-              <OTPInput style = {{}} value = {OTP} onChange = {setOTP} autoFocus OTPLength={8} otpType="number" disabled={false}  />
+              <OTPInput style = {{}} value = {OTP} onChange = {setOTP} autoFocus OTPLength={6} otpType="number" disabled={false}  />
             </div>
             <div className="item submit">
               <button type="submit" onClick={handleSubmit}>
