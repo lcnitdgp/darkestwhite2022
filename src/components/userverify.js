@@ -24,19 +24,17 @@ function VerifyUser(){
             uniqueString: OTP,
           })
           .then((res) => {
-            console.log(res);
-            if(res.data.success === true){
+            console.log(res)
+             if(res.data.success == true){
               const token = res.data.token;
-             const user_id = res.data.user[0]._id;
+             const user_id = res.data.user._id;
+              console.log(res.data);
              setToken(token);
              setId(user_id);
              toast("Verified");
              window.location = "/";
-            }
-            else{
-              toast("Incorrect OTP.")
-            }
-            
+             }
+             
               
           })
           .catch((err) => console.log(err));
