@@ -19,19 +19,21 @@ function VerifyUser(){
         e.preventDefault();
 
         await axios
-          .get(`http://localhost:5000/user/verify`, {
+          .post(`http://localhost:5000/user/verify`, {
             uniqueString: OTP,
           })
           .then((res) => {
-            
-             
-             const token = res.data.token;
-             const user_id = res.data.user[0]._id;
+            console.log(res)
+             if(res.data.success == true){
+              const token = res.data.token;
+             const user_id = res.data.user._id;
               console.log(res.data);
              setToken(token);
              setId(user_id);
              toast("verified");
              window.location = "/";
+             }
+             
               
           })
           .catch((err) => console.log(err));
