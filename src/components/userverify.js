@@ -16,6 +16,7 @@ function VerifyUser(){
        
       const [OTP, setOTP] = useState("");
       const handleSubmit = async (e) => {
+        console.log(OTP);
         e.preventDefault();
 
         await axios
@@ -30,7 +31,7 @@ function VerifyUser(){
               console.log(res.data);
              setToken(token);
              setId(user_id);
-             toast("verified");
+             toast("Verified");
              window.location = "/";
              }
              
@@ -62,7 +63,7 @@ function VerifyUser(){
             Enter Otp
           </h3>
             <div>
-              <OTPInput style = {{}} value = {OTP} onChange = {setOTP} autoFocus OTPLength={8} otpType="number" disabled={false}  />
+              <OTPInput style = {{}} value = {OTP} onChange = {setOTP} autoFocus OTPLength={6} otpType="number" disabled={false}  />
             </div>
             <div className="item submit">
               <button type="submit" onClick={handleSubmit}>

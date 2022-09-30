@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Container, Row, Col, Button } from "react-bootstrap";
+
 const user_id = "USER_ID";
 const token_key = "USER_TOKEN";
+
 
 function CommentForm() {
   const [comment, setComment] = useState("");
@@ -57,13 +60,30 @@ function CommentForm() {
               setComment(e.target.value);
             }}
             value={comment}
+            style={{
+              fontSize: "2.3vh",
+              resize: "none",
+            }}
           />
         </div>
 
         <div className="item submit">
-          <button type="submit" onClick={handleSubmit}>
+        <Button
+          variant="outline-light"
+          style={{
+              borderRadius: "0%",
+              width: "10%",
+              minWidth: "min-content",
+              marginBottom: "2rem",
+              borderRadius: "0.3rem",
+          }}
+          onClick={handleSubmit}
+        >
+        SUBMIT
+        </Button>
+          {/* <button type="submit" onClick={handleSubmit}>
             Submit
-          </button>
+          </button> */}
           <ToastContainer/>
         </div>
       </form>

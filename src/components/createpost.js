@@ -94,7 +94,7 @@ export default function Create() {
   return (
     <div>
       <NavbarNew />
-
+    <div className = "main-create-hero">
       <Container className="create-hero">
         <h1 className="create-header">POST YOUR BLOG</h1>
         <form >
@@ -143,13 +143,16 @@ export default function Create() {
               placeholder="upload image"
               onChange={handleFileInputChange}
               value={fileInputState}
+              style={{
+                color: "aliceblue",
+              }}
             />
           </Row>
 
           <Row className="create-fields">
             <Button
               className="button-create"
-              variant="outline-dark"
+              variant="outline-light"
               style={{
                 borderRadius: "0%",
                 width: "60%",
@@ -163,6 +166,7 @@ export default function Create() {
           </Row>
         </form>
       </Container>
+    </div>
       <Footer />
       <ScrollArrow />
     </div>

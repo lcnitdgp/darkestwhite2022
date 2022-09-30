@@ -1032,6 +1032,7 @@ article > h4{
     margin: 1vh 1vw 1vh 1vw;
     width: 27vw;
     height: max-content;
+    min-width: min-content;
     background-color:#dfdccf;
     border-radius: 10px;
     box-shadow: 0 4px 8px 7px rgb(0 0 0 / 20%), 0 6px 20px 7px rgb(0 0 0 / 19%);
@@ -1333,9 +1334,11 @@ button {
 
 /*create post section */
 
+.main-create-hero{
+  background-color: black;
+}
 .create-hero{
   height: 50rem;
-  
 }
 .create-header{
    font-family: "Cinzel",
@@ -1343,6 +1346,7 @@ button {
     text-align: center;
     padding-top: 2rem;
     font-weight: 400;
+    color: #eae9e4;
 }
 
 .create-fields{
