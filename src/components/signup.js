@@ -4,7 +4,23 @@ import axios from 'axios';
 import { Link,Navigate } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
+const token_key = "USER_TOKEN";
 
+const user_id = "USER_ID";
+
+const setToken = (token) => {
+  window.localStorage.setItem(token_key, token);
+};
+
+
+const getToken = () => {
+  let token = window.localStorage.getItem(token_key);
+  if (!!token) return token;
+  return false;
+};
+const setId = (id) => {
+  window.localStorage.setItem(user_id, id);
+};
 function Signup()  {
 
   gapi.load("client:auth2", () => {
@@ -45,6 +61,8 @@ function Signup()  {
      })
      .then((res) => {
        console.log(res);
+       const token = res.data.token;
+       setToken(token);
        console.log("submit");
        window.location = "/userverify";
      })

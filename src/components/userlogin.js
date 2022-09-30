@@ -37,14 +37,14 @@ function Userlogin(){
         e.preventDefault();
 
         await axios
-          .post(`https://darkestwhitebackend.lcnitd.co.in/user/login`, {
+          .post(`http://localhost:5000/auth/google`, {
             
             username: username,
             password: password,
           })
           .then((res) => {
             
-             
+             console.log(res+'google login succeeded')
              const token = res.data.token;
              const user_id = res.data.user[0]._id;
               console.log(res.data);
@@ -133,7 +133,7 @@ function Userlogin(){
                 cookiePolicy={"single_host_origin"}
                 isSignedIn={true}
                 uxMode="redirect"
-                redirectUri="http://localhost/"
+                redirectUri="http://localhost:3000"
               />
             )}           
              {loginStatus && (
