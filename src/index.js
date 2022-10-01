@@ -26,7 +26,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}></Route>
         <Route path="contact" element={<Contactpage />}></Route>
-        <Route path="userlogin" element={<Userlogin />}></Route>
+        <Route path="login" element={<Userlogin />}></Route>
         <Route path="signup" element={<Signup />}></Route>
         <Route path="blog/:id" element={<Blogdisplay />}></Route>
         <Route path="blogadmin/:id" element={<BlogdisplayAdmin />}></Route>

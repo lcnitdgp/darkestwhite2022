@@ -4,6 +4,10 @@ import axios from 'axios';
 import { Link,Navigate } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 const token_key = "USER_TOKEN";
 
 const user_id = "USER_ID";
@@ -49,9 +53,11 @@ function Signup()  {
      setLoginStatus(false);
    };
  const handleSubmit = async (e) => {
-   e.preventDefault();
-
-   
+  e.preventDefault();
+    console.log(username);
+   if((username === "") || (password === "") || (name === "") || (email === "")){
+     toast.error("Please fill out all fields.");
+   }
    await axios
      .post(`http://localhost:5000/user/signup`, {
        name: name,
@@ -173,7 +179,7 @@ function Signup()  {
           )}
         </div>
         <span className="ac">
-          Have an Account? <Link to="/userlogin">Log In</Link>
+          Have an Account? <Link to="/login">Log In</Link>
         </span>
       </div>
     </div>

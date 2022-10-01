@@ -100,7 +100,7 @@ export default function Article(){
    });
      
    if (!token) 
-   toast("You need to LogIn to perform this action."); 
+   toast.error("You need to LogIn to perform this action."); 
 
      if(token){
      await axios
@@ -142,8 +142,9 @@ export default function Article(){
                 onClick={handleLike}
                 style={{
                   padding: "0.5em 1em 0.5em 1em",
-                  background: "rgb(139 112 0)",
-                  borderColor: "rgb(139 112 0)",
+                  background: "#dfdccf",
+                  borderColor: "#dfdccf",
+                  color: "black"
                 }}
               >
 

@@ -26,11 +26,9 @@ export default function App() {
         :
         
         <Landing/>
-        
 
         
       }
-    
     </div>
   );
 }

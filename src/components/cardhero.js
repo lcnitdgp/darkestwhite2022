@@ -27,7 +27,7 @@ function CardHero(){
   });   
 
     return (
-      <div className="cardhero">
+      <div className="cardhero" style={{ height: "auto", }}>
         <h1 className="cardhero-header">Our Recent posts</h1>
        
         <Container className='card-grid' >

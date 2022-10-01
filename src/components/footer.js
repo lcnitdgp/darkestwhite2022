@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebook, FaGlobe } from "react-icons/fa";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="container-footer">
+      <div className="container-footer" style={{ maxHeight: "100%" }}>
         <h2 className="footer-title">DARKEST WHITE</h2>
         <h4 className="footer-lc">Brought to you by Literary Circle</h4>
         {/* <h4 className="footer-socials">IG. BE. FB.</h4> */}

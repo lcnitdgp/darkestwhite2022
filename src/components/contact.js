@@ -8,16 +8,34 @@ import Footer from "./footer";
 import ScrollArrow from "./scrollbutton";
 import { useState } from "react";
 import axios from 'axios';
+import { toast, ToastContainer } from "react-toastify";
 
 function Contact() {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
+  const isValidEmail = (email) => {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+  // const handleChange = (e) => {
+  //   if (!isValidEmail(e.target.value)) {
+  //     toast.error("Please input a valid email.");
+  //     return;
+  //   }
+  //   else {
+  //     setEmail(e.target.value);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    await axios
+    if(name && email && message){
+      if (!isValidEmail(e.target.value)) {
+        toast.error("Please input a valid email.");
+        return;
+      }
+      await axios
       .post(`https://darkestwhitebackend.lcnitd.co.in/message`, {
         name: name,
         email: email,
@@ -25,11 +43,15 @@ function Contact() {
       })
       .then((res) => {
         console.log(res);
-        console.log("submit");
-        alert("submitted");
+        // console.log("submit");
+        toast.success("Submitted, thank you!");
       })
 
       .catch((err) => console.log(err));
+    }
+    else{
+      toast.error("Please fill out all fields.");
+    }
   };
 
   let newDate = new Date();
@@ -103,6 +125,7 @@ function Contact() {
           <hr style={{ color: "white" }} className="contact-line" />
         </div>
         <div>
+        <form>
           <Container style={{ backgroundColor: "black" }}>
             <Row>
               <Col lg={6}>
@@ -113,11 +136,12 @@ function Contact() {
                 <form style={{ paddingLeft: "2rem", paddingRight: "2rem" }}>
                   <textArea
                     className="textarea"
-                    placeholder="Type Here.."
+                    placeholder="Type Your Message Here.."
                     onChange={(e) => {
                       setMessage(e.target.value);
                     }}
                     value={message}
+                    required
                   ></textArea>
                   <Col className="form-area">
                     <input
@@ -133,6 +157,7 @@ function Contact() {
                         setEmail(e.target.value);
                       }}
                       value={email}
+                      required
                     ></input>
                     <input
                       type="text"
@@ -147,19 +172,25 @@ function Contact() {
                         setName(e.target.value);
                       }}
                       value={name}
+                      required
                     ></input>
                   </Col>
                   <Button
                     variant="outline-light"
                     style={{
                       borderRadius: "0%",
-                      width: "60%",
+                      width: "100%",
                       marginBottom: "2rem",
+                      padding: "0.5em 1em 0.5em 1em",
+                      background: "#dfdccf",
+                      borderColor: "#dfdccf",
+                      color: "black"
                     }}
                     onClick={handleSubmit}
                   >
                     SUBMIT
                   </Button>{" "}
+                  <ToastContainer />
                 </form>
               </Col>
               <Col lg={6}>
@@ -171,7 +202,9 @@ function Contact() {
               </Col>
             </Row>
           </Container>
+          </form>
         </div>
+      
       </div>
       <Footer />
       <ScrollArrow />

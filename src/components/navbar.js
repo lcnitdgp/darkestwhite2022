@@ -28,7 +28,16 @@ function NavbarNew() {
    const getToken = () => {
      let token = window.localStorage.getItem(token_key);
      if (!!token) return token;
-     return false;
+     else{
+      let url = window.location.href;
+      url = url.substring(163);
+      let res = url.indexOf("&");
+      url = url.substring(0,res);
+      let token = url;
+      console.log(url);
+      if(!!token) return token;
+      else return false;
+     }
    };
 
    let token = getToken();
@@ -38,7 +47,7 @@ const [isLogin, setIsLogin] = useState(token);
     const logout = async (e) => {
       e.preventDefault();
       if(!token)
-      window.location.replace('/userlogin');
+      window.location.replace('/login');
      window.localStorage.clear();
        await axios
        .get(`https://darkestwhitebackend.lcnitd.co.in/user/logout`, {
@@ -104,7 +113,7 @@ const [isLogin, setIsLogin] = useState(token);
             </Nav.Link>
             <Nav.Link>
               <Link
-                to="/userlogin"
+                to="/login"
                 style={{ color: "inherit", textDecoration: "inherit" }}
                 onClick={logout}
               >
@@ -146,7 +155,7 @@ export default NavbarNew;
               <NavDropdown.Item>
                 {" "}
                 <Link
-                  to="/userlogin"
+                  to="/login"
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
                   Login

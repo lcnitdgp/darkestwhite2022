@@ -50,7 +50,7 @@ export default function Create() {
  const handleSubmit = async (e) => {
    e.preventDefault();
    if(!token)
-    toast("You're not Logged In to perform this action");   
+    toast.error("You're not Logged In to perform this action.");   
   
    if (!selectedFile) return;
    const reader = new FileReader();
@@ -72,7 +72,7 @@ export default function Create() {
        console.log("submit");
         
       
-       toast("submitted");
+       toast.success("Submitted.");
               //window.location.replace = "/";
      })
 

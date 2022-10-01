@@ -29,7 +29,8 @@ function CommentForm() {
 
     console.log(token);
   if(!token)
-  toast("You need to LogIn to perform this action.")
+    toast.error("You need to LogIn to perform this action.")
+  if(token){
     await axios
       .post(
         `https://darkestwhitebackend.lcnitd.co.in/blog/${params.id}/comments`,
@@ -47,10 +48,11 @@ function CommentForm() {
       })
 
       .catch((err) => console.log(err));
+    }
   };
 
   return (
-    <div className="comment-section">
+    <div className="comment-section" style={{marginTop: "0",}}>
       <form className="form-login">
         <div className="item-login">
           <textarea
@@ -76,6 +78,10 @@ function CommentForm() {
               minWidth: "min-content",
               marginBottom: "2rem",
               borderRadius: "0.3rem",
+              padding: "0.5em 1em 0.5em 1em",
+              background: "#dfdccf",
+              borderColor: "#dfdccf",
+              color: "black"
           }}
           onClick={handleSubmit}
         >
@@ -84,7 +90,6 @@ function CommentForm() {
           {/* <button type="submit" onClick={handleSubmit}>
             Submit
           </button> */}
-          <ToastContainer/>
         </div>
       </form>
     </div>

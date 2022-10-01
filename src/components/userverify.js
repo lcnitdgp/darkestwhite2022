@@ -31,7 +31,7 @@ function VerifyUser(){
               console.log(res.data);
              setToken(token);
              setId(user_id);
-             toast("Verified");
+             toast.success("Verified");
              window.location = "/";
              }
              
@@ -63,7 +63,7 @@ function VerifyUser(){
             Enter Otp
           </h3>
             <div>
-              <OTPInput style = {{}} value = {OTP} onChange = {setOTP} autoFocus OTPLength={6} otpType="number" disabled={false}  />
+              <OTPInput className = "otp-inp" value = {OTP} onChange = {setOTP} autoFocus OTPLength={6} otpType="number" disabled={false}  />
             </div>
             <div className="item submit">
               <button type="submit" onClick={handleSubmit}>

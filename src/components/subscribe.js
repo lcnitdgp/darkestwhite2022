@@ -37,7 +37,7 @@ function Subscribe() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(!uid)
-    window.location= "/userlogin";
+    window.location= "/login";
     await axios
       .put(`https://darkestwhitebackend.lcnitd.co.in/user/subscribe/${uid}`, {
         uid: uid,
@@ -50,7 +50,7 @@ function Subscribe() {
 
       .catch((err) => console.log(err));
     { 
-      token ? toast("subscribed") : toast(" not subscribed");
+      token ? toast.success("Subscribed.") : toast.error("Not subscribed.");
       console.log("submit");
     }
   };

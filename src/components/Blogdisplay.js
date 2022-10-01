@@ -9,8 +9,8 @@ export default function Blogdisplay(){
     return(
         <blogpage>
             <Article />
+            <CommentForm/>
            <Comment/>
-           <CommentForm/>
             <Footer />
             <ScrollArrow />
         </blogpage>
