@@ -1196,7 +1196,7 @@ button {
 @media only screen and (max-width: 500px) {
 
     .container-login{
-      align-items: flex-start;
+      align-items: center;
     }
     .container-wrapper-login {
       width: 75%;

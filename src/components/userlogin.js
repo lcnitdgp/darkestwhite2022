@@ -209,7 +209,7 @@ function Userlogin(){
             )}           
              {loginStatus && (
               <div>
-                  <GoogleLogout clientId={clientId} buttonText="Log out" onLogoutSuccess={logOut} />
+                  <GoogleLogout clientId={clientId} buttonText="Log Out" onLogoutSuccess={logOut} />
               </div>
             )}
           </div>
