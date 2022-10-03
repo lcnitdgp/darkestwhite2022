@@ -1354,12 +1354,11 @@ button {
   height: 50rem;
 }
 .create-header{
-   font-family: "Cinzel",
-    serif;
+   font-family: "Cinzel", serif;
     text-align: center;
     padding-top: 2rem;
     font-weight: 400;
-    color: #eae9e4;
+    color: #dfdccf;
 }
 
 .create-fields{
@@ -1367,18 +1366,25 @@ button {
 }
 
 .create-input{
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
   outline: none;
+  background-color: #dfdccf;
 }
 
 .image-create{
    margin-left: auto;
   margin-right: auto;
 }
+
 .button-create{
   margin-left: auto;
   margin-right: auto;
 }
 
+.button-create:hover{
+  background-color: #dfdccf;
+}
 .app {
   font-family: sans-serif;
   display: flex;

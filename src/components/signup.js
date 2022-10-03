@@ -1,5 +1,5 @@
 import "../App.css";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link,Navigate } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
@@ -11,6 +11,7 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 const token_key = "USER_TOKEN";
 
 const user_id = "USER_ID";
+const clientId = process.env.REACT_APP_CLIENT_ID;
 
 const setToken = (token) => {
   window.localStorage.setItem(token_key, token);
@@ -26,38 +27,86 @@ const setId = (id) => {
   window.localStorage.setItem(user_id, id);
 };
 function Signup()  {
-
-  gapi.load("client:auth2", () => {
-    gapi.client.init({
-      clientId:
-        "729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com",
-      plugin_name: "login`",
-    });
+  
+  useEffect(() => {
+    const initClient = () => {
+          gapi.client.init({
+          clientId: clientId,
+          scope: ''
+        });
+     };
+     gapi.load('client:auth2', initClient);
   });
+  
+  const isValidEmail = (email) => {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
    const [username, setUserName] = useState("");
    const [password, setPassword] = useState("");
    
    const [url, setUrl] = useState("");
+   const [googleId, setGoogleId] = useState("");
+
    const [loginStatus, setLoginStatus] = useState(false);
-   const responseGoogle = (response) => {
-     console.log(response);
-     setName(response.profileObj.name);
-     setEmail(response.profileObj.email);
-     setUrl(response.profileObj.imageUrl);
-     setLoginStatus(true);
-   };
-   const logout = () => {
-     console.log("logout");
-     setLoginStatus(false);
-   };
+   const handleGoogleSuccess = async (e) => {
+    console.log("Check check");
+    await axios
+      .post(`http://localhost:5000/user/googlelogin`, {
+        name: name,
+        email: email,
+        image: url,
+        googleId: googleId,
+        username: name,
+      })
+      .then((res) => {
+         toast.success("Logged in.");
+         window.location = "/";
+      })
+      .catch((err) => {
+        window.location = "/";
+        console.log(err);
+      });
+  };
+
+   const onSuccess = async (res) => {
+    setName(res.profileObj.name);
+    setEmail(res.profileObj.email);
+    setUrl(res.profileObj.imageUrl);
+    setGoogleId(res.profileObj.googleId);
+    setLoginStatus(true);
+    console.log("Success");
+    console.log(res);
+    const user_id = res.googleId;
+    const token = res.accessToken;
+    setToken(token);
+    setId(user_id);
+    console.log("Check1");
+    await handleGoogleSuccess();
+  };
+
+  const onFailure = (err) => {
+    console.log("Authentication failed");
+  };
+
+  const logOut = () => {
+      console.log("logged out");
+      setLoginStatus(false);
+  };
+  
  const handleSubmit = async (e) => {
   e.preventDefault();
-    console.log(username);
-   if((username === "") || (password === "") || (name === "") || (email === "")){
-     toast.error("Please fill out all fields.");
-   }
+   if((username && name && email && password)){
+    if(!isValidEmail(email)) {
+      toast.error("Please input a valid email.");
+      return;
+    }
+    if(password.length < 8){
+      toast.error("The password must be at least 8 characters long.");
+      return;
+    }
    await axios
      .post(`http://localhost:5000/user/signup`, {
        name: name,
@@ -73,7 +122,16 @@ function Signup()  {
        window.location = "/userverify";
      })
 
-     .catch((err) => console.log(err));
+     .catch((err) => {
+        console.log(err)
+        toast.error("A user with this username already exists.");
+        return;
+     });
+    }
+    else{
+      toast.error("Please fill out all fields.");
+      return;
+    }
  };
   
   
@@ -159,28 +217,26 @@ function Signup()  {
         </form>
         <h2 className="or">OR</h2>
         <div className="social-media">
-          {!loginStatus && (<GoogleLogin
-            clientId="729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com"
-            buttonText="Sign Up"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={"single_host_origin"}
-            isSignedIn={true}
-          />)}
-         
-          {loginStatus && (
-            <div>
-              <GoogleLogout
-                clientId="729111369321-ccjfl5jdeqpiekfl0mots534folvdmnu.apps.googleusercontent.com"
-                buttonText="Logout"
-                onLogoutSuccess={logout}
+        {!loginStatus && (
+              <GoogleLogin
+                clientId={clientId}
+                buttonText="Login"
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                cookiePolicy={'single_host_origin'}
+                isSignedIn={true}
               />
-            </div>
-          )}
+            )}           
+             {loginStatus && (
+              <div>
+                  <GoogleLogout clientId={clientId} buttonText="Log Out" onLogoutSuccess={logOut} />
+              </div>
+            )}
         </div>
         <span className="ac">
           Have an Account? <Link to="/login">Log In</Link>
         </span>
+        <ToastContainer/>
       </div>
     </div>
   );

@@ -40,7 +40,7 @@ function AdminCard(props) {
   return (
     <div className="container-card">
       <Link
-        to={{ pathname: `/blogadmin/${props.item._id}` }}
+        to={{ pathname: `/darkestwhite_blogadmin/${props.item._id}` }}
         style={{ color: "inherit", textDecoration: "inherit" }}
       >
         <img

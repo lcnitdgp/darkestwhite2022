@@ -52,7 +52,13 @@ export default function Create() {
    if(!token)
     toast.error("You're not Logged In to perform this action.");   
   
-   if (!selectedFile) return;
+   if (!selectedFile){
+    toast.error("Please select an image for the blogpost.");
+    return;
+   }
+   if(!(author && title && content)){
+    toast.error("Please fill out all fields.");
+   }
    const reader = new FileReader();
    reader.readAsDataURL(selectedFile);
    reader.onloadend = async()=> {
@@ -70,8 +76,6 @@ export default function Create() {
      .then((res) => {
        console.log(res);
        console.log("submit");
-        
-      
        toast.success("Submitted.");
               //window.location.replace = "/";
      })
@@ -141,10 +145,11 @@ export default function Create() {
               id="myFile"
               name="filename"
               placeholder="upload image"
+              accept="image/*"
               onChange={handleFileInputChange}
               value={fileInputState}
               style={{
-                color: "aliceblue",
+                color: "#dfdccf",
               }}
             />
           </Row>

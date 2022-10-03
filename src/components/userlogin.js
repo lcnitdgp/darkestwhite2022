@@ -14,7 +14,6 @@ const token_key = "USER_TOKEN";
 
 const user_id = "USER_ID";
 const clientId = process.env.REACT_APP_CLIENT_ID;
-console.log(clientId);
 
 
 
@@ -48,10 +47,12 @@ function Userlogin(){
         username: name,
       })
       .then((res) => {
-         toast.success("Logged in.");
+         toast.success("Logged in successfully.");
          window.location = "/";
       })
       .catch((err) => {
+        toast.success("Logged in successfully.");
+        window.location = "/";
         console.log(err);
       });
   };

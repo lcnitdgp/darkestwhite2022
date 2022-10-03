@@ -15,6 +15,7 @@ import {
   FormControl,
   Button, Offcanvas
 } from "react-bootstrap";
+import { toast } from 'react-toastify';
 
 const token_key = "USER_TOKEN";
 
@@ -56,9 +57,9 @@ const [isLogin, setIsLogin] = useState(token);
         },
       })
        .then((res) => {
-        
          setIsLogin(false);
-        
+         toast.success("Logged out successfully.")
+         window.location.reload(2);
          console.log(res);
        })
 

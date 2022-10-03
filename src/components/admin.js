@@ -25,7 +25,10 @@ function Admin() {
  
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    if(! (username && password)){
+      toast.error("Please fill out all fields.")
+      return;
+    }
     await axios
       .post(`https://darkestwhitebackend.lcnitd.co.in/user/login`, {
         username: username,
@@ -51,11 +54,14 @@ function Admin() {
 
         setId(user_id);
          if (res.data.user[0].isAdmin)
-           window.location = "/adminpanel";
+           window.location = "/darkestwhite_admin_panel";
            console.log("submit");
       })
 
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        toast.error("Invalid Credentials.")
+      });
   };
 
   const setToken = (token) => {
@@ -102,10 +108,10 @@ function Admin() {
               }}
             />{" "}
           </div>
-          <span className="remember">
+          {/* <span className="remember">
             {" "}
             <a href="#">Forgot Password?</a>{" "}
-          </span>
+          </span> */}
           <div className="item submit">
             <button type="submit" onClick={handleSubmit}>
               Submit
@@ -113,7 +119,7 @@ function Admin() {
             <ToastContainer/>
           </div>
         </form>
-        <h2 className="or">OR</h2>
+        {/* <h2 className="or">OR</h2>
         <div className="social-media">
           <a href="#">
             <div className="icons8-google social-mediaImg" />
@@ -128,7 +134,7 @@ function Admin() {
         <span className="ac">
           Don't have an Account?
           <Link to="/signup"> Sign Up</Link>
-        </span>
+        </span> */}
       </div>
     </div>
   );

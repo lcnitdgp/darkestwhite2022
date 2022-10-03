@@ -31,13 +31,16 @@ function VerifyUser(){
               console.log(res.data);
              setToken(token);
              setId(user_id);
-             toast.success("Verified");
+             toast.success("Verified.");
              window.location = "/";
              }
              
               
           })
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            console.log(err);
+            toast.error("Invalid OTP.");
+          });
       };
 
       const setToken = (token) => {
@@ -70,6 +73,7 @@ function VerifyUser(){
                 Submit
               </button>
             </div>
+            
           </form>
           </div>
       </div>

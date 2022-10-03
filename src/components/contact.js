@@ -18,20 +18,11 @@ function Contact() {
   const isValidEmail = (email) => {
     return /\S+@\S+\.\S+/.test(email);
   }
-  // const handleChange = (e) => {
-  //   if (!isValidEmail(e.target.value)) {
-  //     toast.error("Please input a valid email.");
-  //     return;
-  //   }
-  //   else {
-  //     setEmail(e.target.value);
-  //   }
-  // };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(name && email && message){
-      if (!isValidEmail(e.target.value)) {
+      if(!isValidEmail(email)) {
         toast.error("Please input a valid email.");
         return;
       }
@@ -42,8 +33,6 @@ function Contact() {
         message:message,
       })
       .then((res) => {
-        console.log(res);
-        // console.log("submit");
         toast.success("Submitted, thank you!");
       })
 

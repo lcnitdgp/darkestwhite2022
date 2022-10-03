@@ -29,13 +29,13 @@ root.render(
         <Route path="login" element={<Userlogin />}></Route>
         <Route path="signup" element={<Signup />}></Route>
         <Route path="blog/:id" element={<Blogdisplay />}></Route>
-        <Route path="blogadmin/:id" element={<BlogdisplayAdmin />}></Route>
+        <Route path="darkestwhite_blogadmin/:id" element={<BlogdisplayAdmin />}></Route>
         <Route path="posts" element={<Movies />}></Route>
         <Route path="userverify" element={<Verify />}></Route>
         
         <Route path="create" element={<Create />}></Route>
         <Route path="admin" element={<Admin />}></Route>
-        <Route path="adminpanel" element={<AdminPanel />}></Route>
+        <Route path="darkestwhite_admin_panel" element={<AdminPanel />}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
