@@ -36,16 +36,24 @@ function Userlogin(){
   const [loginStatus, setLoginStatus] = useState(false);
 
   const handleGoogleSuccess = async (e) => {
-    console.log("Check check");
+    console.log(name);
+    
+  };
+  const onSuccess = async (res) => {
+    const user_id = res.googleId;
+    const token = res.accessToken;
     await axios
       .post(`http://localhost:5000/user/googlelogin`, {
-        name: name,
-        email: email,
-        image: url,
-        googleId: googleId,
-        username: name,
+        name: res.profileObj.name,
+        email: res.profileObj.email,
+        image: res.profileObj.imageUrl,
+        googleId: res.profileObj.googleId,
+        username: res.profileObj.name,
       })
       .then((res) => {
+        setLoginStatus(true);
+        setToken(token);
+        setId(user_id);
          toast.success("Logged in successfully.");
          window.location = "/";
       })
@@ -53,21 +61,6 @@ function Userlogin(){
         toast.error("Error in logging you in..");
         console.log(err);
       });
-  };
-  const onSuccess = async (res) => {
-    setName(res.profileObj.name);
-    setEmail(res.profileObj.email);
-    setUrl(res.profileObj.imageUrl);
-    setGoogleId(res.profileObj.googleId);
-    setLoginStatus(true);
-    console.log("Success");
-    console.log(res);
-    const user_id = res.googleId;
-    const token = res.accessToken;
-    setToken(token);
-    setId(user_id);
-    // window.location = "/";
-    // await handleGoogleSuccess();
   };
 
   const onFailure = (err) => {
