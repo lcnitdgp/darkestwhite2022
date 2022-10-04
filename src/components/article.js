@@ -74,12 +74,9 @@ export default function Article(){
      .then((response) => response.data)
      .then((data) => {
        setPost(data);
-       setLikes(data.likes);     
-       
-     });
-
-    
-    
+       setLikes(data.likes);
+       (data.likedBy.includes(uid) && token)? setIsLiked(true) : setIsLiked(false);
+     });    
  }
  useEffect(() => {
    getPosts();
@@ -95,8 +92,7 @@ export default function Article(){
      console.log(data.likedBy);
      (data.likedBy.includes(uid) && token)? setIsLiked(true) : setIsLiked(false);
      setLikes(data.likedBy.length);
-     console.log(isLiked);    
-    
+     console.log(isLiked);
    });
      
    if (!token) 

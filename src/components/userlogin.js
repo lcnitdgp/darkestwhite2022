@@ -7,7 +7,6 @@ import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from 'gapi-script';
-import { set } from 'react-hook-form';
 
 
 const token_key = "USER_TOKEN";
@@ -51,8 +50,7 @@ function Userlogin(){
          window.location = "/";
       })
       .catch((err) => {
-        toast.success("Logged in successfully.");
-        window.location = "/";
+        toast.error("Error in logging you in..");
         console.log(err);
       });
   };
@@ -68,8 +66,8 @@ function Userlogin(){
     const token = res.accessToken;
     setToken(token);
     setId(user_id);
-    console.log("Check1");
-    await handleGoogleSuccess();
+    // window.location = "/";
+    // await handleGoogleSuccess();
   };
 
   const onFailure = (err) => {
@@ -77,8 +75,13 @@ function Userlogin(){
   };
 
   const logOut = () => {
-      console.log("logged out");
       setLoginStatus(false);
+      setEmail("");
+      setName("");
+      setUrl("");
+      setGoogleId("");
+      window.localStorage.clear();
+      console.log("logged out");
   };
   
       const [username, setUserName] = useState("");
@@ -88,7 +91,7 @@ function Userlogin(){
         if(username && password){
           await axios
           .post(`http://localhost:5000/user/login`, {
-            email: email,
+            username: username,
             password: password,
           })
           .then((res) => {
@@ -206,6 +209,7 @@ function Userlogin(){
                 onFailure={onFailure}
                 cookiePolicy={'single_host_origin'}
                 isSignedIn={true}
+                autoLoad={false}
               />
             )}           
              {loginStatus && (

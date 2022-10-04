@@ -42,6 +42,7 @@ function NavbarNew() {
    };
 
    let token = getToken();
+   console.log(token);
 const [isLogin, setIsLogin] = useState(token);
   
 
@@ -49,17 +50,17 @@ const [isLogin, setIsLogin] = useState(token);
       e.preventDefault();
       if(!token)
       window.location.replace('/login');
-     window.localStorage.clear();
        await axios
-       .get(`https://darkestwhitebackend.lcnitd.co.in/user/logout`, {
+       .get(`http://localhost:5000/user/logout`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
        .then((res) => {
          setIsLogin(false);
+         window.localStorage.clear();
          toast.success("Logged out successfully.")
-         window.location.reload(2);
+         window.location.reload();
          console.log(res);
        })
 

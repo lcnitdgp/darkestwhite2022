@@ -20,7 +20,6 @@ const token_key = "USER_TOKEN";
 
  const getToken = () => {
    let token = window.localStorage.getItem(token_key);
-    console.log(token + "article");
    if (token) return token;
    
    return false;

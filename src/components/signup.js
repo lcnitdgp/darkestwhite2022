@@ -6,7 +6,6 @@ import { GoogleLogin, GoogleLogout } from "react-google-login";
 import { gapi } from "gapi-script";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { GoogleOAuthProvider } from '@react-oauth/google';
 
 const token_key = "USER_TOKEN";
 
@@ -124,7 +123,7 @@ function Signup()  {
 
      .catch((err) => {
         console.log(err)
-        toast.error("A user with this username already exists.");
+        toast.error("A user with this email or username already exists.");
         return;
      });
     }

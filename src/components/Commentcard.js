@@ -1,15 +1,14 @@
 import "../App.js"
 export default function Commentcard(props) {
-  console.log(props);
+  // console.log(props.item);
 
   const dateToTime = date => date.toLocaleString('en-US', {
     hour: 'numeric',
     minute: 'numeric'
   });
 
-    const dateString = props.item.createdAt;
-    const userOffset = new Date().getTimezoneOffset()*60*1000;
-    const localDate = new Date(dateString);
+    const a = props.item.createdAt;
+    const localDate = new Date(a);
     const commenttime = dateToTime(localDate);
     return (
       <div className="comment-card">
