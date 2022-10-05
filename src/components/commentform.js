@@ -31,6 +31,7 @@ function CommentForm() {
   if(!token)
     toast.error("You need to LogIn to perform this action.")
   if(token){
+    console.log('check1')
     await axios
       .post(
         `https://darkestwhitebackend.lcnitd.co.in/blog/${params.id}/comments`,
