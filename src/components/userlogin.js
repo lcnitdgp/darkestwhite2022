@@ -47,12 +47,12 @@ function Userlogin(){
         username: res.profileObj.name,
       })
       .then((res) => {
-        console.log(res.data)
+        console.log(res.user._id)
         setLoginStatus(true);
         setToken(token);
         setId(user_id);
         toast.success("Logged in successfully.");
-        window.location = "/";
+        //window.location = "/";
       })
       .catch((err) => {
         toast.error("Error in logging you in..");
