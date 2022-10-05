@@ -47,6 +47,7 @@ function Userlogin(){
         username: res.profileObj.name,
       })
       .then((res) => {
+        console.log(res.data)
         setLoginStatus(true);
         setToken(token);
         setId(user_id);
