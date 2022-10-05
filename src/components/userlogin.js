@@ -47,12 +47,12 @@ function Userlogin(){
         username: res.profileObj.name,
       })
       .then((res) => {
-        console.log(res.user._id)
+        console.log(res.user)
         setLoginStatus(true);
         setToken(token);
         setId(user_id);
         toast.success("Logged in successfully.");
-        //window.location = "/";
+        window.location = "/";
       })
       .catch((err) => {
         toast.error("Error in logging you in..");
@@ -87,7 +87,7 @@ function Userlogin(){
              setToken(token);
              setId(user_id);
              toast.success("Logged in.");
-            //  window.location = "/";
+             window.location = "/";
           })
           .catch((err) => {
             toast.error("The username and password do not match.");  
