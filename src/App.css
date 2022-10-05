@@ -426,6 +426,7 @@
   align-items: center;
   background-color: #eae9e4;
   height: max-content;
+ 
   
 }
 .cardhero-header {
@@ -448,6 +449,7 @@
   /* width: 70%; */
   display: inline-grid;
   grid-template-columns: auto;
+  margin-bottom: 5rem;
  
 }
 
@@ -549,7 +551,7 @@
     font-size: 4rem;
   }
   .cardhero {
-    height:90rem;
+    height:105rem;
   }
 }
 
@@ -634,12 +636,13 @@
 
   .subscribe{
     padding-left: 3rem;
+    
   }
 }
 
 @media screen and (min-width:360px) {
   .subscribe{
-    height: 46vh;
+    height: 50vh;
   }
   .sub-heading{
     padding-top: 2rem;

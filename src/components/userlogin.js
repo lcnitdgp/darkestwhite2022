@@ -32,7 +32,7 @@ function Userlogin() {
   const [loginStatus, setLoginStatus] = useState(false);
 
   const onSuccess = async (res) => {
-   const user_id = res.googleId;
+    //const user_id = res.googleId;
     const token = res.accessToken;
     await axios
       .post(`https://darkestwhitebackend.lcnitd.co.in/user/googlelogin`, {
