@@ -7,7 +7,7 @@ import ReactTypingEffectDemo from './typing';
 // function Hero() {
 //   return (
 //      <div className='hero'>
-//          <img className="profile-photo" src={require("../main-home-rev-1.jpg")} alt={"Carlie Anglemire"}/>
+//          <img className="profile-photo" src={require("../main-home-rev-1.jpg")} alt={"Darkest White"}/>
 //      </div>
 //   );
 // }
@@ -18,7 +18,7 @@ import ReactTypingEffectDemo from './typing';
 function Hero(){
     return(
         <div className="hero">
-              <img className="profile-photo" src={require("../main-home-rev-1.jpg")} alt={"Carlie Anglemire"}/>
+              <img className="profile-photo" src={require("../main-home-rev-1.jpg")} alt={"Darkest White"}/>
               <ReactTypingEffectDemo/>
 
         </div>

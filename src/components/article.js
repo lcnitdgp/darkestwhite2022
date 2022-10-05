@@ -111,6 +111,8 @@ export default function Article(){
        .then((res) => {
         console.log(res.data);
          console.log("sent id");
+         (res.data.likedBy.includes(uid) && token)? setIsLiked(true) : setIsLiked(false);
+         setLikes(res.data.likes);    
        })
 
        .catch((err) => console.log(err));
@@ -126,7 +128,7 @@ export default function Article(){
             <img
               className="img-article"
               src={`${post.image}`}
-              alt={"Carlie Anglemire"}
+              alt={"Darkest White"}
             />
             <h1> {post.title}</h1>
             <h4>

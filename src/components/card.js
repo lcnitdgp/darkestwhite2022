@@ -22,7 +22,7 @@ function Card(props){
           <img
             className="img-card"
             src={`${props.item.image}`}
-            alt={"Carlie Anglemire"}
+            alt={"Darkest White"}
           />
         </Link>
         <div className="card-content">

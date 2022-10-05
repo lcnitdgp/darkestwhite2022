@@ -7,12 +7,22 @@ import { useState, useEffect } from "react";
 import { data } from "jquery";
 import { Button } from "react-bootstrap";
 const user_id = "USER_ID";
+const token_key = "USER_TOKEN";
+
 
 export default function AdminArticle() {
   const params = useParams();
 
   let uid = window.localStorage.getItem(user_id);
 
+  const getToken = () => {
+    let token = window.localStorage.getItem(token_key);
+    if (!!token) return token;
+    return false;
+  };
+  
+  let token = getToken();
+  
   const handleLike = async (e) => {
     e.preventDefault();
     console.log(params.id);
@@ -37,7 +47,9 @@ export default function AdminArticle() {
     e.preventDefault();
 
     await axios
-      .post(`https://darkestwhitebackend.lcnitd.co.in/blog/publishblog/${params.id}`, {})
+      .post(`https://darkestwhitebackend.lcnitd.co.in/blog/publishblog/${params.id}`, {
+          user_id: uid,
+        })
       .then((res) => {
         console.log(res);
         console.log("submit param");
@@ -74,7 +86,7 @@ export default function AdminArticle() {
           <img
             className="img-article"
             src={`${post.image}`}
-            alt={"Carlie Anglemire"}
+            alt={"Darkest White"}
           />
           <h1> {post.title}</h1>
           <h4>

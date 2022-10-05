@@ -72,7 +72,7 @@ function Contact() {
           <img
             className="team"
             src={require("../contact.JPG")}
-            alt={"Carlie Anglemire"}
+            alt={"Darkest White"}
           />
           <hr style={{ color: "white" }} className="contact-line" />
           <p className="intro">

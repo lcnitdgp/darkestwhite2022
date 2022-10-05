@@ -20,7 +20,7 @@ function VerifyUser(){
         e.preventDefault();
 
         await axios
-          .post(`http://localhost:5000/user/verify`, {
+          .post(`https://darkestwhitebackend.lcnitd.co.in/user/verify`, {
             uniqueString: OTP,
           })
           .then((res) => {

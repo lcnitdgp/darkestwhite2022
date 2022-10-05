@@ -637,12 +637,15 @@
   }
 }
 
-@media screen and (min-width:375px) {
+@media screen and (min-width:360px) {
   .subscribe{
-    height: 35rem;
+    height: 46vh;
   }
-  
+  .sub-heading{
+    padding-top: 2rem;
+  }
 }
+
 @media screen and (min-width:1024px) {
   .subscribe {
     height: 25rem;
@@ -796,11 +799,10 @@
 
 @media screen and (max-width: 1925px) {
   .footer {
-    height: 35rem;
+    height: 70vh;
   }
 
   .footer-title {
-    padding-top: 15rem;
     font-size: 3rem;
   }
 
@@ -824,7 +826,6 @@
   }
 
   .footer-title {
-    padding-top: 12rem;
     font-size: 2.5rem;
   }
 
@@ -904,7 +905,7 @@ blog-text{
   width:60%;
 }
 blog-text > p{
-  
+  white-space: pre-line;
   margin: 10%;
   font-family: 'Antic Slab', serif;
   font-weight: 600;
@@ -1047,7 +1048,7 @@ article > h4{
     width: 27vw;
     height: max-content;
     min-width: min-content;
-    background-color:#dfdccf;
+    background-color: lightgrey;
     border-radius: 10px;
     box-shadow: 0 4px 8px 7px rgb(0 0 0 / 20%), 0 6px 20px 7px rgb(0 0 0 / 19%);
 }
@@ -1081,7 +1082,7 @@ button {
     padding: 0.5em 1em 0.5em 1em;
     border: none;
     width: max-content;
-    background-color: #3a2d2d;
+    background-color: black;
     font-size: 18px;
 }
 

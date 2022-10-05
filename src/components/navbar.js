@@ -20,38 +20,28 @@ import { toast } from 'react-toastify';
 const token_key = "USER_TOKEN";
 
 function NavbarNew() {
-   const [show, setShow] = useState(false);
-   
+  //  const [show, setShow] = useState(false);
 
-   const handleClose = () => setShow(false);
-   const handleShow = () => setShow(true);
+  //  const handleClose = () => setShow(false);
+  //  const handleShow = () => setShow(true);
 
    const getToken = () => {
      let token = window.localStorage.getItem(token_key);
      if (!!token) return token;
-     else{
-      let url = window.location.href;
-      url = url.substring(163);
-      let res = url.indexOf("&");
-      url = url.substring(0,res);
-      let token = url;
-      console.log(url);
-      if(!!token) return token;
-      else return false;
-     }
-   };
+     else return false;
+   }
 
    let token = getToken();
    console.log(token);
-const [isLogin, setIsLogin] = useState(token);
-  
+   const [isLogin, setIsLogin] = useState(token? true : false);
 
     const logout = async (e) => {
       e.preventDefault();
       if(!token)
       window.location.replace('/login');
-       await axios
-       .get(`http://localhost:5000/user/logout`, {
+      if(token){
+        await axios
+       .get(`https://darkestwhitebackend.lcnitd.co.in/user/logout`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -64,8 +54,12 @@ const [isLogin, setIsLogin] = useState(token);
          console.log(res);
        })
 
-       .catch((err) => console.log(err));
-     
+       .catch((err) => {
+        console.log(err)
+        console.log("Here")
+       }); 
+      }
+       
    };
  
   return (
@@ -144,32 +138,6 @@ const [isLogin, setIsLogin] = useState(token);
       </Container>
     </Navbar>
   );
+
 }
-
-export default NavbarNew;
-
-
-
-
-
- {
-   /* <NavDropdown title="LOGIN" id="collasible-nav-dropdown">
-              <NavDropdown.Item>
-                {" "}
-                <Link
-                  to="/login"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                >
-                  Login
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link
-                  to="/signup"
-                  style={{ color: "inherit", textDecoration: "inherit" }}
-                >
-                  SignUp
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown> */
- }
+  export default NavbarNew;

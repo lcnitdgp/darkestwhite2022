@@ -35,15 +35,11 @@ function Userlogin(){
 
   const [loginStatus, setLoginStatus] = useState(false);
 
-  const handleGoogleSuccess = async (e) => {
-    console.log(name);
-    
-  };
   const onSuccess = async (res) => {
     const user_id = res.googleId;
     const token = res.accessToken;
     await axios
-      .post(`http://localhost:5000/user/googlelogin`, {
+      .post(`https://darkestwhitebackend.lcnitd.co.in/user/googlelogin`, {
         name: res.profileObj.name,
         email: res.profileObj.email,
         image: res.profileObj.imageUrl,
@@ -54,8 +50,8 @@ function Userlogin(){
         setLoginStatus(true);
         setToken(token);
         setId(user_id);
-         toast.success("Logged in successfully.");
-         window.location = "/";
+        toast.success("Logged in successfully.");
+        window.location = "/";
       })
       .catch((err) => {
         toast.error("Error in logging you in..");
@@ -69,10 +65,6 @@ function Userlogin(){
 
   const logOut = () => {
       setLoginStatus(false);
-      setEmail("");
-      setName("");
-      setUrl("");
-      setGoogleId("");
       window.localStorage.clear();
       console.log("logged out");
   };
@@ -83,7 +75,7 @@ function Userlogin(){
         e.preventDefault();
         if(username && password){
           await axios
-          .post(`http://localhost:5000/user/login`, {
+          .post(`https://darkestwhitebackend.lcnitd.co.in/user/login`, {
             username: username,
             password: password,
           })
@@ -120,7 +112,7 @@ function Userlogin(){
         window.localStorage.setItem(user_id, id);
       };
     return (
-      <div className="container-login">
+      <div className="container-login" style={{ backgroundImage: `url("https://wallpaperaccess.com/full/1431811.jpg")`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
         <div className="container-wrapper-login">
           <h3 className="login-text">
             <i className="bi bi-person-circle ac-logo" />
@@ -138,6 +130,7 @@ function Userlogin(){
                 style={{
                   height: "auto",
                   width: "100%",
+                  fontFamily: "'Antic Slab', serif",
                   // maxWidth: "20vw",
                 }}
                 value={username}
@@ -151,7 +144,7 @@ function Userlogin(){
                 style={{
                   height: "auto",
                   width: "100%",
-
+                  fontFamily: "'Antic Slab', serif",
                   // maxWidth: "20vw",
                 }}
                 onChange={(e) => {
@@ -201,7 +194,7 @@ function Userlogin(){
                 onSuccess={onSuccess}
                 onFailure={onFailure}
                 cookiePolicy={'single_host_origin'}
-                isSignedIn={true}
+                isSignedIn={false}
                 autoLoad={false}
               />
             )}           
@@ -212,7 +205,7 @@ function Userlogin(){
             )}
           </div>
           <span className="ac">
-            Don't have an Account? {}
+            New Here? {}
             <Link to="/signup">Sign Up</Link>
           </span>
         </div>

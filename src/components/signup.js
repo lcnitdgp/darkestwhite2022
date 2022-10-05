@@ -50,40 +50,28 @@ function Signup()  {
    const [googleId, setGoogleId] = useState("");
 
    const [loginStatus, setLoginStatus] = useState(false);
-   const handleGoogleSuccess = async (e) => {
-    console.log("Check check");
-    await axios
-      .post(`http://localhost:5000/user/googlelogin`, {
-        name: name,
-        email: email,
-        image: url,
-        googleId: googleId,
-        username: name,
-      })
-      .then((res) => {
-         toast.success("Logged in.");
-         window.location = "/";
-      })
-      .catch((err) => {
-        window.location = "/";
-        console.log(err);
-      });
-  };
-
    const onSuccess = async (res) => {
-    setName(res.profileObj.name);
-    setEmail(res.profileObj.email);
-    setUrl(res.profileObj.imageUrl);
-    setGoogleId(res.profileObj.googleId);
-    setLoginStatus(true);
-    console.log("Success");
-    console.log(res);
     const user_id = res.googleId;
     const token = res.accessToken;
-    setToken(token);
-    setId(user_id);
-    console.log("Check1");
-    await handleGoogleSuccess();
+    await axios
+      .post(`https://darkestwhitebackend.lcnitd.co.in/user/googlelogin`, {
+        name: res.profileObj.name,
+        email: res.profileObj.email,
+        image: res.profileObj.imageUrl,
+        googleId: res.profileObj.googleId,
+        username: res.profileObj.name,
+      })
+      .then((res) => {
+        setLoginStatus(true);
+        setToken(token);
+        setId(user_id);
+        toast.success("Logged in successfully.");
+        // window.location = "/";
+      })
+      .catch((err) => {
+        toast.error("Error in logging you in..");
+        console.log(err);
+      });
   };
 
   const onFailure = (err) => {
@@ -91,8 +79,9 @@ function Signup()  {
   };
 
   const logOut = () => {
-      console.log("logged out");
       setLoginStatus(false);
+      window.localStorage.clear();
+      console.log("logged out");
   };
   
  const handleSubmit = async (e) => {
@@ -107,7 +96,7 @@ function Signup()  {
       return;
     }
    await axios
-     .post(`http://localhost:5000/user/signup`, {
+     .post(`https://darkestwhitebackend.lcnitd.co.in/user/signup`, {
        name: name,
        email: email,
         username: username,
@@ -135,7 +124,7 @@ function Signup()  {
   
   
   return (
-    <div className="container-login">
+    <div className="container-login" style={{ backgroundImage: `url("https://wallpaperaccess.com/full/1431811.jpg")`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
       <div className="container-wrapper-login">
         <h3 className="login-text">
           <i className="bi bi-person-circle ac-logo" />
@@ -153,6 +142,7 @@ function Signup()  {
               style={{
                 height: "auto",
                 width: "100%",
+                fontFamily: "'Antic Slab', serif",
               }}
               value={name}
             />
@@ -168,6 +158,7 @@ function Signup()  {
               style={{
                 height: "auto",
                 width: "100%",
+                fontFamily: "'Antic Slab', serif",
               }}
               value={email}
             />
@@ -183,7 +174,7 @@ function Signup()  {
               style={{
                 height: "auto",
                 width: "100%",
-
+                fontFamily: "'Antic Slab', serif",
               }}
               value={username}
             />
@@ -199,7 +190,7 @@ function Signup()  {
               style={{
                 height: "auto",
                 width: "100%",
-
+                fontFamily: "'Antic Slab', serif",
               }}
               value={password}
             />{" "}
@@ -214,7 +205,7 @@ function Signup()  {
             </button>
           </div>
         </form>
-        <h2 className="or">OR</h2>
+        {/* <h2 className="or">OR</h2>
         <div className="social-media">
         {!loginStatus && (
               <GoogleLogin
@@ -231,7 +222,7 @@ function Signup()  {
                   <GoogleLogout clientId={clientId} buttonText="Log Out" onLogoutSuccess={logOut} />
               </div>
             )}
-        </div>
+        </div> */}
         <span className="ac">
           Have an Account? <Link to="/login">Log In</Link>
         </span>
