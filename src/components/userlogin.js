@@ -87,7 +87,7 @@ function Userlogin(){
              setToken(token);
              setId(user_id);
              toast.success("Logged in.");
-             window.location = "/";
+            //  window.location = "/";
           })
           .catch((err) => {
             toast.error("The username and password do not match.");  
