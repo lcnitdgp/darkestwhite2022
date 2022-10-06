@@ -1,6 +1,6 @@
 import "../App.js"
 export default function Commentcard(props) {
-  // console.log(props.item);
+  console.log(props.item);
 
   const dateToTime = date => date.toLocaleString('en-US', {
     hour: 'numeric',
@@ -13,7 +13,7 @@ export default function Commentcard(props) {
     return (
       <div className="comment-card">
         <div className="comment-row">
-          <span className="commentor">{props.item.author}</span>
+          <span className="commentor">{props.item.author? props.item.author : "Anonymous"}</span>
           <span className="comment-date"> {props.item.createdAt?.substr(0,10) + " " + commenttime}</span>
         </div>
         <p className="comment-text">{props.item.comment}</p>
