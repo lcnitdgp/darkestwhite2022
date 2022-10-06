@@ -6,13 +6,14 @@ import Comment from "./comment";
 import CommentForm from "./commentform";
 
 export default function Blogdisplay(){
-    return(
-        <blogpage>
-            <Article />
-            <CommentForm/>
-           <Comment/>
-            <Footer />
-            <ScrollArrow />
-        </blogpage>
-    )
+    return (
+      <blogpage>
+        <Article />
+        <Comment />
+        <CommentForm />
+
+        <Footer />
+        <ScrollArrow />
+      </blogpage>
+    );
 }
