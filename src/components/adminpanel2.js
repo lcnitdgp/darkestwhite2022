@@ -7,9 +7,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import Article from "./article";
 import { data } from "jquery";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Card from './card';
 import { isContentEditable } from "@testing-library/user-event/dist/utils";
 const user_id = "USER_ID";
 const token_key = "USER_TOKEN";
+
 
 
 function AdminPanel() {
@@ -41,9 +44,7 @@ function AdminPanel() {
      getMessages();
         console.log(message);
    }, []);
-  const cards = post.map((item) => {
-      return <AdminCard key={item._id} item={item} />
-  });
+ 
 
     const messages = message.map((item) => {
       return (
@@ -58,15 +59,21 @@ function AdminPanel() {
     });
 
     return (
-      <div className="cardhero"
-      style={{ height: "auto" }}
-      >
+      <div className="cardhero" style={{ height: "auto" }}>
         <h1 className="cardhero-header">unpublished Posts</h1>
         <hr className="herohr" />
-        <Container className="card-grid">{cards}</Container>
+        <ResponsiveMasonry>
+          <Masonry columnsCount={3}>
+            {[...post].reverse().map((item) => (
+              <Card key={item._id} item={item} />
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
         <h1 className="cardhero-header">messages</h1>
         <hr className="herohr" />
-        <div className = "comment-section" style = {{background: "#eae9e4",}}>{messages}</div>
+        <div className="comment-section" style={{ background: "#eae9e4" }}>
+          {messages}
+        </div>
       </div>
     );
 }
