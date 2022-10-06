@@ -775,7 +775,7 @@
   background-color: black;
   color: aliceblue;
   font-family: "Cinzel", serif;
-  height: rem;
+ 
 }
 
 .footer-title {
@@ -802,11 +802,12 @@
 
 @media screen and (max-width: 1925px) {
   .footer {
-    height: 70vh;
+    height: 45vh;
   }
 
   .footer-title {
     font-size: 3rem;
+    padding-top: 10rem;
   }
 
   .footer-lc {
@@ -853,11 +854,11 @@
     background-color: black;
     color: aliceblue;
     font-family: "Cinzel", serif;
-    height: 30rem;
+    height: 20rem;
   }
 
   .footer-title {
-    padding-top: 12rem;
+    padding-top: 5rem;
     text-align: center;
     font-size: 5vh;
   }
@@ -872,18 +873,18 @@
   }
 
   .tagline {
-    margin: top 18rem;
+    margin: top 10rem;
   }
 
   .copyright {
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 7rem;
   }
 }
 
 @media screen and (max-width: 377px) {
   .footer {
-    height: 22rem;
+    height: 15rem;
     min-height: fit-content;
   }
   .footer-title {
