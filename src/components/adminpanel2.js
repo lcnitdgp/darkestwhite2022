@@ -8,7 +8,7 @@ import axios from "axios";
 import Article from "./article";
 import { data } from "jquery";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import Card from './card';
+
 import { isContentEditable } from "@testing-library/user-event/dist/utils";
 const user_id = "USER_ID";
 const token_key = "USER_TOKEN";
@@ -65,7 +65,7 @@ function AdminPanel() {
         <ResponsiveMasonry>
           <Masonry columnsCount={3}>
             {[...post].reverse().map((item) => (
-              <Card key={item._id} item={item} />
+              <AdminCard key={item._id} item={item} />
             ))}
           </Masonry>
         </ResponsiveMasonry>
