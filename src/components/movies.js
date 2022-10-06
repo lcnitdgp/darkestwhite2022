@@ -8,6 +8,8 @@ import { useLocation} from "react-router-dom";
 import axios from 'axios';
 import Footer from './footer'
 import NavbarNew from './navbar';
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+
 
 
 export default function Posts() {
@@ -25,16 +27,27 @@ export default function Posts() {
     getPosts();
   }, []);
 
-   const cards = [...post].reverse().map((item) => {
-     return <Card key={item._id} item={item} />;
-   });         
+  
+ 
+   
+   
+    
    const sampleLocation = useLocation();
    console.log(sampleLocation.pathname);  
 
   return (
     <div>
       <NavbarNew />
-      <div className="movies">{cards}</div>
+      <div className="movies">
+        <ResponsiveMasonry>
+          <Masonry columnsCount={3}>
+            {[...post].reverse().map((item) => (
+              <Card key={item._id} item={item} />
+            ))}
+          </Masonry>
+        </ResponsiveMasonry>
+        ;
+      </div>
       <Footer />
       <ScrollArrow />
     </div>
