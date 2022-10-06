@@ -172,10 +172,20 @@
   margin-left: 0;
   margin-right: 0;
 }
+
+.hero-tagline {
+  font-size: 1rem;
+   font-family: 'Antic Slab', serif;
+   font-weight: 600;
+  text-align: center;
+  padding-top: 1rem;
+  
+  
+}
 .darkest-white-hero {
   font-family: "Cinzel", serif;
-  font-size: 2rem;
-  padding-left: 10vw;
+  font-size: 2.2rem;
+  padding-left: 11vw;
   text-align: center;
   position: relative;
 
@@ -223,6 +233,10 @@
   .profile-photo{
     height: 70%;
   }
+
+  .hero-tagline{
+    display:none;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -244,6 +258,9 @@
     position: relative;
     bottom: 4.5rem;
   }
+   .hero-tagline{
+    display:none;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -262,6 +279,9 @@
     position: relative;
     bottom: 4rem;
   }
+   .hero-tagline{
+    display:none;
+  }
 }
 
 @media screen and (min-width: 1920px) {
@@ -277,7 +297,9 @@
     font-size: 10rem;
     padding-left: 17vw;
   }
-  
+   .hero-tagline{
+    display:none;
+  }
 }
 
 /* 
