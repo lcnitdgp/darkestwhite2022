@@ -20,9 +20,9 @@ function Hero(){
         <div className="hero">
               <img className="profile-photo" src={require("../main-home-rev-1.jpg")} alt={"Darkest White"}/>
               <ReactTypingEffectDemo/>
-             
-              
-              <p className='hero-tagline'>Share with us the story of your Puja- Unabridged, Unbound and Unparalleled.</p>
+
+
+              <p className='hero-tagline'>Share with us the story of your Christmas- Unabridged, Unbound and Unparalleled.</p>
 
         </div>
     )
